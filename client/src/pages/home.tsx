@@ -118,6 +118,69 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
   );
 }
 
+const LOVINGLY_LIGHT = ["dirty-shirley", "orange-julius", "strawberry-daiquiri", "clover-club"];
+const DARK_AND_SEDUCTIVE = ["mezcal-soda", "whiskey-sour", "pheromone-martini", "negroni-sbagliato"];
+
+function CollectionGroup({
+  title,
+  subtitle,
+  products,
+  packSlug,
+  startIndex,
+}: {
+  title: string;
+  subtitle: string;
+  products: Product[];
+  packSlug: string;
+  startIndex: number;
+}) {
+  const pack = products.find(p => p.slug === packSlug);
+
+  return (
+    <div className="mb-24 last:mb-0">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+        className="text-center mb-12"
+      >
+        <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-3" data-testid={`text-group-label-${packSlug}`}>
+          {subtitle}
+        </p>
+        <h3 className="font-display text-3xl md:text-4xl tracking-wide italic" data-testid={`text-group-title-${packSlug}`}>
+          {title}
+        </h3>
+      </motion.div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {products
+          .filter(p => (packSlug === "lovingly-light" ? LOVINGLY_LIGHT : DARK_AND_SEDUCTIVE).includes(p.slug))
+          .map((product, i) => (
+            <ProductCard key={product.id} product={product} index={startIndex + i} />
+          ))}
+      </div>
+
+      {pack && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mt-10 flex justify-center"
+        >
+          <Link href={`/product/${pack.slug}`}>
+            <Button variant="outline" className="font-body text-xs tracking-widest uppercase px-8" data-testid={`button-pack-${packSlug}`}>
+              Shop the {title} 4-Pack
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
+          </Link>
+        </motion.div>
+      )}
+    </div>
+  );
+}
+
 function CollectionSection({ products, isLoading }: { products: Product[]; isLoading: boolean }) {
   return (
     <section id="collection" className="py-24 px-6">
@@ -127,7 +190,7 @@ function CollectionSection({ products, isLoading }: { products: Product[]; isLoa
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
           <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-4" data-testid="text-collection-label">
             The Collection
@@ -141,14 +204,14 @@ function CollectionSection({ products, isLoading }: { products: Product[]; isLoa
         </motion.div>
 
         {isLoading ? (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[0, 1, 2].map(i => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[0, 1, 2, 3].map(i => (
               <Card key={i} className="p-6 border-border/30">
                 <Skeleton className="aspect-[3/4] rounded-md mb-6" />
                 <Skeleton className="h-4 w-20 mb-3" />
                 <Skeleton className="h-8 w-48 mb-3" />
                 <Skeleton className="h-4 w-full mb-4" />
-                <div className="flex justify-between">
+                <div className="flex justify-between gap-2">
                   <Skeleton className="h-8 w-20" />
                   <Skeleton className="h-8 w-32" />
                 </div>
@@ -156,11 +219,22 @@ function CollectionSection({ products, isLoading }: { products: Product[]; isLoa
             ))}
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {products.map((product, i) => (
-              <ProductCard key={product.id} product={product} index={i} />
-            ))}
-          </div>
+          <>
+            <CollectionGroup
+              title="Lovingly Light"
+              subtitle="Bright & Refreshing"
+              products={products}
+              packSlug="lovingly-light"
+              startIndex={0}
+            />
+            <CollectionGroup
+              title="Dark & Seductive"
+              subtitle="Bold & Complex"
+              products={products}
+              packSlug="dark-and-seductive"
+              startIndex={4}
+            />
+          </>
         )}
       </div>
     </section>
