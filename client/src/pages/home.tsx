@@ -147,10 +147,10 @@ function CollectionGroup({
         className="text-center mb-12"
       >
         <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-3" data-testid={`text-group-label-${packSlug}`}>
-          {subtitle}
+          {title}
         </p>
         <h3 className="font-display text-3xl md:text-4xl tracking-wide italic" data-testid={`text-group-title-${packSlug}`}>
-          {title}
+          {subtitle}
         </h3>
       </motion.div>
 
