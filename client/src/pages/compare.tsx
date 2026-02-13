@@ -34,9 +34,9 @@ const barExperience = [
 const hedonicExperience = [
   { text: "Ready when you are", positive: true },
   { text: "Your space, your music, your vibe", positive: true },
-  { text: "Bar-quality craft cocktails", positive: true },
+  { text: "Same premium spirits & real ingredients", positive: true },
   { text: "No driving, no waiting", positive: true },
-  { text: "Enjoy at your own pace", positive: true },
+  { text: "All the luxury, none of the markup", positive: true },
 ];
 
 export default function Compare() {
@@ -69,7 +69,7 @@ export default function Compare() {
             Hedonic <span className="italic">at Home</span>
           </h1>
           <p className="font-body text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed" data-testid="text-compare-intro">
-            Same quality. Same number of drinks. Dramatically different price tag. Here's what a night of four cocktails actually costs.
+            Same premium spirits. Same craft cocktails. Same luxury — just without the markup. Here's what a night of four drinks actually costs.
           </p>
         </motion.div>
 
@@ -187,7 +187,7 @@ export default function Compare() {
               That's <span className="text-primary font-semibold">{savingsPercent}%</span> less per night
             </p>
             <p className="font-body text-sm text-muted-foreground/70 max-w-md mx-auto">
-              Same number of drinks. Same premium quality. No compromises, no Ubers, no waiting.
+              Same luxury. Same top-shelf ingredients. Same number of cocktails. The only thing missing is the inflated price tag.
             </p>
           </Card>
         </motion.div>
@@ -243,7 +243,7 @@ export default function Compare() {
             The Choice is Clear
           </h2>
           <p className="font-body text-sm text-muted-foreground mb-8 max-w-md mx-auto">
-            Premium cocktails, zero hassle. Keep ${savings.toFixed(0)} in your pocket.
+            Every bit as luxurious. Keep ${savings.toFixed(0)} in your pocket.
           </p>
           <Link href="/collection">
             <Button className="font-body text-sm tracking-widest uppercase px-8" data-testid="button-compare-shop">
