@@ -1,12 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 import { useRoute, Link } from "wouter";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowLeft, Plus, Minus, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useCart } from "@/lib/cart";
 import type { Product } from "@shared/schema";
-import { useState, useRef } from "react";
+import { useState } from "react";
 
 export default function ProductDetail() {
   const [, params] = useRoute("/product/:slug");
@@ -14,13 +14,6 @@ export default function ProductDetail() {
   const [quantity, setQuantity] = useState(1);
   const [added, setAdded] = useState(false);
   const { addItem } = useCart();
-  const imageRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: imageRef,
-    offset: ["start end", "end start"],
-  });
-  const shineOpacity = useTransform(scrollYProgress, [0, 0.3, 0.6, 1], [0, 0.35, 0.7, 0]);
-  const shineX = useTransform(scrollYProgress, [0, 1], ["-50%", "150%"]);
 
   const { data: products = [], isLoading } = useQuery<Product[]>({
     queryKey: ["/api/products"],
@@ -94,35 +87,12 @@ export default function ProductDetail() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <div
-              ref={imageRef}
-              className="aspect-[3/4] rounded-md overflow-hidden bg-gradient-to-b from-card to-background/50 relative"
-            >
+            <div className="aspect-[3/4] rounded-md overflow-hidden bg-gradient-to-b from-card to-background/50">
               <img
                 src={product.imageUrl}
                 alt={product.name}
                 className="w-full h-full object-cover"
                 data-testid="img-product-detail"
-              />
-              <motion.div
-                className="absolute inset-0 pointer-events-none"
-                style={{ opacity: shineOpacity }}
-              >
-                <motion.div
-                  className="absolute inset-y-0 w-[60%]"
-                  style={{
-                    left: shineX,
-                    background: "linear-gradient(105deg, transparent 0%, rgba(212,175,55,0.08) 20%, rgba(255,255,255,0.18) 45%, rgba(212,175,55,0.12) 55%, rgba(255,255,255,0.25) 65%, rgba(212,175,55,0.08) 80%, transparent 100%)",
-                    filter: "blur(8px)",
-                  }}
-                />
-              </motion.div>
-              <motion.div
-                className="absolute inset-0 pointer-events-none rounded-md"
-                style={{
-                  opacity: shineOpacity,
-                  background: "radial-gradient(ellipse at 50% 40%, rgba(212,175,55,0.06) 0%, transparent 70%)",
-                }}
               />
             </div>
           </motion.div>
