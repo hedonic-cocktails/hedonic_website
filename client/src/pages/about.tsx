@@ -1,33 +1,29 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowLeft, Beaker, Timer, Filter, Sparkles } from "lucide-react";
+import { ArrowLeft, ArrowRight, Gem, Leaf, Droplets, Wine, Heart, Star } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-const steps = [
+const pillars = [
   {
-    icon: Beaker,
-    step: "01",
-    title: "The Blend",
-    description: "We begin by crafting each cocktail recipe from scratch using premium spirits, fresh-squeezed juices, and house-made syrups. Every ingredient is measured with precision to ensure perfect balance before the clarification process begins.",
+    icon: Gem,
+    title: "Uncompromising Quality",
+    description: "We source only the finest spirits from artisan distilleries. Our vodka is distilled five times for absolute purity. Our mezcal comes from hand-selected agave, slow-roasted in earthen pits by master mezcaleros. There are no shortcuts, no substitutes, no compromises.",
   },
   {
-    icon: Timer,
-    step: "02",
-    title: "The Curdle",
-    description: "The full cocktail is slowly poured into cold whole milk. The natural acidity from the citrus causes the milk proteins to curdle, forming delicate clumps that act as a natural filtration web. We let this rest for up to 24 hours, allowing the curds to fully develop and capture every impurity.",
+    icon: Leaf,
+    title: "Real Ingredients",
+    description: "Fresh-squeezed citrus, never from concentrate. House-made vanilla syrup crafted from whole Madagascar beans. Grenadine made from real pomegranate, not corn syrup and red dye. Every ingredient earns its place in the bottle.",
   },
   {
-    icon: Filter,
-    step: "03",
-    title: "The Clarification",
-    description: "The mixture is gently strained through the milk curds, which act as a living filter. The protein web traps color pigments, tannins, and harsh compounds while letting the pure, clarified liquid pass through. We strain multiple times until the cocktail is crystal clear.",
+    icon: Droplets,
+    title: "Impossible Clarity",
+    description: "Each cocktail undergoes our signature milk clarification process, transforming bold flavors into crystal-clear, luminous liquid. The result is a visual experience as striking as the taste itself — cocktails that glow like liquid gold.",
   },
   {
-    icon: Sparkles,
-    step: "04",
-    title: "The Finish",
-    description: "The clarified cocktail is carbonated to give it a crisp, effervescent sparkle, then bottled in our signature wine bottles. The result is a shelf-stable, silky-smooth cocktail with a velvety mouthfeel and flavors that are rounder and more refined than the original.",
+    icon: Wine,
+    title: "Velvet Mouthfeel",
+    description: "Clarification doesn't just change how our cocktails look — it fundamentally transforms how they feel. The process imparts a silky, velvety texture that coats the palate and carries flavor in a way that unclarified cocktails simply cannot. Every sip is smooth, round, and impossibly luxurious.",
   },
 ];
 
@@ -55,13 +51,13 @@ export default function About() {
           className="text-center mt-8 mb-20"
         >
           <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-4" data-testid="text-about-label">
-            Our Process
+            About Us
           </p>
           <h1 className="font-display text-4xl md:text-6xl tracking-wide mb-6" data-testid="text-about-title">
-            The Art of <span className="italic">Clarity</span>
+            The Pursuit of <span className="italic">Pleasure</span>
           </h1>
           <p className="font-body text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed" data-testid="text-about-intro">
-            Every Hedonic cocktail undergoes milk clarification, a centuries-old technique dating back to the 1700s that transforms bold, complex cocktails into crystal-clear, silky-smooth masterpieces.
+            Hedonic was born from a simple belief: pleasure is not a luxury — it is a necessity. Life is too short for mediocre drinks.
           </p>
         </motion.div>
 
@@ -73,18 +69,21 @@ export default function About() {
           className="mb-24"
         >
           <Card className="p-8 md:p-12 border-border/30 bg-card/50">
-            <h2 className="font-display text-2xl md:text-3xl tracking-wide mb-6" data-testid="text-what-title">
-              What is Milk Clarification?
-            </h2>
-            <div className="space-y-4 font-body text-sm text-foreground/70 leading-relaxed">
-              <p data-testid="text-what-p1">
-                Milk clarification, also known as milk punch, is a bartending technique where a finished cocktail is combined with whole milk. The acid in the cocktail — from citrus juices, tannins, or the alcohol itself — causes the milk proteins to curdle into soft clumps.
+            <div className="flex items-center gap-3 mb-6">
+              <Heart className="w-6 h-6 text-primary" />
+              <h2 className="font-display text-2xl md:text-3xl tracking-wide" data-testid="text-philosophy-title">
+                Our Philosophy
+              </h2>
+            </div>
+            <div className="space-y-5 font-body text-sm text-foreground/70 leading-relaxed">
+              <p data-testid="text-philosophy-p1">
+                The word <span className="italic text-foreground">hedonic</span> comes from the Greek <span className="italic text-foreground">hedonikos</span> — relating to pleasure. It is the root of hedonism, the philosophy that the highest good is the pursuit of sensory delight. We named our company after this idea because we believe it, deeply.
               </p>
-              <p data-testid="text-what-p2">
-                These curds form a natural protein web that acts as an incredibly fine filter. As the cocktail slowly passes through this web, the curds capture color pigments, tannins, harsh polyphenols, and microscopic particles — everything that makes a cocktail cloudy, astringent, or rough around the edges.
+              <p data-testid="text-philosophy-p2">
+                A perfect cocktail is one of life's great pleasures. The clink of glass, the first sip that stops you mid-conversation, the warmth that follows. It's a moment of indulgence, and it should be available whenever you want it — not just when you're seated at a world-class bar with a $25 tab open.
               </p>
-              <p data-testid="text-what-p3">
-                What remains is something remarkable: a cocktail that is perfectly transparent, impossibly smooth, with a velvety mouthfeel from the residual lactose. The flavors are rounder, softer, and more integrated. Harsh edges disappear. Complexity deepens. It is, quite simply, the same cocktail elevated to its purest form.
+              <p data-testid="text-philosophy-p3">
+                That's why we created Hedonic. We wanted to capture that bar-quality moment in a bottle. Not a compromise, not an approximation — the real thing. Every cocktail we make is crafted with the same obsessive attention to detail that the best bartenders in the world bring to their craft. The difference is that ours is ready the moment you are.
               </p>
             </div>
           </Card>
@@ -99,17 +98,17 @@ export default function About() {
             className="text-center mb-16"
           >
             <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-4">
-              Step by Step
+              What Sets Us Apart
             </p>
-            <h2 className="font-display text-3xl md:text-4xl tracking-wide" data-testid="text-steps-title">
-              How We Make It
+            <h2 className="font-display text-3xl md:text-4xl tracking-wide" data-testid="text-pillars-title">
+              Four Pillars of Hedonic
             </h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {steps.map((step, i) => (
+            {pillars.map((pillar, i) => (
               <motion.div
-                key={step.step}
+                key={pillar.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -119,18 +118,15 @@ export default function About() {
                   <div className="flex items-start gap-5">
                     <div className="flex-shrink-0">
                       <div className="w-12 h-12 rounded-full border border-primary/30 flex items-center justify-center">
-                        <step.icon className="w-5 h-5 text-primary" />
+                        <pillar.icon className="w-5 h-5 text-primary" />
                       </div>
                     </div>
                     <div>
-                      <p className="font-body text-xs tracking-[0.2em] uppercase text-primary mb-1" data-testid={`text-step-num-${i}`}>
-                        Step {step.step}
-                      </p>
-                      <h3 className="font-display text-xl tracking-wide mb-3" data-testid={`text-step-title-${i}`}>
-                        {step.title}
+                      <h3 className="font-display text-xl tracking-wide mb-3" data-testid={`text-pillar-title-${i}`}>
+                        {pillar.title}
                       </h3>
-                      <p className="font-body text-sm text-muted-foreground leading-relaxed" data-testid={`text-step-desc-${i}`}>
-                        {step.description}
+                      <p className="font-body text-sm text-muted-foreground leading-relaxed" data-testid={`text-pillar-desc-${i}`}>
+                        {pillar.description}
                       </p>
                     </div>
                   </div>
@@ -145,30 +141,28 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
+          className="mb-24"
         >
-          <Card className="p-8 md:p-12 border-border/30 bg-card/50 mb-16">
-            <h2 className="font-display text-2xl md:text-3xl tracking-wide mb-6" data-testid="text-why-title">
-              Why Clarify?
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div>
-                <h3 className="font-display text-lg mb-2 text-primary" data-testid="text-benefit-1">Texture</h3>
-                <p className="font-body text-sm text-muted-foreground leading-relaxed">
-                  The residual lactose from the milk gives each cocktail a velvety, almost silky mouthfeel that you simply cannot achieve any other way.
-                </p>
-              </div>
-              <div>
-                <h3 className="font-display text-lg mb-2 text-primary" data-testid="text-benefit-2">Flavor</h3>
-                <p className="font-body text-sm text-muted-foreground leading-relaxed">
-                  By removing tannins and harsh compounds, the underlying flavors become rounder, softer, and more integrated. You taste nuance, not noise.
-                </p>
-              </div>
-              <div>
-                <h3 className="font-display text-lg mb-2 text-primary" data-testid="text-benefit-3">Stability</h3>
-                <p className="font-body text-sm text-muted-foreground leading-relaxed">
-                  Clarified cocktails are remarkably shelf-stable. The process removes the compounds that cause spoilage, meaning every bottle stays perfect for months.
-                </p>
-              </div>
+          <Card className="p-8 md:p-12 border-border/30 bg-card/50">
+            <div className="flex items-center gap-3 mb-6">
+              <Star className="w-6 h-6 text-primary" />
+              <h2 className="font-display text-2xl md:text-3xl tracking-wide" data-testid="text-promise-title">
+                The Hedonic Promise
+              </h2>
+            </div>
+            <div className="space-y-5 font-body text-sm text-foreground/70 leading-relaxed">
+              <p data-testid="text-promise-p1">
+                Every bottle of Hedonic is a statement: that you deserve better. Better than canned cocktails made with artificial flavors and bottom-shelf spirits. Better than the sugary, one-dimensional drinks that dominate the ready-to-drink market. Better than settling.
+              </p>
+              <p data-testid="text-promise-p2">
+                We use premium spirits because they matter. The purity of our five-times-distilled vodka means cleaner flavors and no harsh burn. The complexity of our artisan mezcal means genuine smokiness that unfolds across the palate, not a chemical imitation. When you choose real ingredients, you can taste the difference in every sip.
+              </p>
+              <p data-testid="text-promise-p3">
+                And then we go further. Our signature clarification process transforms each cocktail into something extraordinary — crystal-clear liquid with a texture so smooth it feels like velvet on your tongue. The mouthfeel alone sets Hedonic apart from anything else you've ever tasted from a bottle.
+              </p>
+              <p data-testid="text-promise-p4">
+                This is not a cocktail you drink. It is a cocktail you <span className="italic text-foreground">experience</span>.
+              </p>
             </div>
           </Card>
         </motion.div>
@@ -181,16 +175,24 @@ export default function About() {
           className="text-center"
         >
           <h2 className="font-display text-3xl md:text-4xl tracking-wide italic mb-4" data-testid="text-about-cta">
-            Ready to Taste the Difference?
+            Curious How We Do It?
           </h2>
-          <p className="font-body text-sm text-muted-foreground mb-8">
-            Experience what centuries of technique and modern craft can do.
+          <p className="font-body text-sm text-muted-foreground mb-8 max-w-md mx-auto">
+            Learn about our signature milk clarification process that gives every Hedonic cocktail its impossible clarity and velvet texture.
           </p>
-          <Link href="/collection">
-            <Button className="font-body text-sm tracking-widest uppercase px-8" data-testid="button-about-shop">
-              Shop the Collection
-            </Button>
-          </Link>
+          <div className="flex items-center justify-center gap-4 flex-wrap">
+            <Link href="/clarity">
+              <Button variant="outline" className="font-body text-sm tracking-widest uppercase px-8" data-testid="button-about-clarity">
+                Our Process
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </Link>
+            <Link href="/collection">
+              <Button className="font-body text-sm tracking-widest uppercase px-8" data-testid="button-about-shop">
+                Shop the Collection
+              </Button>
+            </Link>
+          </div>
         </motion.div>
       </div>
     </div>
