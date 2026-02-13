@@ -63,13 +63,13 @@ export default function Compare() {
           className="text-center mt-8 mb-16"
         >
           <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-4" data-testid="text-compare-label">
-            The Smart Choice
+            More Good Nights for Less
           </p>
           <h1 className="font-display text-4xl md:text-6xl tracking-wide mb-6" data-testid="text-compare-title">
             Hedonic <span className="italic">at Home</span>
           </h1>
           <p className="font-body text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed" data-testid="text-compare-intro">
-            Same premium spirits. Same craft cocktails. Same luxury — just without the markup. Here's what a night of four drinks actually costs.
+            Same premium spirits. Same craft cocktails. Same luxury — just without the markup. For the cost of one night out, you could have {Math.floor(barTotal / hedonicTotal)} nights in with Hedonic.
           </p>
         </motion.div>
 
@@ -186,8 +186,11 @@ export default function Compare() {
             <p className="font-body text-lg text-muted-foreground mb-2" data-testid="text-savings-percent">
               That's <span className="text-primary font-semibold">{savingsPercent}%</span> less per night
             </p>
+            <p className="font-body text-base text-muted-foreground max-w-lg mx-auto mb-4">
+              One bar night = <span className="text-primary font-semibold">{Math.floor(barTotal / hedonicTotal)} Hedonic nights</span> of the same luxury.
+            </p>
             <p className="font-body text-sm text-muted-foreground/70 max-w-md mx-auto">
-              Same luxury. Same top-shelf ingredients. Same number of cocktails. The only thing missing is the inflated price tag.
+              More good nights. Same top-shelf ingredients. Same indulgence. The only thing missing is the inflated price tag.
             </p>
           </Card>
         </motion.div>
@@ -240,10 +243,10 @@ export default function Compare() {
           className="text-center"
         >
           <h2 className="font-display text-3xl md:text-4xl tracking-wide italic mb-4" data-testid="text-compare-cta">
-            The Choice is Clear
+            More Good Nights for Less
           </h2>
           <p className="font-body text-sm text-muted-foreground mb-8 max-w-md mx-auto">
-            Every bit as luxurious. Keep ${savings.toFixed(0)} in your pocket.
+            Every bit as luxurious. {Math.floor(barTotal / hedonicTotal)}x more nights of indulgence for the same spend.
           </p>
           <Link href="/collection">
             <Button className="font-body text-sm tracking-widest uppercase px-8" data-testid="button-compare-shop">
