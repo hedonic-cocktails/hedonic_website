@@ -163,18 +163,31 @@ function CollectionGroup({
       </div>
 
       {pack && (
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          className="mt-12 max-w-md mx-auto"
-        >
-          <p className="font-body text-xs tracking-[0.3em] uppercase text-primary text-center mb-4" data-testid={`text-pack-label-${packSlug}`}>
-            The 4-Pack
-          </p>
-          <ProductCard product={pack} index={startIndex + 4} />
-        </motion.div>
+        <div className="mt-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-8"
+          >
+            <p className="font-display text-2xl md:text-3xl tracking-wide mb-2">
+              Not sure what you want?
+            </p>
+            <p className="font-body text-sm text-muted-foreground">
+              Let us help you scratch the itch.
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="max-w-md mx-auto"
+          >
+            <ProductCard product={pack} index={startIndex + 4} />
+          </motion.div>
+        </div>
       )}
     </div>
   );
@@ -226,28 +239,6 @@ function CollectionSection({ products, isLoading }: { products: Product[]; isLoa
               packSlug="lovingly-light"
               startIndex={0}
             />
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center py-10 mb-24"
-              data-testid="quiz-nudge"
-            >
-              <p className="font-display text-2xl md:text-3xl tracking-wide mb-2">
-                Not sure what you want?
-              </p>
-              <p className="font-body text-sm text-muted-foreground mb-6">
-                Let us help you scratch the itch.
-              </p>
-              <Link href="/quiz">
-                <Button variant="outline" className="font-body text-xs tracking-widest uppercase px-8" data-testid="button-quiz-nudge">
-                  Take the Quiz
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-              </Link>
-            </motion.div>
-
             <CollectionGroup
               title="Dark & Seductive"
               subtitle="Bold & Complex"
