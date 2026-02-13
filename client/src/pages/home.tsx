@@ -164,18 +164,16 @@ function CollectionGroup({
 
       {pack && (
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-10 flex justify-center"
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="mt-12 max-w-md mx-auto"
         >
-          <Link href={`/product/${pack.slug}`}>
-            <Button variant="outline" className="font-body text-xs tracking-widest uppercase px-8" data-testid={`button-pack-${packSlug}`}>
-              Shop the {title} 4-Pack
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
-          </Link>
+          <p className="font-body text-xs tracking-[0.3em] uppercase text-primary text-center mb-4" data-testid={`text-pack-label-${packSlug}`}>
+            The 4-Pack
+          </p>
+          <ProductCard product={pack} index={startIndex + 4} />
         </motion.div>
       )}
     </div>
