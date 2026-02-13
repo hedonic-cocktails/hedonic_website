@@ -233,8 +233,8 @@ function CollectionSection({ products, isLoading }: { products: Product[]; isLoa
         ) : (
           <>
             <CollectionGroup
-              title="Lovingly Light"
-              subtitle="Bright & Refreshing"
+              title="Bright & Refreshing"
+              subtitle="Lovingly Light"
               products={products}
               packSlug="lovingly-light"
               startIndex={0}
