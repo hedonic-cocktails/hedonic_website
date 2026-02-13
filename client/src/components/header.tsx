@@ -51,6 +51,14 @@ export function Header() {
               Our Story
             </span>
           </Link>
+          <Link href="/clarity">
+            <span
+              className={`cursor-pointer transition-colors duration-300 ${location === "/clarity" ? "text-primary" : "text-muted-foreground hover:text-foreground"}`}
+              data-testid="link-nav-process"
+            >
+              Our Process
+            </span>
+          </Link>
         </nav>
 
         <Link href="/cart">
