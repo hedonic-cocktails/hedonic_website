@@ -12,6 +12,7 @@ import Collection from "@/pages/collection";
 import About from "@/pages/about";
 import Clarity from "@/pages/clarity";
 import Compare from "@/pages/compare";
+import Quiz from "@/pages/quiz";
 import ProductDetail from "@/pages/product-detail";
 import CartPage from "@/pages/cart";
 import NotFound from "@/pages/not-found";
@@ -34,6 +35,7 @@ function Router() {
         <Route path="/about" component={About} />
         <Route path="/clarity" component={Clarity} />
         <Route path="/compare" component={Compare} />
+        <Route path="/quiz" component={Quiz} />
         <Route path="/product/:slug" component={ProductDetail} />
         <Route path="/cart" component={CartPage} />
         <Route component={NotFound} />

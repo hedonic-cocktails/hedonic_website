@@ -250,12 +250,19 @@ function CtaSection() {
           <p className="font-body text-sm text-muted-foreground mb-8 max-w-md mx-auto">
             $29.99 per bottle. Approximately four cocktails per bottle. Delivered to your door.
           </p>
-          <Link href="/collection">
-            <Button className="font-body text-sm tracking-widest uppercase px-8" data-testid="button-shop-now">
-              Shop Now
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
-          </Link>
+          <div className="flex items-center justify-center gap-4 flex-wrap">
+            <Link href="/collection">
+              <Button className="font-body text-sm tracking-widest uppercase px-8" data-testid="button-shop-now">
+                Shop Now
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </Link>
+            <Link href="/quiz">
+              <Button variant="outline" className="font-body text-sm tracking-widest uppercase px-8" data-testid="button-find-bottle">
+                Find Your Bottle
+              </Button>
+            </Link>
+          </div>
         </motion.div>
       </div>
     </section>
