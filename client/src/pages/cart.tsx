@@ -21,6 +21,9 @@ const checkoutSchema = z.object({
   city: z.string().min(2, "Please enter your city"),
   state: z.string().min(2, "Please select your state"),
   zipCode: z.string().regex(/^\d{5}(-\d{4})?$/, "Please enter a valid zip code"),
+  cardNumber: z.string().regex(/^\d{4}\s?\d{4}\s?\d{4}\s?\d{4}$/, "Please enter a valid 16-digit card number"),
+  expiration: z.string().regex(/^(0[1-9]|1[0-2])\/\d{2}$/, "Please enter a valid date (MM/YY)"),
+  ccv: z.string().regex(/^\d{3,4}$/, "Please enter a valid CCV"),
 });
 
 type CheckoutFormData = z.infer<typeof checkoutSchema>;
@@ -39,6 +42,9 @@ export default function CartPage() {
       city: "",
       state: "",
       zipCode: "",
+      cardNumber: "",
+      expiration: "",
+      ccv: "",
     },
   });
 
@@ -408,6 +414,76 @@ export default function CartPage() {
                         </FormItem>
                       )}
                     />
+                  </div>
+                  <div className="border-t border-border/20 pt-4 mt-4">
+                    <p className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-4">
+                      Payment
+                    </p>
+                    <FormField
+                      control={form.control}
+                      name="cardNumber"
+                      render={({ field }) => (
+                        <FormItem className="mb-4">
+                          <FormLabel className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground">
+                            Card Number
+                          </FormLabel>
+                          <FormControl>
+                            <Input
+                              {...field}
+                              placeholder="1234 5678 9012 3456"
+                              maxLength={19}
+                              className="font-body text-sm bg-background border-border/30"
+                              data-testid="input-card-number"
+                            />
+                          </FormControl>
+                          <FormMessage className="font-body text-xs" />
+                        </FormItem>
+                      )}
+                    />
+                    <div className="grid grid-cols-2 gap-3">
+                      <FormField
+                        control={form.control}
+                        name="expiration"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground">
+                              Expiration Date
+                            </FormLabel>
+                            <FormControl>
+                              <Input
+                                {...field}
+                                placeholder="MM/YY"
+                                maxLength={5}
+                                className="font-body text-sm bg-background border-border/30"
+                                data-testid="input-expiration"
+                              />
+                            </FormControl>
+                            <FormMessage className="font-body text-xs" />
+                          </FormItem>
+                        )}
+                      />
+                      <FormField
+                        control={form.control}
+                        name="ccv"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground">
+                              CCV
+                            </FormLabel>
+                            <FormControl>
+                              <Input
+                                {...field}
+                                placeholder="123"
+                                maxLength={4}
+                                className="font-body text-sm bg-background border-border/30"
+                                data-testid="input-ccv"
+                              />
+                            </FormControl>
+                            <FormMessage className="font-body text-xs" />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
                   </div>
                   <Button
                     type="submit"
