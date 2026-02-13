@@ -5,61 +5,96 @@ import { ArrowLeft, ArrowRight, RotateCcw } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
+type Scores = { ds: number; oj: number; ms: number; ws: number; sd: number; cc: number; pm: number };
+
 interface Question {
   id: number;
   question: string;
-  options: { label: string; scores: { ds: number; oj: number; ms: number } }[];
+  options: { label: string; scores: Scores }[];
 }
+
+const S = (ds=0,oj=0,ms=0,ws=0,sd=0,cc=0,pm=0): Scores => ({ds,oj,ms,ws,sd,cc,pm});
 
 const questions: Question[] = [
   {
     id: 1,
     question: "What kind of evening are you in the mood for?",
     options: [
-      { label: "Something fun and vibrant", scores: { ds: 3, oj: 1, ms: 0 } },
-      { label: "Cozy and nostalgic", scores: { ds: 0, oj: 3, ms: 1 } },
-      { label: "Sophisticated and contemplative", scores: { ds: 0, oj: 0, ms: 3 } },
+      { label: "Something fun and vibrant", scores: S(3,0,0,0,2,1,0) },
+      { label: "Cozy and nostalgic", scores: S(0,3,0,1,0,0,0) },
+      { label: "Sophisticated and contemplative", scores: S(0,0,2,2,0,1,0) },
+      { label: "Mysterious and seductive", scores: S(0,0,1,0,0,0,3) },
     ],
   },
   {
     id: 2,
     question: "Pick a flavor that speaks to you.",
     options: [
-      { label: "Bright berry with a citrus edge", scores: { ds: 3, oj: 1, ms: 0 } },
-      { label: "Creamy orange and vanilla", scores: { ds: 0, oj: 3, ms: 0 } },
-      { label: "Smoky with a hint of sweetness", scores: { ds: 0, oj: 0, ms: 3 } },
+      { label: "Bright berry with a citrus edge", scores: S(3,0,0,0,1,2,0) },
+      { label: "Creamy orange and vanilla", scores: S(0,3,0,0,0,0,0) },
+      { label: "Smoky with a hint of sweetness", scores: S(0,0,3,1,0,0,0) },
+      { label: "Tropical fruit and dark chocolate", scores: S(0,0,0,0,0,0,3) },
+      { label: "Tart, tangy, and refreshing", scores: S(0,0,0,2,2,1,0) },
     ],
   },
   {
     id: 3,
     question: "How do you take your coffee?",
     options: [
-      { label: "Iced with something fruity or sweet", scores: { ds: 3, oj: 1, ms: 0 } },
-      { label: "A creamy latte or cappuccino", scores: { ds: 1, oj: 3, ms: 0 } },
-      { label: "Black or with a splash of something bold", scores: { ds: 0, oj: 0, ms: 3 } },
+      { label: "Iced with something fruity or sweet", scores: S(2,0,0,0,2,1,0) },
+      { label: "A creamy latte or cappuccino", scores: S(0,3,0,0,0,0,1) },
+      { label: "Black or with a splash of something bold", scores: S(0,0,2,2,0,0,0) },
+      { label: "A mocha — chocolate is non-negotiable", scores: S(0,0,0,0,0,0,3) },
     ],
   },
   {
     id: 4,
     question: "You're at a restaurant. What catches your eye?",
     options: [
-      { label: "A refreshing starter with bright, tangy flavors", scores: { ds: 3, oj: 0, ms: 1 } },
-      { label: "A rich, creamy dessert", scores: { ds: 0, oj: 3, ms: 0 } },
-      { label: "Something charcoal-grilled with depth", scores: { ds: 0, oj: 0, ms: 3 } },
+      { label: "A refreshing starter with bright, tangy flavors", scores: S(2,0,0,2,1,0,0) },
+      { label: "A rich, creamy dessert", scores: S(0,3,0,0,0,0,1) },
+      { label: "Something charcoal-grilled with depth", scores: S(0,0,3,1,0,0,0) },
+      { label: "A fruit tart with berries", scores: S(1,0,0,0,2,0,2) },
+      { label: "A botanical gin and tonic to start", scores: S(0,0,0,0,0,3,0) },
     ],
   },
   {
     id: 5,
     question: "What's your ideal vacation destination?",
     options: [
-      { label: "A lively beach town with nightlife", scores: { ds: 3, oj: 1, ms: 0 } },
-      { label: "A sunny coastal village with markets", scores: { ds: 1, oj: 3, ms: 0 } },
-      { label: "A remote mountain retreat", scores: { ds: 0, oj: 0, ms: 3 } },
+      { label: "A lively beach town with nightlife", scores: S(2,0,0,0,2,0,0) },
+      { label: "A sunny coastal village with markets", scores: S(0,3,0,0,1,0,0) },
+      { label: "A remote mountain retreat", scores: S(0,0,3,1,0,0,0) },
+      { label: "An old European city dripping with history", scores: S(0,0,0,1,0,3,0) },
+      { label: "Somewhere exotic and unexpected", scores: S(0,0,0,0,0,0,3) },
+    ],
+  },
+  {
+    id: 6,
+    question: "Pick a music vibe for tonight.",
+    options: [
+      { label: "Upbeat pop or dance music", scores: S(3,0,0,0,2,0,0) },
+      { label: "Chill lo-fi or acoustic", scores: S(0,3,0,0,0,0,0) },
+      { label: "Blues, Americana, or classic rock", scores: S(0,0,1,3,0,0,0) },
+      { label: "Jazz or bossa nova", scores: S(0,0,0,0,0,3,1) },
+      { label: "Deep house or something sultry", scores: S(0,0,0,0,0,0,3) },
+    ],
+  },
+  {
+    id: 7,
+    question: "What word describes your ideal cocktail?",
+    options: [
+      { label: "Sparkling", scores: S(3,0,0,0,1,0,0) },
+      { label: "Comforting", scores: S(0,3,0,1,0,0,0) },
+      { label: "Smoky", scores: S(0,0,3,1,0,0,0) },
+      { label: "Elegant", scores: S(0,0,0,0,0,3,1) },
+      { label: "Tropical", scores: S(0,0,0,0,2,0,2) },
+      { label: "Bold", scores: S(0,0,1,3,0,0,0) },
     ],
   },
 ];
 
-const results: Record<string, { slug: string; name: string; tagline: string; description: string; color: string; imageUrl: string }> = {
+const resultData: Record<string, { slug: string; name: string; tagline: string; description: string; color: string; imageUrl: string }> = {
   ds: {
     slug: "dirty-shirley",
     name: "Dirty Shirley",
@@ -84,22 +119,55 @@ const results: Record<string, { slug: string; name: string; tagline: string; des
     color: "#c4a050",
     imageUrl: "/images/mezcal-soda.png",
   },
+  ws: {
+    slug: "whiskey-sour",
+    name: "Whiskey Sour",
+    tagline: "Bold, bright, and beautifully balanced.",
+    description: "You're drawn to the classics — bold, honest, and perfectly executed. The Whiskey Sour's caramel depth and bright citrus speak to your appreciation for timeless quality.",
+    color: "#d4a340",
+    imageUrl: "/images/whiskey-sour.png",
+  },
+  sd: {
+    slug: "strawberry-daiquiri",
+    name: "Strawberry Daiquiri",
+    tagline: "Sun-kissed sweetness, impossibly clear.",
+    description: "You bring the sunshine wherever you go. The Strawberry Daiquiri's ripe berry sweetness and fresh lime capture your bright, joyful spirit in a glass.",
+    color: "#e05878",
+    imageUrl: "/images/strawberry-daiquiri.png",
+  },
+  cc: {
+    slug: "clover-club",
+    name: "Clover Club",
+    tagline: "Refined raspberry elegance, sparkling and clear.",
+    description: "You have an eye for the refined and a taste for the botanical. The Clover Club's gin-forward elegance and tart raspberry are a perfect match for your sophisticated palate.",
+    color: "#c44870",
+    imageUrl: "/images/clover-club.png",
+  },
+  pm: {
+    slug: "pheromone-martini",
+    name: "Pheromone Martini",
+    tagline: "Dark, exotic, and irresistibly seductive.",
+    description: "You're drawn to the unconventional and the alluring. The Pheromone Martini's exotic passionfruit and dark chocolate reflect your taste for the provocative and the unforgettable.",
+    color: "#b8864e",
+    imageUrl: "/images/pheromone-martini.png",
+  },
 };
+
+const keys: (keyof Scores)[] = ["ds", "oj", "ms", "ws", "sd", "cc", "pm"];
 
 export default function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [scores, setScores] = useState({ ds: 0, oj: 0, ms: 0 });
+  const [scores, setScores] = useState<Scores>({ ds: 0, oj: 0, ms: 0, ws: 0, sd: 0, cc: 0, pm: 0 });
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [showResult, setShowResult] = useState(false);
 
   const handleSelect = (optionIndex: number) => {
     setSelectedOption(optionIndex);
     const option = questions[currentQuestion].options[optionIndex];
-    const newScores = {
-      ds: scores.ds + option.scores.ds,
-      oj: scores.oj + option.scores.oj,
-      ms: scores.ms + option.scores.ms,
-    };
+    const newScores = { ...scores };
+    for (const k of keys) {
+      newScores[k] = scores[k] + option.scores[k];
+    }
     setScores(newScores);
 
     setTimeout(() => {
@@ -113,15 +181,20 @@ export default function Quiz() {
   };
 
   const getResult = () => {
-    const max = Math.max(scores.ds, scores.oj, scores.ms);
-    if (scores.ds === max) return results.ds;
-    if (scores.oj === max) return results.oj;
-    return results.ms;
+    let maxKey: keyof Scores = "ds";
+    let maxVal = scores.ds;
+    for (const k of keys) {
+      if (scores[k] > maxVal) {
+        maxVal = scores[k];
+        maxKey = k;
+      }
+    }
+    return resultData[maxKey];
   };
 
   const restart = () => {
     setCurrentQuestion(0);
-    setScores({ ds: 0, oj: 0, ms: 0 });
+    setScores({ ds: 0, oj: 0, ms: 0, ws: 0, sd: 0, cc: 0, pm: 0 });
     setSelectedOption(null);
     setShowResult(false);
   };
@@ -158,7 +231,7 @@ export default function Quiz() {
             Which Hedonic Speaks to You?
           </h1>
           <p className="font-body text-sm text-muted-foreground max-w-md mx-auto">
-            Five quick questions to discover your perfect match.
+            Seven quick questions to discover your perfect match.
           </p>
         </motion.div>
 

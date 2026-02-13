@@ -133,7 +133,7 @@ function CollectionSection({ products, isLoading }: { products: Product[]; isLoa
             The Collection
           </p>
           <h2 className="font-display text-4xl md:text-5xl tracking-wide mb-4" data-testid="text-collection-title">
-            Three Expressions
+            Seven Expressions
           </h2>
           <p className="font-body text-sm text-muted-foreground max-w-lg mx-auto">
             Each cocktail tells its own story. Distinct flavors, united by an obsession with quality.
