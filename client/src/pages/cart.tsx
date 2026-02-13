@@ -294,7 +294,7 @@ export default function CartPage() {
                     Tax{taxRate > 0 ? ` (${(taxRate * 100).toFixed(2)}%)` : ""}
                   </span>
                   <span data-testid="text-tax">
-                    {taxRate > 0 ? `$${taxAmount.toFixed(2)}` : "Enter state"}
+                    {taxRate > 0 ? `$${taxAmount.toFixed(2)}` : <span className="text-muted-foreground/50">TBD</span>}
                   </span>
                 </div>
               </div>
