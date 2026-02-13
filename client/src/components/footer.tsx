@@ -21,6 +21,7 @@ export function Footer() {
               <li><a href="/" className="text-foreground/70 hover:text-primary transition-colors duration-300" data-testid="link-footer-home">Home</a></li>
               <li><a href="/collection" className="text-foreground/70 hover:text-primary transition-colors duration-300" data-testid="link-footer-collection">Collection</a></li>
               <li><a href="/about" className="text-foreground/70 hover:text-primary transition-colors duration-300" data-testid="link-footer-story">Our Story</a></li>
+              <li><a href="/clarity" className="text-foreground/70 hover:text-primary transition-colors duration-300" data-testid="link-footer-process">Our Process</a></li>
             </ul>
           </div>
 
