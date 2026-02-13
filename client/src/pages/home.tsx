@@ -1,7 +1,8 @@
+import { useState, useEffect, useRef } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { Link } from "wouter";
-import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, Droplets, Wine } from "lucide-react";
+import { Link, useLocation } from "wouter";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, Sparkles, Droplets, Wine, HelpCircle, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -343,6 +344,116 @@ function CtaSection() {
   );
 }
 
+function QuizPrompt() {
+  const [show, setShow] = useState(false);
+  const [dismissed, setDismissed] = useState(false);
+  const scrollTimeRef = useRef(0);
+  const rafRef = useRef<number | null>(null);
+  const lastTimestampRef = useRef<number | null>(null);
+  const [, navigate] = useLocation();
+
+  useEffect(() => {
+    if (dismissed) return;
+    const alreadyShown = sessionStorage.getItem("quiz-prompt-shown");
+    if (alreadyShown) return;
+
+    const tick = (timestamp: number) => {
+      if (lastTimestampRef.current !== null) {
+        const delta = (timestamp - lastTimestampRef.current) / 1000;
+        if (window.scrollY > 100) {
+          scrollTimeRef.current += delta;
+        }
+      }
+      lastTimestampRef.current = timestamp;
+
+      if (scrollTimeRef.current >= 15) {
+        setShow(true);
+        sessionStorage.setItem("quiz-prompt-shown", "true");
+        return;
+      }
+      rafRef.current = requestAnimationFrame(tick);
+    };
+
+    rafRef.current = requestAnimationFrame(tick);
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
+  }, [dismissed]);
+
+  const handleDismiss = () => {
+    setShow(false);
+    setDismissed(true);
+  };
+
+  const handleStart = () => {
+    setShow(false);
+    setDismissed(true);
+    navigate("/quiz");
+  };
+
+  return (
+    <AnimatePresence>
+      {show && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.4 }}
+          className="fixed inset-0 z-50 flex items-center justify-center px-6"
+          data-testid="quiz-prompt-overlay"
+        >
+          <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" onClick={handleDismiss} />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            className="relative max-w-md w-full bg-card border border-border/40 rounded-md p-10 text-center"
+          >
+            <button
+              onClick={handleDismiss}
+              className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition-colors"
+              data-testid="button-dismiss-quiz-prompt"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            <div className="w-14 h-14 rounded-full border border-primary/30 flex items-center justify-center mx-auto mb-6">
+              <HelpCircle className="w-7 h-7 text-primary" />
+            </div>
+
+            <h3 className="font-display text-3xl tracking-wide mb-3" data-testid="text-quiz-prompt-title">
+              Need Help <span className="italic text-primary">Deciding?</span>
+            </h3>
+            <p className="font-body text-sm text-muted-foreground mb-8 leading-relaxed">
+              Take our quick quiz and we&apos;ll match you with the perfect bottle for your palate.
+            </p>
+
+            <div className="flex flex-col gap-3">
+              <Button
+                onClick={handleStart}
+                className="font-body text-sm tracking-widest uppercase w-full"
+                data-testid="button-start-quiz-prompt"
+              >
+                Find Your Bottle
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+              <Button
+                variant="ghost"
+                onClick={handleDismiss}
+                className="font-body text-xs tracking-widest uppercase text-muted-foreground"
+                data-testid="button-continue-browsing"
+              >
+                I&apos;m Just Browsing
+              </Button>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
+
 export default function Home() {
   const { data: products = [], isLoading } = useQuery<Product[]>({
     queryKey: ["/api/products"],
@@ -354,6 +465,7 @@ export default function Home() {
       <CollectionSection products={products} isLoading={isLoading} />
       <StorySection />
       <CtaSection />
+      <QuizPrompt />
     </div>
   );
 }
