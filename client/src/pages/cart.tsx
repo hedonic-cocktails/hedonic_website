@@ -13,6 +13,24 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
+const STATE_TAX_RATES: Record<string, number> = {
+  AL: 0.04, AK: 0, AZ: 0.056, AR: 0.065, CA: 0.0725,
+  CO: 0.029, CT: 0.0635, DE: 0, DC: 0.06, FL: 0.06,
+  GA: 0.04, HI: 0.04, ID: 0.06, IL: 0.0625, IN: 0.07,
+  IA: 0.06, KS: 0.065, KY: 0.06, LA: 0.0445, ME: 0.055,
+  MD: 0.06, MA: 0.0625, MI: 0.06, MN: 0.06875, MS: 0.07,
+  MO: 0.04225, MT: 0, NE: 0.055, NV: 0.0685, NH: 0,
+  NJ: 0.06625, NM: 0.05125, NY: 0.04, NC: 0.0475, ND: 0.05,
+  OH: 0.0575, OK: 0.045, OR: 0, PA: 0.06, RI: 0.07,
+  SC: 0.06, SD: 0.042, TN: 0.07, TX: 0.0625, UT: 0.061,
+  VT: 0.06, VA: 0.053, WA: 0.065, WV: 0.06, WI: 0.05, WY: 0.04,
+};
+
+function getTaxRate(stateInput: string): number {
+  const normalized = stateInput.trim().toUpperCase();
+  return STATE_TAX_RATES[normalized] ?? 0;
+}
+
 const checkoutSchema = z.object({
   customerName: z.string().min(2, "Name must be at least 2 characters"),
   customerEmail: z.string().email("Please enter a valid email"),
@@ -48,6 +66,11 @@ export default function CartPage() {
     },
   });
 
+  const watchedState = form.watch("state");
+  const taxRate = getTaxRate(watchedState || "");
+  const taxAmount = totalPrice * taxRate;
+  const orderTotal = totalPrice + taxAmount;
+
   const orderMutation = useMutation({
     mutationFn: async (data: CheckoutFormData) => {
       const orderItems = items.map(i => ({
@@ -66,7 +89,7 @@ export default function CartPage() {
         customerEmail: data.customerEmail,
         shippingAddress,
         items: JSON.stringify(orderItems),
-        total: totalPrice.toFixed(2),
+        total: orderTotal.toFixed(2),
       });
     },
     onSuccess: () => {
@@ -259,18 +282,26 @@ export default function CartPage() {
 
               <div className="space-y-3 mb-6 pb-6 border-b border-border/20">
                 <div className="flex justify-between gap-4 font-body text-sm">
-                  <span className="text-muted-foreground">Items ({totalItems})</span>
+                  <span className="text-muted-foreground">Subtotal ({totalItems} {totalItems === 1 ? "item" : "items"})</span>
                   <span data-testid="text-subtotal">${totalPrice.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between gap-4 font-body text-sm">
                   <span className="text-muted-foreground">Shipping</span>
                   <span className="text-primary" data-testid="text-shipping">Free</span>
                 </div>
+                <div className="flex justify-between gap-4 font-body text-sm">
+                  <span className="text-muted-foreground">
+                    Tax{taxRate > 0 ? ` (${(taxRate * 100).toFixed(2)}%)` : ""}
+                  </span>
+                  <span data-testid="text-tax">
+                    {taxRate > 0 ? `$${taxAmount.toFixed(2)}` : "Enter state"}
+                  </span>
+                </div>
               </div>
 
               <div className="flex justify-between gap-4 mb-8">
                 <span className="font-display text-lg">Total</span>
-                <span className="font-display text-2xl" data-testid="text-total">${totalPrice.toFixed(2)}</span>
+                <span className="font-display text-2xl" data-testid="text-total">${orderTotal.toFixed(2)}</span>
               </div>
 
               <Form {...form}>
