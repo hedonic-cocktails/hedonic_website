@@ -240,8 +240,8 @@ function CollectionSection({ products, isLoading }: { products: Product[]; isLoa
               startIndex={0}
             />
             <CollectionGroup
-              title="Dark & Seductive"
-              subtitle="Bold & Complex"
+              title="Bold & Complex"
+              subtitle="Dark & Seductive"
               products={products}
               packSlug="dark-and-seductive"
               startIndex={4}
