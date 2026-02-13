@@ -43,9 +43,9 @@ export function Header() {
               Collection
             </span>
           </Link>
-          <Link href="/#story">
+          <Link href="/about">
             <span
-              className="cursor-pointer text-muted-foreground hover:text-foreground transition-colors duration-300"
+              className={`cursor-pointer transition-colors duration-300 ${location === "/about" ? "text-primary" : "text-muted-foreground hover:text-foreground"}`}
               data-testid="link-nav-story"
             >
               Our Story

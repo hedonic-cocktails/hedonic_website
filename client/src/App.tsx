@@ -8,6 +8,7 @@ import { Footer } from "@/components/footer";
 import { AgeGate } from "@/components/age-gate";
 import Home from "@/pages/home";
 import Collection from "@/pages/collection";
+import About from "@/pages/about";
 import ProductDetail from "@/pages/product-detail";
 import CartPage from "@/pages/cart";
 import NotFound from "@/pages/not-found";
@@ -17,6 +18,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/collection" component={Collection} />
+      <Route path="/about" component={About} />
       <Route path="/product/:slug" component={ProductDetail} />
       <Route path="/cart" component={CartPage} />
       <Route component={NotFound} />
