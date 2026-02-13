@@ -9,8 +9,8 @@ const barCosts = [
   { label: "Bar snack", detail: "Appetizer", amount: 6.00 },
   { label: "Tax", detail: "~8.5%", amount: 6.63 },
   { label: "Tip", detail: "20%", amount: 15.60 },
-  { label: "Uber there", detail: "Rideshare", amount: 18.00 },
-  { label: "Uber home", detail: "Rideshare", amount: 22.00 },
+  { label: "Uber there", detail: "Rideshare", amount: 13.00 },
+  { label: "Uber home", detail: "Rideshare", amount: 17.00 },
 ];
 
 const hedonicCosts = [
