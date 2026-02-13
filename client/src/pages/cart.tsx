@@ -16,7 +16,11 @@ import { z } from "zod";
 const checkoutSchema = z.object({
   customerName: z.string().min(2, "Name must be at least 2 characters"),
   customerEmail: z.string().email("Please enter a valid email"),
-  shippingAddress: z.string().min(10, "Please enter a complete shipping address"),
+  streetAddress: z.string().min(3, "Please enter your street address"),
+  streetAddress2: z.string().optional(),
+  city: z.string().min(2, "Please enter your city"),
+  state: z.string().min(2, "Please select your state"),
+  zipCode: z.string().regex(/^\d{5}(-\d{4})?$/, "Please enter a valid zip code"),
 });
 
 type CheckoutFormData = z.infer<typeof checkoutSchema>;
@@ -30,7 +34,11 @@ export default function CartPage() {
     defaultValues: {
       customerName: "",
       customerEmail: "",
-      shippingAddress: "",
+      streetAddress: "",
+      streetAddress2: "",
+      city: "",
+      state: "",
+      zipCode: "",
     },
   });
 
@@ -42,10 +50,15 @@ export default function CartPage() {
         quantity: i.quantity,
         price: Number(i.product.price),
       }));
+      const shippingAddress = [
+        data.streetAddress,
+        data.streetAddress2,
+        `${data.city}, ${data.state} ${data.zipCode}`,
+      ].filter(Boolean).join(", ");
       return apiRequest("POST", "/api/orders", {
         customerName: data.customerName,
         customerEmail: data.customerEmail,
-        shippingAddress: data.shippingAddress,
+        shippingAddress,
         items: JSON.stringify(orderItems),
         total: totalPrice.toFixed(2),
       });
@@ -297,23 +310,105 @@ export default function CartPage() {
                   />
                   <FormField
                     control={form.control}
-                    name="shippingAddress"
+                    name="streetAddress"
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground">
-                          Shipping Address
+                          Street Address
                         </FormLabel>
                         <FormControl>
                           <Input
                             {...field}
+                            placeholder="123 Main St"
                             className="font-body text-sm bg-background border-border/30"
-                            data-testid="input-address"
+                            data-testid="input-street-address"
                           />
                         </FormControl>
                         <FormMessage className="font-body text-xs" />
                       </FormItem>
                     )}
                   />
+                  <FormField
+                    control={form.control}
+                    name="streetAddress2"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground">
+                          Street Address 2
+                        </FormLabel>
+                        <FormControl>
+                          <Input
+                            {...field}
+                            placeholder="Apt, Suite, Unit (optional)"
+                            className="font-body text-sm bg-background border-border/30"
+                            data-testid="input-street-address-2"
+                          />
+                        </FormControl>
+                        <FormMessage className="font-body text-xs" />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="city"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground">
+                          City
+                        </FormLabel>
+                        <FormControl>
+                          <Input
+                            {...field}
+                            className="font-body text-sm bg-background border-border/30"
+                            data-testid="input-city"
+                          />
+                        </FormControl>
+                        <FormMessage className="font-body text-xs" />
+                      </FormItem>
+                    )}
+                  />
+                  <div className="grid grid-cols-2 gap-3">
+                    <FormField
+                      control={form.control}
+                      name="state"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground">
+                            State
+                          </FormLabel>
+                          <FormControl>
+                            <Input
+                              {...field}
+                              placeholder="CA"
+                              className="font-body text-sm bg-background border-border/30"
+                              data-testid="input-state"
+                            />
+                          </FormControl>
+                          <FormMessage className="font-body text-xs" />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="zipCode"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground">
+                            Zip Code
+                          </FormLabel>
+                          <FormControl>
+                            <Input
+                              {...field}
+                              placeholder="90210"
+                              className="font-body text-sm bg-background border-border/30"
+                              data-testid="input-zip-code"
+                            />
+                          </FormControl>
+                          <FormMessage className="font-body text-xs" />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
                   <Button
                     type="submit"
                     className="w-full font-body text-sm tracking-widest uppercase mt-2"
