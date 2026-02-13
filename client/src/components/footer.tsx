@@ -6,7 +6,10 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div>
-            <h3 className="font-display text-2xl tracking-wide mb-4" data-testid="text-footer-brand">HEDONIC</h3>
+            <div className="flex items-center gap-3 mb-4">
+              <img src="/images/logo-octopus.png" alt="Hedonic" className="w-10 h-10 object-contain" />
+              <h3 className="font-display text-2xl tracking-wide" data-testid="text-footer-brand">HEDONIC</h3>
+            </div>
             <p className="font-body text-sm text-muted-foreground leading-relaxed max-w-xs">
               Premium ready-to-drink cocktails crafted with the finest spirits and ingredients. Luxury in every sip.
             </p>

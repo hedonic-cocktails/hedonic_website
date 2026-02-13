@@ -18,10 +18,11 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between gap-4 h-16">
         <Link href="/">
           <span
-            className="font-display text-xl tracking-wide text-foreground cursor-pointer"
+            className="flex items-center gap-2.5 cursor-pointer"
             data-testid="link-home"
           >
-            HEDONIC
+            <img src="/images/logo-octopus.png" alt="Hedonic" className="w-8 h-8 object-contain" />
+            <span className="font-display text-xl tracking-wide text-foreground">HEDONIC</span>
           </span>
         </Link>
 

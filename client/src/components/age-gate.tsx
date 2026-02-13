@@ -46,6 +46,7 @@ export function AgeGate({ children }: { children: React.ReactNode }) {
               transition={{ delay: 0.2, duration: 0.6 }}
               className="relative text-center px-6 max-w-md"
             >
+              <img src="/images/logo-octopus.png" alt="Hedonic" className="w-20 h-20 object-contain mx-auto mb-4" />
               <h1 className="font-display text-4xl md:text-5xl tracking-wide mb-2" data-testid="text-age-title">
                 HEDONIC
               </h1>
