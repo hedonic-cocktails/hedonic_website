@@ -242,10 +242,10 @@ export default function Quiz() {
             Find Your Bottle
           </p>
           <h1 className="font-display text-4xl md:text-5xl tracking-wide mb-4" data-testid="text-quiz-title">
-            Which Hedonic Speaks to You?
+            Which Hedonic <span className="italic text-primary">Wants</span> You?
           </h1>
           <p className="font-body text-sm text-muted-foreground max-w-md mx-auto">
-            Seven quick questions to discover your perfect match.
+            Seven questions. One perfect match. Let&apos;s find the bottle you didn&apos;t know you were craving.
           </p>
         </motion.div>
 

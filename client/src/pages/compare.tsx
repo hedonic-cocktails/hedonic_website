@@ -32,11 +32,11 @@ const barExperience = [
 ];
 
 const hedonicExperience = [
-  { text: "Ready when you are", positive: true },
-  { text: "Your space, your music, your vibe", positive: true },
-  { text: "Same premium spirits & real ingredients", positive: true },
-  { text: "No driving, no waiting", positive: true },
-  { text: "All the luxury, none of the markup", positive: true },
+  { text: "Ready the moment the mood strikes", positive: true },
+  { text: "Your space, your music, your rules", positive: true },
+  { text: "Same premium spirits, same silky finish", positive: true },
+  { text: "No driving, no waiting, no pants required", positive: true },
+  { text: "All the indulgence, none of the markup", positive: true },
 ];
 
 export default function Compare() {
@@ -69,7 +69,7 @@ export default function Compare() {
             Hedonic <span className="italic">at Home</span>
           </h1>
           <p className="font-body text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed" data-testid="text-compare-intro">
-            Same premium spirits. Same craft cocktails. Same luxury — just without the markup. For the cost of one night out, you could have {Math.floor(barTotal / hedonicTotal)} nights in with Hedonic.
+            Same top-shelf spirits. Same indulgent cocktails. Same velvet mouthfeel — without the inflated bill, the crowded bar, or the surge-priced ride home. One night out buys you {Math.floor(barTotal / hedonicTotal)} nights in with Hedonic.
           </p>
         </motion.div>
 
@@ -190,7 +190,7 @@ export default function Compare() {
               One bar night = <span className="text-primary font-semibold">{Math.floor(barTotal / hedonicTotal)} Hedonic nights</span> of the same luxury.
             </p>
             <p className="font-body text-sm text-muted-foreground/70 max-w-md mx-auto">
-              More good nights. Same top-shelf ingredients. Same indulgence. The only thing missing is the inflated price tag.
+              More good nights. Same sinful quality. The only thing missing is the bartender judging your second round.
             </p>
           </Card>
         </motion.div>
@@ -246,7 +246,7 @@ export default function Compare() {
             More Good Nights for Less
           </h2>
           <p className="font-body text-sm text-muted-foreground mb-8 max-w-md mx-auto">
-            Every bit as luxurious. {Math.floor(barTotal / hedonicTotal)}x more nights of indulgence for the same spend.
+            Every bit as intoxicating. {Math.floor(barTotal / hedonicTotal)}x more nights of indulgence for the same spend. Do the math. Then do yourself a favor.
           </p>
           <Link href="/collection">
             <Button className="font-body text-sm tracking-widest uppercase px-8" data-testid="button-compare-shop">

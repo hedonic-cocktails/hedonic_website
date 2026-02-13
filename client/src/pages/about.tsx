@@ -57,7 +57,7 @@ export default function About() {
             The Pursuit of <span className="italic">Pleasure</span>
           </h1>
           <p className="font-body text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed" data-testid="text-about-intro">
-            Hedonic was born from a simple belief: pleasure is not a luxury — it is a necessity. Life is too short for mediocre drinks.
+            Hedonic was born from a dangerous idea: that pleasure is not a luxury — it is a birthright. Life is too fleeting for forgettable drinks and half-hearted evenings.
           </p>
         </motion.div>
 
@@ -77,13 +77,13 @@ export default function About() {
             </div>
             <div className="space-y-5 font-body text-sm text-foreground/70 leading-relaxed">
               <p data-testid="text-philosophy-p1">
-                The word <span className="italic text-foreground">hedonic</span> comes from the Greek <span className="italic text-foreground">hedonikos</span> — relating to pleasure. It is the root of hedonism, the philosophy that the highest good is the pursuit of sensory delight. We named our company after this idea because we believe it, deeply.
+                The word <span className="italic text-foreground">hedonic</span> comes from the Greek <span className="italic text-foreground">hedonikos</span> — relating to pleasure. It is the root of hedonism, the philosophy that the highest good is the pursuit of sensory delight. We named our company after this idea because we believe it in our bones.
               </p>
               <p data-testid="text-philosophy-p2">
-                A perfect cocktail is one of life's great pleasures. The clink of glass, the first sip that stops you mid-conversation, the warmth that follows. It's a moment of indulgence, and it should be available whenever you want it — not just when you're seated at a world-class bar with a $25 tab open.
+                A perfect cocktail is one of life&apos;s most intimate pleasures. The weight of the glass in your hand. The first sip that makes you close your eyes. The warmth that blooms through you and softens the edges of the evening. That feeling should be yours whenever you want it — not rationed out at $25 a pour behind a velvet rope.
               </p>
               <p data-testid="text-philosophy-p3">
-                That's why we created Hedonic. We wanted to capture that bar-quality moment in a bottle. Not a compromise, not an approximation — the real thing. Every cocktail we make is crafted with the same obsessive attention to detail that the best bartenders in the world bring to their craft. The difference is that ours is ready the moment you are.
+                That&apos;s why we created Hedonic. We wanted to bottle the moment — not approximate it, not water it down, but capture it whole. The same obsessive craft a world-class bartender brings to their finest creation, waiting in your kitchen for the instant the mood takes you.
               </p>
             </div>
           </Card>
@@ -152,16 +152,16 @@ export default function About() {
             </div>
             <div className="space-y-5 font-body text-sm text-foreground/70 leading-relaxed">
               <p data-testid="text-promise-p1">
-                Every bottle of Hedonic is a statement: that you deserve better. Better than canned cocktails made with artificial flavors and bottom-shelf spirits. Better than the sugary, one-dimensional drinks that dominate the ready-to-drink market. Better than settling.
+                Every bottle of Hedonic is a quiet declaration: that you refuse to settle. Not for canned cocktails drowning in artificial sweetness. Not for bottom-shelf spirits hiding behind clever marketing. Not for anything less than the real thing.
               </p>
               <p data-testid="text-promise-p2">
-                We use premium spirits because they matter. The purity of our five-times-distilled vodka means cleaner flavors and no harsh burn. The complexity of our artisan mezcal means genuine smokiness that unfolds across the palate, not a chemical imitation. When you choose real ingredients, you can taste the difference in every sip.
+                We use premium spirits because your palate knows the difference — even when your mind doesn&apos;t. The purity of five-times-distilled vodka means flavors that caress rather than burn. The depth of hand-selected agave means smokiness that lingers on the tongue like a whispered secret, not a chemical shout.
               </p>
               <p data-testid="text-promise-p3">
-                And then we go further. Our signature clarification process transforms each cocktail into something extraordinary — crystal-clear liquid with a texture so smooth it feels like velvet on your tongue. The mouthfeel alone sets Hedonic apart from anything else you've ever tasted from a bottle.
+                And then we go further. Our signature clarification transforms each cocktail into something almost unreasonable — crystal-clear liquid with a texture so silky it feels like it was designed for the sole purpose of making you close your eyes and exhale.
               </p>
               <p data-testid="text-promise-p4">
-                This is not a cocktail you drink. It is a cocktail you <span className="italic text-foreground">experience</span>.
+                This is not a cocktail you drink. It is a cocktail you <span className="italic text-foreground">surrender to</span>.
               </p>
             </div>
           </Card>
@@ -175,10 +175,10 @@ export default function About() {
           className="text-center"
         >
           <h2 className="font-display text-3xl md:text-4xl tracking-wide italic mb-4" data-testid="text-about-cta">
-            Curious How We Do It?
+            Want to Know Our Secret?
           </h2>
           <p className="font-body text-sm text-muted-foreground mb-8 max-w-md mx-auto">
-            Learn about our signature milk clarification process that gives every Hedonic cocktail its impossible clarity and velvet texture.
+            Discover the centuries-old technique that gives every Hedonic cocktail its impossible clarity and sinfully smooth texture.
           </p>
           <div className="flex items-center justify-center gap-4 flex-wrap">
             <Link href="/clarity">

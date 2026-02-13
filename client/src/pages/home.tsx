@@ -22,7 +22,7 @@ function HeroSection() {
           transition={{ duration: 1, ease: "easeOut" }}
         >
           <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-6" data-testid="text-hero-label">
-            Premium Ready-to-Drink
+            Surrender to the Sip
           </p>
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl tracking-wide leading-tight mb-6" data-testid="text-hero-title">
             Crafted for
@@ -30,7 +30,7 @@ function HeroSection() {
             <span className="italic text-primary">Pleasure</span>
           </h1>
           <p className="font-body text-base md:text-lg text-foreground/60 max-w-xl mx-auto mb-10 leading-relaxed" data-testid="text-hero-subtitle">
-            Every bottle is a masterclass in balance. Made with premium spirits, real ingredients, and nothing artificial.
+            Crystal-clear. Impossibly smooth. Every bottle is a seduction in balance — premium spirits, real ingredients, and nothing between you and pure indulgence.
           </p>
           <div className="flex items-center justify-center gap-4">
             <Link href="/collection">
@@ -182,7 +182,7 @@ function CollectionSection({ products, isLoading }: { products: Product[]; isLoa
             Every Expression
           </h2>
           <p className="font-body text-sm text-muted-foreground max-w-lg mx-auto">
-            Each cocktail tells its own story. Distinct flavors, united by an obsession with quality.
+            Eight temptations, each with its own mood. Find the one that pulls you in.
           </p>
         </motion.div>
 
@@ -256,18 +256,18 @@ function StorySection() {
   const features = [
     {
       icon: Sparkles,
-      title: "Premium Spirits",
-      description: "Every bottle starts with carefully selected, top-shelf spirits from artisan distilleries.",
+      title: "Top-Shelf Only",
+      description: "We start with spirits so good you'd sip them straight. Five-times-distilled vodka. Hand-selected agave. No compromises, no apologies.",
     },
     {
       icon: Droplets,
-      title: "Real Ingredients",
-      description: "Fresh juices, house-made syrups, and natural botanicals. Nothing artificial, ever.",
+      title: "Nothing Fake",
+      description: "Fresh-squeezed citrus. House-made syrups from real vanilla and pomegranate. If it doesn't belong, it doesn't go in.",
     },
     {
       icon: Wine,
-      title: "Bar Quality",
-      description: "The same techniques and precision a world-class bartender would use, in every bottle.",
+      title: "Velvet in a Bottle",
+      description: "Milk-clarified for impossible smoothness, then carbonated with a gentle fizz. The texture alone will ruin other drinks for you.",
     },
   ];
 
@@ -282,13 +282,13 @@ function StorySection() {
           className="text-center mb-16"
         >
           <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-4" data-testid="text-story-label">
-            Our Philosophy
+            Why We Exist
           </p>
           <h2 className="font-display text-4xl md:text-5xl tracking-wide mb-4" data-testid="text-story-title">
             Obsessively Crafted
           </h2>
           <p className="font-body text-sm text-muted-foreground max-w-lg mx-auto">
-            We believe a great cocktail shouldn&apos;t require a bar cart, a shaker, and twenty minutes. It should be ready when you are.
+            A perfect cocktail shouldn&apos;t require a reservation, a bartender, and a $25 tab. It should be waiting for you at home, ready the moment the mood strikes.
           </p>
         </motion.div>
 
@@ -330,10 +330,10 @@ function CtaSection() {
           transition={{ duration: 0.7 }}
         >
           <h2 className="font-display text-4xl md:text-5xl tracking-wide mb-4 italic" data-testid="text-cta-title">
-            Ready to Indulge?
+            Give In.
           </h2>
           <p className="font-body text-sm text-muted-foreground mb-8 max-w-md mx-auto">
-            $29.99 per bottle. Approximately four cocktails per bottle. Delivered to your door.
+            Four pours per bottle. $29.99. Delivered to your door. Your best night in is one click away.
           </p>
           <div className="flex items-center justify-center gap-4 flex-wrap">
             <Link href="/collection">
@@ -433,10 +433,10 @@ function QuizPrompt() {
             </div>
 
             <h3 className="font-display text-3xl tracking-wide mb-3" data-testid="text-quiz-prompt-title">
-              Need Help <span className="italic text-primary">Deciding?</span>
+              Feeling <span className="italic text-primary">Tempted?</span>
             </h3>
             <p className="font-body text-sm text-muted-foreground mb-8 leading-relaxed">
-              Take our quick quiz and we&apos;ll match you with the perfect bottle for your palate.
+              Tell us what you&apos;re in the mood for and we&apos;ll find the bottle that was made for you.
             </p>
 
             <div className="flex flex-col gap-3">

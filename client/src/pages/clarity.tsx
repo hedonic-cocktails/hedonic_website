@@ -61,7 +61,7 @@ export default function Clarity() {
             The Art of <span className="italic">Clarity</span>
           </h1>
           <p className="font-body text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed" data-testid="text-clarity-intro">
-            Every Hedonic cocktail undergoes milk clarification — a centuries-old technique dating back to the 1700s that transforms bold, complex cocktails into crystal-clear, silky-smooth masterpieces.
+            A centuries-old seduction dating back to the 1700s. Milk clarification strips away everything harsh and leaves behind something dangerously smooth — crystal-clear cocktails with a texture that borders on obscene.
           </p>
         </motion.div>
 
@@ -84,7 +84,7 @@ export default function Clarity() {
                 These protein formations create an extraordinarily fine natural filter. As the cocktail slowly passes through this web, it captures color pigments, tannins, harsh polyphenols, and microscopic particles — everything that makes a cocktail cloudy, astringent, or rough around the edges.
               </p>
               <p data-testid="text-what-p3">
-                What remains is something remarkable: a cocktail that is perfectly transparent, impossibly smooth, with a velvety mouthfeel from the residual lactose. The flavors are rounder, softer, and more integrated. Harsh edges disappear. Complexity deepens. It is, quite simply, the same cocktail elevated to its purest form.
+                What remains is something almost unfair: a cocktail that is perfectly transparent, impossibly smooth, with a velvety mouthfeel that lingers on your lips. The flavors become rounder, more intimate, more honest. Harsh edges melt away. Complexity deepens into something you want to linger in. It is the same cocktail, undressed to its most beautiful form.
               </p>
             </div>
           </Card>
@@ -154,19 +154,19 @@ export default function Clarity() {
               <div>
                 <h3 className="font-display text-lg mb-2 text-primary" data-testid="text-benefit-1">Texture</h3>
                 <p className="font-body text-sm text-muted-foreground leading-relaxed">
-                  The residual lactose from the milk gives each cocktail a velvety, almost silky mouthfeel that you simply cannot achieve any other way. It transforms how the cocktail feels on your palate.
+                  Residual lactose gives each cocktail a velvety, almost sinful mouthfeel you simply cannot get any other way. Once you feel it on your tongue, you&apos;ll understand why we&apos;re obsessed.
                 </p>
               </div>
               <div>
                 <h3 className="font-display text-lg mb-2 text-primary" data-testid="text-benefit-2">Flavor</h3>
                 <p className="font-body text-sm text-muted-foreground leading-relaxed">
-                  By removing tannins and harsh compounds, the underlying flavors become rounder, softer, and more integrated. You taste nuance, not noise. Subtlety, not sharpness.
+                  Tannins and harsh compounds are stripped away, and what&apos;s left is pure seduction. Rounder flavors. Softer edges. You taste nuance, not noise. Intimacy, not intensity.
                 </p>
               </div>
               <div>
-                <h3 className="font-display text-lg mb-2 text-primary" data-testid="text-benefit-3">Stability</h3>
+                <h3 className="font-display text-lg mb-2 text-primary" data-testid="text-benefit-3">Longevity</h3>
                 <p className="font-body text-sm text-muted-foreground leading-relaxed">
-                  Clarified cocktails are remarkably shelf-stable. The process removes the compounds that cause degradation, meaning every bottle stays perfect for months.
+                  Clarified cocktails are remarkably shelf-stable. The compounds that cause degradation are gone, so every bottle stays at its peak for months — ready whenever you are.
                 </p>
               </div>
             </div>
@@ -181,10 +181,10 @@ export default function Clarity() {
           className="text-center"
         >
           <h2 className="font-display text-3xl md:text-4xl tracking-wide italic mb-4" data-testid="text-clarity-cta">
-            Ready to Taste the Difference?
+            Ready to Feel the Difference?
           </h2>
           <p className="font-body text-sm text-muted-foreground mb-8">
-            Experience what centuries of technique and modern craft can do.
+            Three hundred years of technique. One unforgettable first sip.
           </p>
           <Link href="/collection">
             <Button className="font-body text-sm tracking-widest uppercase px-8" data-testid="button-clarity-shop">

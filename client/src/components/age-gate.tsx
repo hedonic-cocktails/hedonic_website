@@ -52,7 +52,7 @@ export function AgeGate({ children }: { children: React.ReactNode }) {
               </h1>
               <div className="w-16 h-px bg-primary mx-auto my-6" />
               <p className="font-body text-sm text-muted-foreground tracking-wide uppercase mb-8">
-                Premium Cocktails
+                Pleasure, Bottled
               </p>
 
               {denied ? (
