@@ -7,7 +7,7 @@ Premium ready-to-drink cocktail brand website for Hedonic Cocktails. Luxurious d
 - Initial build: Full MVP with age gate, landing page, product details, cart, order placement
 - Dark luxury theme with gold accents (Playfair Display + Inter fonts)
 - PostgreSQL backend with products and orders tables
-- 7 products: Dirty Shirley, Orange Julius, Mezcal Soda, Whiskey Sour, Strawberry Daiquiri, Clover Club, Pheromone Martini ($29.99 each, 750mL)
+- 10 products: Dirty Shirley, Orange Julius, Mezcal Soda, Whiskey Sour, Strawberry Daiquiri, Clover Club, Negroni Sbagliato, Pheromone Martini ($29.99 each, 750mL) + 2 variety 4-packs (Lovingly Light, Dark & Seductive, 4x187mL, $29.99)
 
 ## Architecture
 - **Frontend**: React + Vite, wouter routing, TanStack Query, Framer Motion animations

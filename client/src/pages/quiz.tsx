@@ -5,7 +5,7 @@ import { ArrowLeft, ArrowRight, RotateCcw } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-type Scores = { ds: number; oj: number; ms: number; ws: number; sd: number; cc: number; pm: number };
+type Scores = { ds: number; oj: number; ms: number; ws: number; sd: number; cc: number; pm: number; ns: number };
 
 interface Question {
   id: number;
@@ -13,83 +13,89 @@ interface Question {
   options: { label: string; scores: Scores }[];
 }
 
-const S = (ds=0,oj=0,ms=0,ws=0,sd=0,cc=0,pm=0): Scores => ({ds,oj,ms,ws,sd,cc,pm});
+const S = (ds=0,oj=0,ms=0,ws=0,sd=0,cc=0,pm=0,ns=0): Scores => ({ds,oj,ms,ws,sd,cc,pm,ns});
 
 const questions: Question[] = [
   {
     id: 1,
     question: "What kind of evening are you in the mood for?",
     options: [
-      { label: "Something fun and vibrant", scores: S(3,0,0,0,2,1,0) },
-      { label: "Cozy and nostalgic", scores: S(0,3,0,1,0,0,0) },
-      { label: "Sophisticated and contemplative", scores: S(0,0,2,2,0,1,0) },
-      { label: "Mysterious and seductive", scores: S(0,0,1,0,0,0,3) },
+      { label: "Something fun and vibrant", scores: S(3,0,0,0,2,1,0,0) },
+      { label: "Cozy and nostalgic", scores: S(0,3,0,1,0,0,0,0) },
+      { label: "Sophisticated and contemplative", scores: S(0,0,2,2,0,1,0,1) },
+      { label: "Mysterious and seductive", scores: S(0,0,1,0,0,0,3,0) },
     ],
   },
   {
     id: 2,
     question: "Pick a flavor that speaks to you.",
     options: [
-      { label: "Bright berry with a citrus edge", scores: S(3,0,0,0,1,2,0) },
-      { label: "Creamy orange and vanilla", scores: S(0,3,0,0,0,0,0) },
-      { label: "Smoky with a hint of sweetness", scores: S(0,0,3,1,0,0,0) },
-      { label: "Tropical fruit and dark chocolate", scores: S(0,0,0,0,0,0,3) },
-      { label: "Tart, tangy, and refreshing", scores: S(0,0,0,2,2,1,0) },
+      { label: "Bright berry with a citrus edge", scores: S(3,0,0,0,1,2,0,0) },
+      { label: "Creamy orange and vanilla", scores: S(0,3,0,0,0,0,0,0) },
+      { label: "Smoky with a hint of sweetness", scores: S(0,0,3,1,0,0,0,0) },
+      { label: "Tropical fruit and dark chocolate", scores: S(0,0,0,0,0,0,3,0) },
+      { label: "Bitter, herbal, and complex", scores: S(0,0,0,0,0,0,0,3) },
+      { label: "Tart, tangy, and refreshing", scores: S(0,0,0,2,2,1,0,0) },
     ],
   },
   {
     id: 3,
     question: "How do you take your coffee?",
     options: [
-      { label: "Iced with something fruity or sweet", scores: S(2,0,0,0,2,1,0) },
-      { label: "A creamy latte or cappuccino", scores: S(0,3,0,0,0,0,1) },
-      { label: "Black or with a splash of something bold", scores: S(0,0,2,2,0,0,0) },
-      { label: "A mocha — chocolate is non-negotiable", scores: S(0,0,0,0,0,0,3) },
+      { label: "Iced with something fruity or sweet", scores: S(2,0,0,0,2,1,0,0) },
+      { label: "A creamy latte or cappuccino", scores: S(0,3,0,0,0,0,1,0) },
+      { label: "Black or with a splash of something bold", scores: S(0,0,2,2,0,0,0,1) },
+      { label: "A mocha — chocolate is non-negotiable", scores: S(0,0,0,0,0,0,3,0) },
+      { label: "An espresso — bitter and unapologetic", scores: S(0,0,0,0,0,0,0,3) },
     ],
   },
   {
     id: 4,
     question: "You're at a restaurant. What catches your eye?",
     options: [
-      { label: "A refreshing starter with bright, tangy flavors", scores: S(2,0,0,2,1,0,0) },
-      { label: "A rich, creamy dessert", scores: S(0,3,0,0,0,0,1) },
-      { label: "Something charcoal-grilled with depth", scores: S(0,0,3,1,0,0,0) },
-      { label: "A fruit tart with berries", scores: S(1,0,0,0,2,0,2) },
-      { label: "A botanical gin and tonic to start", scores: S(0,0,0,0,0,3,0) },
+      { label: "A refreshing starter with bright, tangy flavors", scores: S(2,0,0,2,1,0,0,0) },
+      { label: "A rich, creamy dessert", scores: S(0,3,0,0,0,0,1,0) },
+      { label: "Something charcoal-grilled with depth", scores: S(0,0,3,1,0,0,0,0) },
+      { label: "A fruit tart with berries", scores: S(1,0,0,0,2,0,2,0) },
+      { label: "A botanical gin and tonic to start", scores: S(0,0,0,0,0,3,0,1) },
+      { label: "An amaro or digestif to finish", scores: S(0,0,0,0,0,0,0,3) },
     ],
   },
   {
     id: 5,
     question: "What's your ideal vacation destination?",
     options: [
-      { label: "A lively beach town with nightlife", scores: S(2,0,0,0,2,0,0) },
-      { label: "A sunny coastal village with markets", scores: S(0,3,0,0,1,0,0) },
-      { label: "A remote mountain retreat", scores: S(0,0,3,1,0,0,0) },
-      { label: "An old European city dripping with history", scores: S(0,0,0,1,0,3,0) },
-      { label: "Somewhere exotic and unexpected", scores: S(0,0,0,0,0,0,3) },
+      { label: "A lively beach town with nightlife", scores: S(2,0,0,0,2,0,0,0) },
+      { label: "A sunny coastal village with markets", scores: S(0,3,0,0,1,0,0,0) },
+      { label: "A remote mountain retreat", scores: S(0,0,3,1,0,0,0,0) },
+      { label: "An old European city dripping with history", scores: S(0,0,0,1,0,2,0,2) },
+      { label: "Somewhere exotic and unexpected", scores: S(0,0,0,0,0,0,3,0) },
+      { label: "The Italian coast at golden hour", scores: S(0,0,0,0,0,0,0,3) },
     ],
   },
   {
     id: 6,
     question: "Pick a music vibe for tonight.",
     options: [
-      { label: "Upbeat pop or dance music", scores: S(3,0,0,0,2,0,0) },
-      { label: "Chill lo-fi or acoustic", scores: S(0,3,0,0,0,0,0) },
-      { label: "Blues, Americana, or classic rock", scores: S(0,0,1,3,0,0,0) },
-      { label: "Jazz or bossa nova", scores: S(0,0,0,0,0,3,1) },
-      { label: "Deep house or something sultry", scores: S(0,0,0,0,0,0,3) },
+      { label: "Upbeat pop or dance music", scores: S(3,0,0,0,2,0,0,0) },
+      { label: "Chill lo-fi or acoustic", scores: S(0,3,0,0,0,0,0,0) },
+      { label: "Blues, Americana, or classic rock", scores: S(0,0,1,3,0,0,0,0) },
+      { label: "Jazz or bossa nova", scores: S(0,0,0,0,0,3,1,0) },
+      { label: "Deep house or something sultry", scores: S(0,0,0,0,0,0,3,0) },
+      { label: "Italian cinema soundtracks", scores: S(0,0,0,0,0,0,0,3) },
     ],
   },
   {
     id: 7,
     question: "What word describes your ideal cocktail?",
     options: [
-      { label: "Sparkling", scores: S(3,0,0,0,1,0,0) },
-      { label: "Comforting", scores: S(0,3,0,1,0,0,0) },
-      { label: "Smoky", scores: S(0,0,3,1,0,0,0) },
-      { label: "Elegant", scores: S(0,0,0,0,0,3,1) },
-      { label: "Tropical", scores: S(0,0,0,0,2,0,2) },
-      { label: "Bold", scores: S(0,0,1,3,0,0,0) },
+      { label: "Sparkling", scores: S(3,0,0,0,1,0,0,0) },
+      { label: "Comforting", scores: S(0,3,0,1,0,0,0,0) },
+      { label: "Smoky", scores: S(0,0,3,1,0,0,0,0) },
+      { label: "Elegant", scores: S(0,0,0,0,0,3,1,0) },
+      { label: "Tropical", scores: S(0,0,0,0,2,0,2,0) },
+      { label: "Bold", scores: S(0,0,1,3,0,0,0,0) },
+      { label: "Bittersweet", scores: S(0,0,0,0,0,0,0,3) },
     ],
   },
 ];
@@ -151,13 +157,21 @@ const resultData: Record<string, { slug: string; name: string; tagline: string; 
     color: "#b8864e",
     imageUrl: "/images/pheromone-martini.png",
   },
+  ns: {
+    slug: "negroni-sbagliato",
+    name: "Negroni Sbagliato",
+    tagline: "A beautiful mistake, clarified and sparkling.",
+    description: "You appreciate the bittersweet things in life — bold, complex, and unapologetically Italian. The Negroni Sbagliato's Campari bite and herbal depth are your kind of evening.",
+    color: "#c47040",
+    imageUrl: "/images/negroni-sbagliato.png",
+  },
 };
 
-const keys: (keyof Scores)[] = ["ds", "oj", "ms", "ws", "sd", "cc", "pm"];
+const keys: (keyof Scores)[] = ["ds", "oj", "ms", "ws", "sd", "cc", "pm", "ns"];
 
 export default function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [scores, setScores] = useState<Scores>({ ds: 0, oj: 0, ms: 0, ws: 0, sd: 0, cc: 0, pm: 0 });
+  const [scores, setScores] = useState<Scores>({ ds: 0, oj: 0, ms: 0, ws: 0, sd: 0, cc: 0, pm: 0, ns: 0 });
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [showResult, setShowResult] = useState(false);
 
@@ -194,7 +208,7 @@ export default function Quiz() {
 
   const restart = () => {
     setCurrentQuestion(0);
-    setScores({ ds: 0, oj: 0, ms: 0, ws: 0, sd: 0, cc: 0, pm: 0 });
+    setScores({ ds: 0, oj: 0, ms: 0, ws: 0, sd: 0, cc: 0, pm: 0, ns: 0 });
     setSelectedOption(null);
     setShowResult(false);
   };
