@@ -35,9 +35,9 @@ export function Header() {
               Home
             </span>
           </Link>
-          <Link href="/#collection">
+          <Link href="/collection">
             <span
-              className="cursor-pointer text-muted-foreground hover:text-foreground transition-colors duration-300"
+              className={`cursor-pointer transition-colors duration-300 ${location === "/collection" ? "text-primary" : "text-muted-foreground hover:text-foreground"}`}
               data-testid="link-nav-collection"
             >
               Collection

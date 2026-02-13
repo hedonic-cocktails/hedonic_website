@@ -32,7 +32,7 @@ function HeroSection() {
             Every bottle is a masterclass in balance. Made with premium spirits, real ingredients, and nothing artificial.
           </p>
           <div className="flex items-center justify-center gap-4">
-            <Link href="/#collection">
+            <Link href="/collection">
               <Button className="font-body text-sm tracking-widest uppercase px-8" data-testid="button-explore">
                 Explore Collection
                 <ArrowRight className="w-4 h-4 ml-2" />
@@ -250,7 +250,7 @@ function CtaSection() {
           <p className="font-body text-sm text-muted-foreground mb-8 max-w-md mx-auto">
             $29.99 per bottle. Approximately four cocktails per bottle. Delivered to your door.
           </p>
-          <Link href="/#collection">
+          <Link href="/collection">
             <Button className="font-body text-sm tracking-widest uppercase px-8" data-testid="button-shop-now">
               Shop Now
               <ArrowRight className="w-4 h-4 ml-2" />

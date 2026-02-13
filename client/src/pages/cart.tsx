@@ -89,7 +89,7 @@ export default function CartPage() {
             <p className="font-body text-sm text-muted-foreground mb-8">
               Explore our collection and find your perfect cocktail.
             </p>
-            <Link href="/#collection">
+            <Link href="/collection">
               <Button className="font-body text-sm tracking-widest uppercase" data-testid="button-browse">
                 Browse Collection
               </Button>
