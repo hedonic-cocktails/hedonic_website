@@ -135,8 +135,6 @@ function CollectionGroup({
   packSlug: string;
   startIndex: number;
 }) {
-  const pack = products.find(p => p.slug === packSlug);
-
   return (
     <div className="mb-24 last:mb-0">
       <motion.div
@@ -162,33 +160,6 @@ function CollectionGroup({
           ))}
       </div>
 
-      {pack && (
-        <div className="mt-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-8"
-          >
-            <p className="font-display text-2xl md:text-3xl tracking-wide mb-2">
-              Not sure what you want?
-            </p>
-            <p className="font-body text-sm text-muted-foreground">
-              Let us help you scratch the itch.
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="max-w-md mx-auto"
-          >
-            <ProductCard product={pack} index={startIndex + 4} />
-          </motion.div>
-        </div>
-      )}
     </div>
   );
 }
@@ -246,6 +217,34 @@ function CollectionSection({ products, isLoading }: { products: Product[]; isLoa
               packSlug="dark-and-seductive"
               startIndex={4}
             />
+
+            {(() => {
+              const lightPack = products.find(p => p.slug === "lovingly-light");
+              const darkPack = products.find(p => p.slug === "dark-and-seductive");
+              if (!lightPack && !darkPack) return null;
+              return (
+                <div className="mt-4">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="text-center mb-10"
+                  >
+                    <p className="font-display text-2xl md:text-3xl tracking-wide mb-2">
+                      Not sure what you want?
+                    </p>
+                    <p className="font-body text-sm text-muted-foreground">
+                      Let us help you scratch the itch.
+                    </p>
+                  </motion.div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                    {lightPack && <ProductCard product={lightPack} index={8} />}
+                    {darkPack && <ProductCard product={darkPack} index={9} />}
+                  </div>
+                </div>
+              );
+            })()}
           </>
         )}
       </div>
