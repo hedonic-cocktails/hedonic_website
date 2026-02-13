@@ -66,21 +66,21 @@ export default function Compare() {
             The Smart Choice
           </p>
           <h1 className="font-display text-4xl md:text-6xl tracking-wide mb-6" data-testid="text-compare-title">
-            A Night Out vs. <span className="italic">A Night In</span>
+            Hedonic <span className="italic">at Home</span>
           </h1>
           <p className="font-body text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed" data-testid="text-compare-intro">
             Same quality. Same number of drinks. Dramatically different price tag. Here's what a night of four cocktails actually costs.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-2 gap-4 md:gap-8 mb-16">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <Card className="p-8 border-border/30 bg-card/50 h-full">
+            <Card className="p-4 md:p-8 border-border/30 bg-card/50 h-full">
               <div className="flex items-center justify-between gap-4 mb-8">
                 <div>
                   <p className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground mb-1">Option A</p>
@@ -115,7 +115,7 @@ export default function Compare() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <Card className="p-8 border-primary/30 bg-card/50 h-full relative">
+            <Card className="p-4 md:p-8 border-primary/30 bg-card/50 h-full relative">
               <div className="absolute -top-3 right-6">
                 <span className="font-body text-xs tracking-[0.15em] uppercase bg-primary text-primary-foreground px-4 py-1.5 rounded-md" data-testid="text-best-value">
                   Best Value
@@ -192,15 +192,15 @@ export default function Compare() {
           </Card>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-2 gap-4 md:gap-8 mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <Card className="p-8 border-border/30 bg-card/50 h-full">
-              <h3 className="font-display text-xl tracking-wide mb-6" data-testid="text-bar-exp-title">The Bar Experience</h3>
+            <Card className="p-4 md:p-8 border-border/30 bg-card/50 h-full">
+              <h3 className="font-display text-lg md:text-xl tracking-wide mb-4 md:mb-6" data-testid="text-bar-exp-title">The Bar Experience</h3>
               <div className="space-y-4">
                 {barExperience.map((item, i) => (
                   <div key={i} className="flex items-center gap-3" data-testid={`row-bar-exp-${i}`}>
@@ -218,8 +218,8 @@ export default function Compare() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <Card className="p-8 border-primary/30 bg-card/50 h-full">
-              <h3 className="font-display text-xl tracking-wide mb-6" data-testid="text-hedonic-exp-title">The Hedonic Experience</h3>
+            <Card className="p-4 md:p-8 border-primary/30 bg-card/50 h-full">
+              <h3 className="font-display text-lg md:text-xl tracking-wide mb-4 md:mb-6" data-testid="text-hedonic-exp-title">The Hedonic Experience</h3>
               <div className="space-y-4">
                 {hedonicExperience.map((item, i) => (
                   <div key={i} className="flex items-center gap-3" data-testid={`row-hedonic-exp-${i}`}>
