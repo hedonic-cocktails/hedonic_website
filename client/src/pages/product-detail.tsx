@@ -73,7 +73,7 @@ export default function ProductDetail() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.4 }}
         >
-          <Link href="/">
+          <Link href="/collection">
             <span className="inline-flex items-center gap-2 font-body text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer mb-8" data-testid="link-back">
               <ArrowLeft className="w-4 h-4" />
               Back to Collection
