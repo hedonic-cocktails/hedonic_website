@@ -226,6 +226,28 @@ function CollectionSection({ products, isLoading }: { products: Product[]; isLoa
               packSlug="lovingly-light"
               startIndex={0}
             />
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center py-10 mb-24"
+              data-testid="quiz-nudge"
+            >
+              <p className="font-display text-2xl md:text-3xl tracking-wide mb-2">
+                Not sure what you want?
+              </p>
+              <p className="font-body text-sm text-muted-foreground mb-6">
+                Let us help you scratch the itch.
+              </p>
+              <Link href="/quiz">
+                <Button variant="outline" className="font-body text-xs tracking-widest uppercase px-8" data-testid="button-quiz-nudge">
+                  Take the Quiz
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </Link>
+            </motion.div>
+
             <CollectionGroup
               title="Dark & Seductive"
               subtitle="Bold & Complex"
