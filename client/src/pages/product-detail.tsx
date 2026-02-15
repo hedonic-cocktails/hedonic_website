@@ -52,6 +52,16 @@ export default function ProductDetail() {
 
   const ingredientsList = product.ingredients.split(",").map(i => i.trim());
 
+  const MILK_CLARIFIED = [
+    "dirty-shirley", "orange-julius", "mezcal-soda", "whiskey-sour",
+    "strawberry-daiquiri", "clover-club", "negroni-sbagliato", "pheromone-martini",
+    "lovingly-light", "dark-and-seductive",
+  ];
+  const TREE_NUT_PRODUCTS = ["mai-tai", "tropical-paradise"];
+
+  const hasLactoseWarning = MILK_CLARIFIED.includes(product.slug);
+  const hasTreeNutWarning = TREE_NUT_PRODUCTS.includes(product.slug);
+
   return (
     <div className="min-h-screen bg-background pt-24 pb-24 px-6">
       <div className="max-w-6xl mx-auto">
@@ -133,17 +143,26 @@ export default function ProductDetail() {
               </div>
             </div>
 
-            <div className="mb-8 flex items-start gap-3 p-4 rounded-md bg-card/50 border border-border/20">
-              <AlertTriangle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-              <div>
-                <p className="font-body text-xs tracking-[0.15em] uppercase text-foreground/80 mb-1" data-testid="text-allergen-title">
-                  Allergen Notice
-                </p>
-                <p className="font-body text-xs text-muted-foreground leading-relaxed" data-testid="text-allergen-info">
-                  Contains lactose. Contains ingredients derived from milk.
-                </p>
+            {(hasLactoseWarning || hasTreeNutWarning) && (
+              <div className="mb-8 flex items-start gap-3 p-4 rounded-md bg-card/50 border border-border/20">
+                <AlertTriangle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-body text-xs tracking-[0.15em] uppercase text-foreground/80 mb-1" data-testid="text-allergen-title">
+                    Allergen Notice
+                  </p>
+                  {hasLactoseWarning && (
+                    <p className="font-body text-xs text-muted-foreground leading-relaxed" data-testid="text-allergen-lactose">
+                      Contains lactose. Contains ingredients derived from milk.
+                    </p>
+                  )}
+                  {hasTreeNutWarning && (
+                    <p className="font-body text-xs text-muted-foreground leading-relaxed" data-testid="text-allergen-treenut">
+                      Contains orgeat (almond syrup). Contains ingredients derived from tree nuts.
+                    </p>
+                  )}
+                </div>
               </div>
-            </div>
+            )}
 
             <div className="border-t border-border/20 pt-8">
               <div className="flex items-end justify-between gap-4">

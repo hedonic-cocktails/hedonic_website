@@ -102,17 +102,20 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
 
 const LOVINGLY_LIGHT = ["dirty-shirley", "orange-julius", "strawberry-daiquiri", "clover-club"];
 const DARK_AND_SEDUCTIVE = ["mezcal-soda", "whiskey-sour", "pheromone-martini", "negroni-sbagliato"];
+const TROPICAL_PARADISE = ["jungle-bird", "painkiller", "paloma", "mai-tai"];
 
 function CollectionGroup({
   title,
   subtitle,
   products,
+  slugs,
   packSlug,
   startIndex,
 }: {
   title: string;
   subtitle: string;
   products: Product[];
+  slugs: string[];
   packSlug: string;
   startIndex: number;
 }) {
@@ -135,7 +138,7 @@ function CollectionGroup({
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {products
-          .filter(p => (packSlug === "lovingly-light" ? LOVINGLY_LIGHT : DARK_AND_SEDUCTIVE).includes(p.slug))
+          .filter(p => slugs.includes(p.slug))
           .map((product, i) => (
             <ProductCard key={product.id} product={product} index={startIndex + i} />
           ))}
@@ -163,7 +166,7 @@ function CollectionSection({ products, isLoading }: { products: Product[]; isLoa
             Every Expression
           </h2>
           <p className="font-body text-sm text-muted-foreground max-w-lg mx-auto">
-            Eight expressions, each with its own character. Find the one that speaks to you.
+            Twelve expressions, each with its own character. Find the one that speaks to you.
           </p>
         </motion.div>
 
@@ -188,6 +191,7 @@ function CollectionSection({ products, isLoading }: { products: Product[]; isLoa
               title="Bright & Refreshing"
               subtitle="Lovingly Light"
               products={products}
+              slugs={LOVINGLY_LIGHT}
               packSlug="lovingly-light"
               startIndex={0}
             />
@@ -195,14 +199,24 @@ function CollectionSection({ products, isLoading }: { products: Product[]; isLoa
               title="Bold & Complex"
               subtitle="Dark & Seductive"
               products={products}
+              slugs={DARK_AND_SEDUCTIVE}
               packSlug="dark-and-seductive"
               startIndex={4}
+            />
+            <CollectionGroup
+              title="Sun-Soaked & Tropical"
+              subtitle="Tropical Paradise"
+              products={products}
+              slugs={TROPICAL_PARADISE}
+              packSlug="tropical-paradise"
+              startIndex={8}
             />
 
             {(() => {
               const lightPack = products.find(p => p.slug === "lovingly-light");
               const darkPack = products.find(p => p.slug === "dark-and-seductive");
-              if (!lightPack && !darkPack) return null;
+              const tropicalPack = products.find(p => p.slug === "tropical-paradise");
+              if (!lightPack && !darkPack && !tropicalPack) return null;
               return (
                 <div className="mt-4">
                   <motion.div
@@ -219,9 +233,10 @@ function CollectionSection({ products, isLoading }: { products: Product[]; isLoa
                       Let us help you decide.
                     </p>
                   </motion.div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
-                    {lightPack && <ProductCard product={lightPack} index={8} />}
-                    {darkPack && <ProductCard product={darkPack} index={9} />}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    {lightPack && <ProductCard product={lightPack} index={12} />}
+                    {darkPack && <ProductCard product={darkPack} index={13} />}
+                    {tropicalPack && <ProductCard product={tropicalPack} index={14} />}
                   </div>
                 </div>
               );
