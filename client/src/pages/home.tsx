@@ -548,7 +548,7 @@ function QuizPrompt() {
       }
       lastTimestampRef.current = timestamp;
 
-      if (scrollTimeRef.current >= 15) {
+      if (scrollTimeRef.current >= 20) {
         setShow(true);
         sessionStorage.setItem("quiz-prompt-shown", "true");
         return;
