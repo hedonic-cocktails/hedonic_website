@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowLeft, ArrowRight, Gem, Leaf, Droplets, Wine, Heart, Star } from "lucide-react";
+import { ArrowLeft, ArrowRight, Gem, Leaf, Droplets, Wine, Heart, Star, Palmtree, Sparkles } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -8,22 +8,22 @@ const pillars = [
   {
     icon: Gem,
     title: "Uncompromising Quality",
-    description: "We source only the finest spirits from artisan distilleries. Our vodka is distilled five times for absolute purity. Our mezcal comes from hand-selected agave, slow-roasted in earthen pits by master mezcaleros. There are no shortcuts, no substitutes, no compromises.",
+    description: "We source only the finest spirits from artisan distilleries. Five-times-distilled vodka for absolute purity. Hand-selected agave, slow-roasted in earthen pits by master mezcaleros. Premium aged rum from Caribbean traditions. London dry gin with hand-foraged botanicals. Small-batch bourbon and tequila with real provenance. There are no shortcuts, no substitutes, no compromises.",
   },
   {
     icon: Leaf,
     title: "Real Ingredients",
-    description: "Fresh-squeezed citrus, never from concentrate. House-made vanilla syrup crafted from whole Madagascar beans. Grenadine made from real pomegranate, not corn syrup and red dye. Every ingredient earns its place in the bottle.",
+    description: "Fresh-squeezed citrus, never from concentrate. House-made vanilla syrup from whole Madagascar beans. Grenadine from real pomegranate. Hand-pressed pineapple juice. Ruby grapefruit, ripe strawberries, and fresh raspberries. Real coconut milk, not powder. Authentic orgeat from whole almonds. Every ingredient earns its place in the bottle.",
   },
   {
     icon: Droplets,
-    title: "Impossible Clarity",
-    description: "Each cocktail undergoes our signature milk clarification process, transforming bold flavors into crystal-clear, luminous liquid. The result is a visual experience as striking as the taste itself — cocktails that glow like liquid gold.",
+    title: "Two Paths to Clarity",
+    description: "Our original eight cocktails undergo traditional milk clarification — a centuries-old technique that transforms bold flavors into crystal-clear, luminous liquid. Our Tropical Paradise collection takes a different path: coconut milk clarification, which imparts a subtle richness while achieving the same stunning transparency. Two methods, one obsession with perfection.",
   },
   {
     icon: Wine,
     title: "Velvet Mouthfeel",
-    description: "Clarification doesn't just change how our cocktails look — it fundamentally transforms how they feel. The process imparts a silky, velvety texture that coats the palate and carries flavor in a way that unclarified cocktails simply cannot. Every sip is smooth, round, and impossibly luxurious.",
+    description: "Clarification doesn't just change how our cocktails look — it fundamentally transforms how they feel. Whether through milk or coconut, the process strips away harshness and leaves behind a silky, velvety texture that coats the palate and carries flavor in a way unclarified cocktails simply cannot. Every sip is smooth, round, and impossibly luxurious.",
   },
 ];
 
@@ -57,7 +57,7 @@ export default function About() {
             The Pursuit of <span className="italic">Pleasure</span>
           </h1>
           <p className="font-body text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed" data-testid="text-about-intro">
-            Hedonic was born from a simple conviction: that pleasure is not a luxury — it is a philosophy. Life is too short for forgettable drinks and ordinary evenings.
+            Hedonic was born from a simple conviction: that pleasure is not a luxury — it is a philosophy. Twelve cocktails, three collections, and one obsession with perfection.
           </p>
         </motion.div>
 
@@ -145,6 +145,43 @@ export default function About() {
         >
           <Card className="p-8 md:p-12 border-border/30 bg-card/50">
             <div className="flex items-center gap-3 mb-6">
+              <Sparkles className="w-6 h-6 text-primary" />
+              <h2 className="font-display text-2xl md:text-3xl tracking-wide" data-testid="text-collections-title">
+                Three Collections, One Standard
+              </h2>
+            </div>
+            <div className="space-y-6 font-body text-sm text-foreground/70 leading-relaxed">
+              <div>
+                <p className="font-display text-lg text-foreground mb-2" data-testid="text-collection-light-title">Lovingly Light</p>
+                <p data-testid="text-collection-light-desc">
+                  Our brightest, most radiant expressions. The Dirty Shirley&apos;s sparkling grenadine and lime. The Orange Julius&apos;s creamy vanilla and fresh citrus. The Strawberry Daiquiri&apos;s sun-kissed berry sweetness. The Clover Club&apos;s botanical gin and tart raspberry elegance. Each one milk-clarified to a stunning translucent brilliance — cocktails that glow like liquid jewels.
+                </p>
+              </div>
+              <div>
+                <p className="font-display text-lg text-foreground mb-2" data-testid="text-collection-dark-title">Dark &amp; Seductive</p>
+                <p data-testid="text-collection-dark-desc">
+                  For the evenings that call for something deeper. The Whiskey Sour&apos;s bold caramel depth and bright citrus. The Mezcal Soda&apos;s smoky character with a smoldering finish. The Pheromone Martini&apos;s exotic passionfruit and dark chocolate. The Negroni Sbagliato&apos;s bittersweet Campari bite and Italian soul. Each one milk-clarified to a luminous amber — provocation in every sip.
+                </p>
+              </div>
+              <div>
+                <p className="font-display text-lg text-foreground mb-2" data-testid="text-collection-tropical-title">Tropical Paradise</p>
+                <p data-testid="text-collection-tropical-desc">
+                  Our newest collection takes a different path to clarity. The Jungle Bird&apos;s wild pineapple and bitter Campari. The Painkiller&apos;s lush coconut and island warmth. The Paloma&apos;s crisp grapefruit and tequila fire. The Mai Tai&apos;s legendary rum and almond orgeat. Each one clarified through coconut milk — a technique that adds a subtle tropical richness while achieving the same impossible transparency.
+                </p>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="mb-24"
+        >
+          <Card className="p-8 md:p-12 border-border/30 bg-card/50">
+            <div className="flex items-center gap-3 mb-6">
               <Star className="w-6 h-6 text-primary" />
               <h2 className="font-display text-2xl md:text-3xl tracking-wide" data-testid="text-promise-title">
                 The Hedonic Promise
@@ -155,13 +192,13 @@ export default function About() {
                 Every bottle of Hedonic is a quiet declaration: that you refuse to settle. Not for canned cocktails drowning in artificial sweetness. Not for bottom-shelf spirits hiding behind clever marketing. Not for anything less than the real thing.
               </p>
               <p data-testid="text-promise-p2">
-                We use premium spirits because your palate knows the difference — even when your mind doesn&apos;t. The purity of five-times-distilled vodka means flavors that glide rather than burn. The depth of hand-selected agave means smokiness that lingers with quiet authority, not chemical imitation.
+                We use premium spirits because your palate knows the difference — even when your mind doesn&apos;t. The purity of five-times-distilled vodka means flavors that glide rather than burn. The depth of hand-selected agave means smokiness that lingers with quiet authority. The richness of aged Caribbean rum means island warmth that envelops rather than overwhelms. Every spirit is chosen with intention.
               </p>
               <p data-testid="text-promise-p3">
-                And then we go further. Our signature clarification transforms each cocktail into something extraordinary — crystal-clear liquid with a texture so refined it redefines what you thought a bottled cocktail could be.
+                And then we go further. Our signature clarification — whether through traditional milk or tropical coconut — transforms each cocktail into something extraordinary. Crystal-clear liquid with a texture so refined it redefines what you thought a bottled cocktail could be.
               </p>
               <p data-testid="text-promise-p4">
-                This is not a cocktail you simply drink. It is a cocktail you <span className="italic text-foreground">savour</span>.
+                Twelve expressions. Three collections. One uncompromising standard. This is not a cocktail you simply drink. It is a cocktail you <span className="italic text-foreground">savour</span>.
               </p>
             </div>
           </Card>
@@ -178,7 +215,7 @@ export default function About() {
             Curious About Our Process?
           </h2>
           <p className="font-body text-sm text-muted-foreground mb-8 max-w-md mx-auto">
-            Discover the centuries-old technique that gives every Hedonic cocktail its impossible clarity and remarkably smooth texture.
+            Discover the centuries-old techniques that give every Hedonic cocktail its impossible clarity and remarkably smooth texture.
           </p>
           <div className="flex items-center justify-center gap-4 flex-wrap">
             <Link href="/clarity">
@@ -189,7 +226,7 @@ export default function About() {
             </Link>
             <Link href="/collection">
               <Button className="font-body text-sm tracking-widest uppercase px-8" data-testid="button-about-shop">
-                Shop the Collection
+                Explore the Collection
               </Button>
             </Link>
           </div>
