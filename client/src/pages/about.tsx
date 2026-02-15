@@ -160,7 +160,7 @@ export default function About() {
               <div>
                 <p className="font-display text-lg text-foreground mb-2" data-testid="text-collection-dark-title">Dark &amp; Seductive</p>
                 <p data-testid="text-collection-dark-desc">
-                  For the evenings that call for something deeper. The Whiskey Sour&apos;s bold caramel depth and bright citrus. The Mezcal Soda&apos;s smoky character with a smoldering finish. The Pheromone Martini&apos;s exotic passionfruit and dark chocolate. The Negroni Sbagliato&apos;s bittersweet Campari bite and Italian soul. Each one milk-clarified to a luminous amber — provocation in every sip.
+                  For the evenings that call for something deeper. The Whiskey Sour&apos;s bold depth and bright citrus. The Mezcal Soda&apos;s smoky character with a smoldering finish. The Pheromone Martini&apos;s exotic passionfruit and dark chocolate. The Negroni Sbagliato&apos;s bittersweet Campari bite and Italian soul. Each one milk-clarified to a luminous amber — provocation in every sip.
                 </p>
               </div>
               <div>

@@ -124,7 +124,7 @@ const resultData: Record<string, { slug: string; name: string; tagline: string; 
     slug: "whiskey-sour",
     name: "Whiskey Sour",
     tagline: "Bold, bright, and beautifully balanced.",
-    description: "You're drawn to the classics — bold, honest, and perfectly executed. The Whiskey Sour's caramel depth and bright citrus speak to your appreciation for timeless quality.",
+    description: "You're drawn to the classics — bold, honest, and perfectly executed. The Whiskey Sour's depth and bright citrus speak to your appreciation for timeless quality.",
     color: "#d4a340",
     imageUrl: "/images/whiskey-sour.png",
   },
