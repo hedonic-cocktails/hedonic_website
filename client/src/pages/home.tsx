@@ -56,10 +56,10 @@ function HeroSection() {
 function ProductCard({ product, index }: { product: Product; index: number }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.7, delay: index * 0.15 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.35, delay: index * 0.06 }}
     >
       <Link href={`/product/${product.slug}`} data-testid={`link-product-${product.slug}`}>
         <Card className="group overflow-visible border-border/30 bg-card/50 backdrop-blur-sm hover-elevate cursor-pointer">
