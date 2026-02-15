@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Link, useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Sparkles, Droplets, Wine, HelpCircle, X } from "lucide-react";
+import { ArrowRight, Sparkles, Droplets, Wine, HelpCircle, X, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -252,6 +252,182 @@ function CollectionSection({ products, isLoading }: { products: Product[]; isLoa
   );
 }
 
+const barCosts = [
+  { label: "4 craft cocktails", detail: "$18 each", amount: 72.00 },
+  { label: "Bar snack", detail: "Appetizer", amount: 6.00 },
+  { label: "Tax", detail: "~8.5%", amount: 6.63 },
+  { label: "Tip", detail: "20%", amount: 15.60 },
+  { label: "Uber there", detail: "Rideshare", amount: 13.00 },
+  { label: "Uber home", detail: "Rideshare", amount: 17.00 },
+];
+
+const hedonicCosts = [
+  { label: "1 Hedonic bottle", detail: "4 servings", amount: 29.99 },
+  { label: "Tax", detail: "~8.5%", amount: 2.55 },
+];
+
+const barTotal = barCosts.reduce((sum, c) => sum + c.amount, 0);
+const hedonicTotal = hedonicCosts.reduce((sum, c) => sum + c.amount, 0);
+const savings = barTotal - hedonicTotal;
+const savingsPercent = Math.round((savings / barTotal) * 100);
+
+const hedonicPerks = [
+  "Ready whenever the occasion calls",
+  "Your space, your music, your pace",
+  "Same premium spirits, same silky finish",
+  "No driving, no waiting, no hassle",
+  "All the elegance, none of the markup",
+];
+
+function HedonicAtHomeSection() {
+  return (
+    <section className="py-24 px-6 border-t border-border/20">
+      <div className="max-w-5xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="text-center mb-16"
+        >
+          <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-4" data-testid="text-athome-label">
+            More Good Nights for Less
+          </p>
+          <h2 className="font-display text-4xl md:text-5xl tracking-wide mb-4" data-testid="text-athome-title">
+            Hedonic <span className="italic">at Home</span>
+          </h2>
+          <p className="font-body text-sm text-muted-foreground max-w-2xl mx-auto">
+            Same top-shelf spirits. Same refined cocktails. Same velvet mouthfeel — without the inflated bill, the crowded bar, or the ride home.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-2 gap-4 md:gap-8 mb-16">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <Card className="p-4 md:p-8 border-border/30 bg-card/50 h-full">
+              <div className="mb-6">
+                <p className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground mb-1">Option A</p>
+                <h3 className="font-display text-xl md:text-2xl tracking-wide" data-testid="text-home-bar-title">A Night at the Bar</h3>
+              </div>
+              <div className="space-y-3 mb-6">
+                {barCosts.map((cost, i) => (
+                  <div key={i} className="flex items-center justify-between gap-4" data-testid={`row-home-bar-cost-${i}`}>
+                    <div>
+                      <p className="font-body text-sm text-foreground">{cost.label}</p>
+                      <p className="font-body text-xs text-muted-foreground">{cost.detail}</p>
+                    </div>
+                    <span className="font-body text-sm text-foreground">${cost.amount.toFixed(2)}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="border-t border-border/20 pt-4">
+                <div className="flex items-center justify-between gap-4">
+                  <span className="font-display text-lg">Total</span>
+                  <span className="font-display text-2xl md:text-3xl" data-testid="text-home-bar-total">${barTotal.toFixed(2)}</span>
+                </div>
+              </div>
+            </Card>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <Card className="p-4 md:p-8 border-primary/30 bg-card/50 h-full relative">
+              <div className="absolute -top-3 right-6">
+                <span className="font-body text-xs tracking-[0.15em] uppercase bg-primary text-primary-foreground px-4 py-1.5 rounded-md" data-testid="text-home-best-value">
+                  Best Value
+                </span>
+              </div>
+              <div className="mb-6">
+                <p className="font-body text-xs tracking-[0.2em] uppercase text-primary mb-1">Option B</p>
+                <h3 className="font-display text-xl md:text-2xl tracking-wide" data-testid="text-home-hedonic-title">A Night with Hedonic</h3>
+              </div>
+              <div className="space-y-3 mb-6">
+                {hedonicCosts.map((cost, i) => (
+                  <div key={i} className="flex items-center justify-between gap-4" data-testid={`row-home-hedonic-cost-${i}`}>
+                    <div>
+                      <p className="font-body text-sm text-foreground">{cost.label}</p>
+                      <p className="font-body text-xs text-muted-foreground">{cost.detail}</p>
+                    </div>
+                    <span className="font-body text-sm text-foreground">${cost.amount.toFixed(2)}</span>
+                  </div>
+                ))}
+                <div className="flex items-center justify-between gap-4 text-muted-foreground/40">
+                  <p className="font-body text-sm line-through">Uber there</p>
+                  <span className="font-body text-sm line-through">$0.00</span>
+                </div>
+                <div className="flex items-center justify-between gap-4 text-muted-foreground/40">
+                  <p className="font-body text-sm line-through">Uber home</p>
+                  <span className="font-body text-sm line-through">$0.00</span>
+                </div>
+                <div className="flex items-center justify-between gap-4 text-muted-foreground/40">
+                  <p className="font-body text-sm line-through">Tip</p>
+                  <span className="font-body text-sm line-through">$0.00</span>
+                </div>
+              </div>
+              <div className="border-t border-primary/20 pt-4">
+                <div className="flex items-center justify-between gap-4">
+                  <span className="font-display text-lg">Total</span>
+                  <span className="font-display text-2xl md:text-3xl text-primary" data-testid="text-home-hedonic-total">${hedonicTotal.toFixed(2)}</span>
+                </div>
+              </div>
+            </Card>
+          </motion.div>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="mb-16"
+        >
+          <Card className="p-8 md:p-12 border-primary/30 bg-card/50 text-center">
+            <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-4" data-testid="text-home-savings-label">
+              Your Savings
+            </p>
+            <h3 className="font-display text-5xl md:text-7xl tracking-wide text-primary mb-2" data-testid="text-home-savings-amount">
+              ${savings.toFixed(2)}
+            </h3>
+            <p className="font-body text-lg text-muted-foreground mb-2">
+              That&apos;s <span className="text-primary font-semibold">{savingsPercent}%</span> less per night
+            </p>
+            <p className="font-body text-base text-muted-foreground max-w-lg mx-auto mb-4">
+              One bar night = <span className="text-primary font-semibold">{Math.floor(barTotal / hedonicTotal)} Hedonic nights</span> of the same luxury.
+            </p>
+          </Card>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <Card className="p-6 md:p-8 border-primary/30 bg-card/50">
+            <h3 className="font-display text-xl md:text-2xl tracking-wide mb-6 text-center" data-testid="text-home-perks-title">The Hedonic Experience</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+              {hedonicPerks.map((perk, i) => (
+                <div key={i} className="flex items-center gap-3" data-testid={`row-home-perk-${i}`}>
+                  <Check className="w-4 h-4 text-primary flex-shrink-0" />
+                  <span className="font-body text-sm text-foreground">{perk}</span>
+                </div>
+              ))}
+            </div>
+          </Card>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
 function StorySection() {
   const features = [
     {
@@ -472,6 +648,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <HeroSection />
+      <HedonicAtHomeSection />
       <CollectionSection products={products} isLoading={isLoading} />
       <StorySection />
       <CtaSection />
