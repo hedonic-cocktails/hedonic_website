@@ -30,11 +30,16 @@ function HeroSection() {
           <p className="font-body text-base md:text-lg text-foreground/60 max-w-xl mx-auto mb-10 leading-relaxed" data-testid="text-hero-subtitle">
             Crystal-clear. Impossibly smooth. Every bottle is an exercise in balance — premium spirits, real ingredients, and nothing between you and pure indulgence.
           </p>
-          <div className="flex items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/collection">
               <Button className="font-body text-sm tracking-widest uppercase px-8" data-testid="button-explore">
                 Explore Collection
                 <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </Link>
+            <Link href="/quiz">
+              <Button variant="outline" className="font-body text-sm tracking-widest uppercase px-8" data-testid="button-quiz-hero">
+                Find Your Bottle
               </Button>
             </Link>
           </div>
