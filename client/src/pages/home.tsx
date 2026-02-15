@@ -61,46 +61,41 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.7, delay: index * 0.15 }}
     >
-      <Card className="group overflow-visible border-border/30 bg-card/50 backdrop-blur-sm hover-elevate">
-        <div className="p-6">
-          <div className="relative aspect-[3/4] mb-6 overflow-hidden rounded-md bg-gradient-to-b from-card to-background/50 flex items-center justify-center">
-            <img
-              src={product.imageUrl}
-              alt={product.name}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              data-testid={`img-product-${product.slug}`}
-            />
-          </div>
+      <Link href={`/product/${product.slug}`} data-testid={`link-product-${product.slug}`}>
+        <Card className="group overflow-visible border-border/30 bg-card/50 backdrop-blur-sm hover-elevate cursor-pointer">
+          <div className="p-6">
+            <div className="relative aspect-[3/4] mb-6 overflow-hidden rounded-md bg-gradient-to-b from-card to-background/50 flex items-center justify-center">
+              <img
+                src={product.imageUrl}
+                alt={product.name}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                data-testid={`img-product-${product.slug}`}
+              />
+            </div>
 
-          <div className="space-y-3">
-            <p className="font-body text-xs tracking-[0.2em] uppercase text-primary" data-testid={`text-spirit-${product.slug}`}>
-              {product.spirit}
-            </p>
-            <h3 className="font-display text-2xl tracking-wide" data-testid={`text-name-${product.slug}`}>
-              {product.name}
-            </h3>
-            <p className="font-body text-sm text-muted-foreground leading-relaxed line-clamp-2" data-testid={`text-tagline-${product.slug}`}>
-              {product.tagline}
-            </p>
+            <div className="space-y-3">
+              <p className="font-body text-xs tracking-[0.2em] uppercase text-primary" data-testid={`text-spirit-${product.slug}`}>
+                {product.spirit}
+              </p>
+              <h3 className="font-display text-2xl tracking-wide" data-testid={`text-name-${product.slug}`}>
+                {product.name}
+              </h3>
+              <p className="font-body text-sm text-muted-foreground leading-relaxed line-clamp-2" data-testid={`text-tagline-${product.slug}`}>
+                {product.tagline}
+              </p>
 
-            <div className="flex items-end justify-between gap-4 pt-2">
-              <div>
+              <div className="flex items-end justify-between gap-4 pt-2">
                 <span className="font-display text-2xl text-foreground" data-testid={`text-price-${product.slug}`}>
                   ${Number(product.price).toFixed(2)}
                 </span>
-                <span className="font-body text-xs text-muted-foreground ml-2">
+                <span className="font-body text-xs text-muted-foreground">
                   / {product.volume}
                 </span>
               </div>
-              <Link href={`/product/${product.slug}`}>
-                <Button variant="outline" size="sm" className="font-body text-xs tracking-widest uppercase" data-testid={`button-view-${product.slug}`}>
-                  Details
-                </Button>
-              </Link>
             </div>
           </div>
-        </div>
-      </Card>
+        </Card>
+      </Link>
     </motion.div>
   );
 }
