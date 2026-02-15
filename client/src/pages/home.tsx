@@ -649,7 +649,6 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground">
       <HeroSection />
       <CollectionSection products={products} isLoading={isLoading} />
-      <HedonicAtHomeSection />
       <StorySection />
       <CtaSection />
       <QuizPrompt />

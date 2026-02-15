@@ -51,6 +51,14 @@ export function Header() {
               Our Story
             </span>
           </Link>
+          <Link href="/compare">
+            <span
+              className={`cursor-pointer transition-colors duration-300 ${location === "/compare" ? "text-primary" : "text-muted-foreground hover:text-foreground"}`}
+              data-testid="link-nav-compare"
+            >
+              Hedonic at Home
+            </span>
+          </Link>
         </nav>
 
         <Link href="/cart">
