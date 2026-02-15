@@ -152,8 +152,8 @@ const resultData: Record<string, { slug: string; name: string; tagline: string; 
   pm: {
     slug: "pheromone-martini",
     name: "Pheromone Martini",
-    tagline: "Dark, exotic, and irresistibly seductive.",
-    description: "You're drawn to the unconventional and the alluring. The Pheromone Martini's exotic passionfruit and dark chocolate reflect your taste for the provocative and the unforgettable.",
+    tagline: "Dark, exotic, and utterly captivating.",
+    description: "You're drawn to the unconventional and the extraordinary. The Pheromone Martini's exotic passionfruit and dark chocolate reflect your taste for the bold and the unforgettable.",
     color: "#b8864e",
     imageUrl: "/images/pheromone-martini.png",
   },
@@ -242,10 +242,10 @@ export default function Quiz() {
             Find Your Bottle
           </p>
           <h1 className="font-display text-4xl md:text-5xl tracking-wide mb-4" data-testid="text-quiz-title">
-            Which Hedonic <span className="italic text-primary">Wants</span> You?
+            Which Hedonic <span className="italic text-primary">Speaks</span> to You?
           </h1>
           <p className="font-body text-sm text-muted-foreground max-w-md mx-auto">
-            Seven questions. One perfect match. Let&apos;s find the bottle you didn&apos;t know you were craving.
+            Seven questions. One perfect match. Let&apos;s discover the bottle made for your palate.
           </p>
         </motion.div>
 

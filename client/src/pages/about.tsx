@@ -57,7 +57,7 @@ export default function About() {
             The Pursuit of <span className="italic">Pleasure</span>
           </h1>
           <p className="font-body text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed" data-testid="text-about-intro">
-            Hedonic was born from a dangerous idea: that pleasure is not a luxury — it is a birthright. Life is too fleeting for forgettable drinks and half-hearted evenings.
+            Hedonic was born from a simple conviction: that pleasure is not a luxury — it is a philosophy. Life is too short for forgettable drinks and ordinary evenings.
           </p>
         </motion.div>
 
@@ -80,10 +80,10 @@ export default function About() {
                 The word <span className="italic text-foreground">hedonic</span> comes from the Greek <span className="italic text-foreground">hedonikos</span> — relating to pleasure. It is the root of hedonism, the philosophy that the highest good is the pursuit of sensory delight. We named our company after this idea because we believe it in our bones.
               </p>
               <p data-testid="text-philosophy-p2">
-                A perfect cocktail is one of life&apos;s most intimate pleasures. The weight of the glass in your hand. The first sip that makes you close your eyes. The warmth that blooms through you and softens the edges of the evening. That feeling should be yours whenever you want it — not rationed out at $25 a pour behind a velvet rope.
+                A perfect cocktail is one of life&apos;s great pleasures. The weight of the glass in your hand. The first sip that makes you pause and appreciate. The warmth that settles in and elevates the evening. That experience should be yours whenever you want it — not reserved for $25 a pour behind a velvet rope.
               </p>
               <p data-testid="text-philosophy-p3">
-                That&apos;s why we created Hedonic. We wanted to bottle the moment — not approximate it, not water it down, but capture it whole. The same obsessive craft a world-class bartender brings to their finest creation, waiting in your kitchen for the instant the mood takes you.
+                That&apos;s why we created Hedonic. We wanted to bottle the experience — not approximate it, not dilute it, but preserve it in its finest form. The same obsessive craft a world-class bartender brings to their greatest creation, waiting in your home for whenever the occasion calls.
               </p>
             </div>
           </Card>
@@ -155,13 +155,13 @@ export default function About() {
                 Every bottle of Hedonic is a quiet declaration: that you refuse to settle. Not for canned cocktails drowning in artificial sweetness. Not for bottom-shelf spirits hiding behind clever marketing. Not for anything less than the real thing.
               </p>
               <p data-testid="text-promise-p2">
-                We use premium spirits because your palate knows the difference — even when your mind doesn&apos;t. The purity of five-times-distilled vodka means flavors that caress rather than burn. The depth of hand-selected agave means smokiness that lingers on the tongue like a whispered secret, not a chemical shout.
+                We use premium spirits because your palate knows the difference — even when your mind doesn&apos;t. The purity of five-times-distilled vodka means flavors that glide rather than burn. The depth of hand-selected agave means smokiness that lingers with quiet authority, not chemical imitation.
               </p>
               <p data-testid="text-promise-p3">
-                And then we go further. Our signature clarification transforms each cocktail into something almost unreasonable — crystal-clear liquid with a texture so silky it feels like it was designed for the sole purpose of making you close your eyes and exhale.
+                And then we go further. Our signature clarification transforms each cocktail into something extraordinary — crystal-clear liquid with a texture so refined it redefines what you thought a bottled cocktail could be.
               </p>
               <p data-testid="text-promise-p4">
-                This is not a cocktail you drink. It is a cocktail you <span className="italic text-foreground">surrender to</span>.
+                This is not a cocktail you simply drink. It is a cocktail you <span className="italic text-foreground">savour</span>.
               </p>
             </div>
           </Card>
@@ -175,10 +175,10 @@ export default function About() {
           className="text-center"
         >
           <h2 className="font-display text-3xl md:text-4xl tracking-wide italic mb-4" data-testid="text-about-cta">
-            Want to Know Our Secret?
+            Curious About Our Process?
           </h2>
           <p className="font-body text-sm text-muted-foreground mb-8 max-w-md mx-auto">
-            Discover the centuries-old technique that gives every Hedonic cocktail its impossible clarity and sinfully smooth texture.
+            Discover the centuries-old technique that gives every Hedonic cocktail its impossible clarity and remarkably smooth texture.
           </p>
           <div className="flex items-center justify-center gap-4 flex-wrap">
             <Link href="/clarity">

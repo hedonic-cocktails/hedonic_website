@@ -129,7 +129,7 @@ export default function CartPage() {
               Nothing Here Yet
             </h2>
             <p className="font-body text-sm text-muted-foreground mb-8">
-              Your evening deserves better than an empty glass. Go find something irresistible.
+              Your evening deserves better than an empty glass. Explore the collection.
             </p>
             <Link href="/collection">
               <Button className="font-body text-sm tracking-widest uppercase" data-testid="button-browse">
@@ -155,10 +155,10 @@ export default function CartPage() {
               <ShoppingBag className="w-7 h-7 text-primary" />
             </div>
             <h2 className="font-display text-3xl tracking-wide mb-4" data-testid="text-order-success">
-              Consider Yourself <span className="italic text-primary">Indulged</span>
+              Pleasure, <span className="italic text-primary">Delivered</span>
             </h2>
             <p className="font-body text-sm text-muted-foreground mb-8">
-              Your order is on its way. Anticipation is half the pleasure — we&apos;ll send a confirmation to your email shortly.
+              Your order has been placed. We&apos;ll send a confirmation to your email shortly. Something wonderful is on its way.
             </p>
             <Link href="/">
               <Button className="font-body text-sm tracking-widest uppercase" data-testid="button-continue-shopping">

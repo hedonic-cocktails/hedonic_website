@@ -22,7 +22,7 @@ function HeroSection() {
           transition={{ duration: 1, ease: "easeOut" }}
         >
           <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-6" data-testid="text-hero-label">
-            Surrender to the Sip
+            Refined Indulgence
           </p>
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl tracking-wide leading-tight mb-6" data-testid="text-hero-title">
             Crafted for
@@ -30,7 +30,7 @@ function HeroSection() {
             <span className="italic text-primary">Pleasure</span>
           </h1>
           <p className="font-body text-base md:text-lg text-foreground/60 max-w-xl mx-auto mb-10 leading-relaxed" data-testid="text-hero-subtitle">
-            Crystal-clear. Impossibly smooth. Every bottle is a seduction in balance — premium spirits, real ingredients, and nothing between you and pure indulgence.
+            Crystal-clear. Impossibly smooth. Every bottle is an exercise in balance — premium spirits, real ingredients, and nothing between you and pure indulgence.
           </p>
           <div className="flex items-center justify-center gap-4">
             <Link href="/collection">
@@ -182,7 +182,7 @@ function CollectionSection({ products, isLoading }: { products: Product[]; isLoa
             Every Expression
           </h2>
           <p className="font-body text-sm text-muted-foreground max-w-lg mx-auto">
-            Eight temptations, each with its own mood. Find the one that pulls you in.
+            Eight expressions, each with its own character. Find the one that speaks to you.
           </p>
         </motion.div>
 
@@ -235,7 +235,7 @@ function CollectionSection({ products, isLoading }: { products: Product[]; isLoa
                       Not sure what you want?
                     </p>
                     <p className="font-body text-sm text-muted-foreground">
-                      Let us help you scratch the itch.
+                      Let us help you decide.
                     </p>
                   </motion.div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
@@ -267,7 +267,7 @@ function StorySection() {
     {
       icon: Wine,
       title: "Velvet in a Bottle",
-      description: "Milk-clarified for impossible smoothness, then carbonated with a gentle fizz. The texture alone will ruin other drinks for you.",
+      description: "Milk-clarified for impossible smoothness, then carbonated with a gentle fizz. Once you experience the texture, nothing else compares.",
     },
   ];
 
@@ -288,7 +288,7 @@ function StorySection() {
             Obsessively Crafted
           </h2>
           <p className="font-body text-sm text-muted-foreground max-w-lg mx-auto">
-            A perfect cocktail shouldn&apos;t require a reservation, a bartender, and a $25 tab. It should be waiting for you at home, ready the moment the mood strikes.
+            A perfect cocktail shouldn&apos;t require a reservation, a bartender, and a $25 tab. It should be waiting for you at home — effortless elegance, whenever you want it.
           </p>
         </motion.div>
 
@@ -330,10 +330,10 @@ function CtaSection() {
           transition={{ duration: 0.7 }}
         >
           <h2 className="font-display text-4xl md:text-5xl tracking-wide mb-4 italic" data-testid="text-cta-title">
-            Give In.
+            Indulge.
           </h2>
           <p className="font-body text-sm text-muted-foreground mb-8 max-w-md mx-auto">
-            Four pours per bottle. $29.99. Delivered to your door. Your best night in is one click away.
+            Four pours per bottle. $29.99. Delivered to your door. The finest night in is one click away.
           </p>
           <div className="flex items-center justify-center gap-4 flex-wrap">
             <Link href="/collection">
@@ -433,10 +433,10 @@ function QuizPrompt() {
             </div>
 
             <h3 className="font-display text-3xl tracking-wide mb-3" data-testid="text-quiz-prompt-title">
-              Feeling <span className="italic text-primary">Tempted?</span>
+              Not Sure <span className="italic text-primary">Where to Start?</span>
             </h3>
             <p className="font-body text-sm text-muted-foreground mb-8 leading-relaxed">
-              Tell us what you&apos;re in the mood for and we&apos;ll find the bottle that was made for you.
+              Tell us your preferences and we&apos;ll match you with the perfect bottle.
             </p>
 
             <div className="flex flex-col gap-3">

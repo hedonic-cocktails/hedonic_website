@@ -61,7 +61,7 @@ export default function Clarity() {
             The Art of <span className="italic">Clarity</span>
           </h1>
           <p className="font-body text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed" data-testid="text-clarity-intro">
-            A centuries-old seduction dating back to the 1700s. Milk clarification strips away everything harsh and leaves behind something dangerously smooth — crystal-clear cocktails with a texture that borders on obscene.
+            A centuries-old technique dating back to the 1700s. Milk clarification strips away everything harsh and leaves behind something remarkably refined — crystal-clear cocktails with a texture of extraordinary elegance.
           </p>
         </motion.div>
 
@@ -84,7 +84,7 @@ export default function Clarity() {
                 These protein formations create an extraordinarily fine natural filter. As the cocktail slowly passes through this web, it captures color pigments, tannins, harsh polyphenols, and microscopic particles — everything that makes a cocktail cloudy, astringent, or rough around the edges.
               </p>
               <p data-testid="text-what-p3">
-                What remains is something almost unfair: a cocktail that is perfectly transparent, impossibly smooth, with a velvety mouthfeel that lingers on your lips. The flavors become rounder, more intimate, more honest. Harsh edges melt away. Complexity deepens into something you want to linger in. It is the same cocktail, undressed to its most beautiful form.
+                What remains is something exceptional: a cocktail that is perfectly transparent, impossibly smooth, with a velvety mouthfeel that lingers on the palate. The flavors become rounder, more refined, more complete. Harsh edges dissolve. Complexity deepens into something you want to savour. It is the same cocktail, elevated to its most elegant form.
               </p>
             </div>
           </Card>
@@ -154,13 +154,13 @@ export default function Clarity() {
               <div>
                 <h3 className="font-display text-lg mb-2 text-primary" data-testid="text-benefit-1">Texture</h3>
                 <p className="font-body text-sm text-muted-foreground leading-relaxed">
-                  Residual lactose gives each cocktail a velvety, almost sinful mouthfeel you simply cannot get any other way. Once you feel it on your tongue, you&apos;ll understand why we&apos;re obsessed.
+                  Residual lactose gives each cocktail a velvety, luxurious mouthfeel you simply cannot achieve any other way. Once you experience it, you&apos;ll understand our obsession.
                 </p>
               </div>
               <div>
                 <h3 className="font-display text-lg mb-2 text-primary" data-testid="text-benefit-2">Flavor</h3>
                 <p className="font-body text-sm text-muted-foreground leading-relaxed">
-                  Tannins and harsh compounds are stripped away, and what&apos;s left is pure seduction. Rounder flavors. Softer edges. You taste nuance, not noise. Intimacy, not intensity.
+                  Tannins and harsh compounds are stripped away, and what&apos;s left is pure refinement. Rounder flavors. Softer edges. You taste nuance, not noise. Elegance, not excess.
                 </p>
               </div>
               <div>
