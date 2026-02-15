@@ -174,6 +174,7 @@ export default function Quiz() {
   const [scores, setScores] = useState<Scores>({ ds: 0, oj: 0, ms: 0, ws: 0, sd: 0, cc: 0, pm: 0, ns: 0 });
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [showResult, setShowResult] = useState(false);
+  const [answerHistory, setAnswerHistory] = useState<number[]>([]);
 
   const handleSelect = (optionIndex: number) => {
     setSelectedOption(optionIndex);
@@ -183,6 +184,7 @@ export default function Quiz() {
       newScores[k] = scores[k] + option.scores[k];
     }
     setScores(newScores);
+    setAnswerHistory([...answerHistory, optionIndex]);
 
     setTimeout(() => {
       if (currentQuestion < questions.length - 1) {
@@ -192,6 +194,21 @@ export default function Quiz() {
         setShowResult(true);
       }
     }, 500);
+  };
+
+  const handleBack = () => {
+    if (currentQuestion === 0) return;
+    const prevQuestion = currentQuestion - 1;
+    const prevAnswerIndex = answerHistory[prevQuestion];
+    const prevOption = questions[prevQuestion].options[prevAnswerIndex];
+    const newScores = { ...scores };
+    for (const k of keys) {
+      newScores[k] = scores[k] - prevOption.scores[k];
+    }
+    setScores(newScores);
+    setAnswerHistory(answerHistory.slice(0, -1));
+    setCurrentQuestion(prevQuestion);
+    setSelectedOption(null);
   };
 
   const getResult = () => {
@@ -211,6 +228,7 @@ export default function Quiz() {
     setScores({ ds: 0, oj: 0, ms: 0, ws: 0, sd: 0, cc: 0, pm: 0, ns: 0 });
     setSelectedOption(null);
     setShowResult(false);
+    setAnswerHistory([]);
   };
 
   const result = getResult();
@@ -271,9 +289,21 @@ export default function Quiz() {
               transition={{ duration: 0.35 }}
             >
               <div className="text-center mb-8">
-                <p className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground mb-3" data-testid="text-question-count">
-                  Question {currentQuestion + 1} of {questions.length}
-                </p>
+                <div className="flex items-center justify-center gap-4 mb-3">
+                  {currentQuestion > 0 && (
+                    <button
+                      onClick={handleBack}
+                      className="inline-flex items-center gap-1 font-body text-xs tracking-[0.15em] uppercase text-muted-foreground hover:text-foreground transition-colors"
+                      data-testid="button-quiz-back"
+                    >
+                      <ArrowLeft className="w-3.5 h-3.5" />
+                      Back
+                    </button>
+                  )}
+                  <p className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground" data-testid="text-question-count">
+                    Question {currentQuestion + 1} of {questions.length}
+                  </p>
+                </div>
                 <h2 className="font-display text-2xl md:text-3xl tracking-wide" data-testid="text-question">
                   {questions[currentQuestion].question}
                 </h2>
