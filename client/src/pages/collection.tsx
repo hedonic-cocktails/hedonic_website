@@ -6,14 +6,10 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import type { Product } from "@shared/schema";
-import { useCart } from "@/lib/cart";
-
 const LOVINGLY_LIGHT = ["dirty-shirley", "orange-julius", "strawberry-daiquiri", "clover-club"];
 const DARK_AND_SEDUCTIVE = ["mezcal-soda", "whiskey-sour", "pheromone-martini", "negroni-sbagliato"];
 
 function ProductCard({ product, index }: { product: Product; index: number }) {
-  const { addItem } = useCart();
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -52,21 +48,11 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
                   / {product.volume}
                 </span>
               </div>
-              <div className="flex items-center gap-2">
-                <Link href={`/product/${product.slug}`}>
-                  <Button variant="outline" size="sm" className="font-body text-xs tracking-widest uppercase" data-testid={`button-view-${product.slug}`}>
-                    Details
-                  </Button>
-                </Link>
-                <Button
-                  size="sm"
-                  className="font-body text-xs tracking-widest uppercase"
-                  onClick={() => addItem(product)}
-                  data-testid={`button-add-${product.slug}`}
-                >
-                  Add
+              <Link href={`/product/${product.slug}`}>
+                <Button variant="outline" size="sm" className="font-body text-xs tracking-widest uppercase" data-testid={`button-view-${product.slug}`}>
+                  Details
                 </Button>
-              </div>
+              </Link>
             </div>
           </div>
         </div>

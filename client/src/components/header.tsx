@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { ShoppingBag, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useCart } from "@/lib/cart";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
@@ -13,7 +12,6 @@ const navLinks = [
 ];
 
 export function Header() {
-  const { totalItems } = useCart();
   const [location] = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -62,27 +60,15 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-2">
-            <Link href="/cart">
-              <Button variant="ghost" size="icon" className="relative" data-testid="button-cart">
-                <ShoppingBag className="w-5 h-5" />
-                {totalItems > 0 && (
-                  <span className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-primary text-primary-foreground text-xs font-body font-semibold flex items-center justify-center" data-testid="text-cart-count">
-                    {totalItems}
-                  </span>
-                )}
-              </Button>
-            </Link>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="md:hidden"
-              onClick={() => setMobileOpen(!mobileOpen)}
-              data-testid="button-mobile-menu"
-            >
-              {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </Button>
-          </div>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            data-testid="button-mobile-menu"
+          >
+            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </Button>
         </div>
       </motion.header>
 
@@ -120,20 +106,6 @@ export function Header() {
                   </Link>
                 </motion.div>
               ))}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: navLinks.length * 0.06 }}
-              >
-                <Link href="/cart">
-                  <span
-                    className={`block py-4 font-display text-2xl tracking-wide cursor-pointer transition-colors ${location === "/cart" ? "text-primary" : "text-foreground"}`}
-                    data-testid="link-mobile-cart"
-                  >
-                    Cart{totalItems > 0 && <span className="text-primary ml-2">({totalItems})</span>}
-                  </span>
-                </Link>
-              </motion.div>
             </motion.nav>
           </motion.div>
         )}

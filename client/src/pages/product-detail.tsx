@@ -1,33 +1,20 @@
 import { useQuery } from "@tanstack/react-query";
 import { useRoute, Link } from "wouter";
 import { motion } from "framer-motion";
-import { ArrowLeft, Plus, Minus, Check } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { useCart } from "@/lib/cart";
 import type { Product } from "@shared/schema";
-import { useState } from "react";
 
 export default function ProductDetail() {
   const [, params] = useRoute("/product/:slug");
   const slug = params?.slug;
-  const [quantity, setQuantity] = useState(1);
-  const [added, setAdded] = useState(false);
-  const { addItem } = useCart();
 
   const { data: products = [], isLoading } = useQuery<Product[]>({
     queryKey: ["/api/products"],
   });
 
   const product = products.find(p => p.slug === slug);
-
-  const handleAdd = () => {
-    if (product) {
-      addItem(product, quantity);
-      setAdded(true);
-      setTimeout(() => setAdded(false), 2000);
-    }
-  };
 
   if (isLoading) {
     return (
@@ -147,7 +134,7 @@ export default function ProductDetail() {
             </div>
 
             <div className="border-t border-border/20 pt-8">
-              <div className="flex items-end justify-between gap-4 mb-6">
+              <div className="flex items-end justify-between gap-4">
                 <div>
                   <span className="font-display text-3xl" data-testid="text-detail-price">
                     ${Number(product.price).toFixed(2)}
@@ -156,45 +143,6 @@ export default function ProductDetail() {
                     per bottle
                   </span>
                 </div>
-              </div>
-
-              <div className="flex items-center gap-4 flex-wrap">
-                <div className="flex items-center border border-border/30 rounded-md">
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    onClick={() => setQuantity(q => Math.max(1, q - 1))}
-                    data-testid="button-decrease-qty"
-                  >
-                    <Minus className="w-4 h-4" />
-                  </Button>
-                  <span className="w-12 text-center font-body text-sm" data-testid="text-quantity">
-                    {quantity}
-                  </span>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    onClick={() => setQuantity(q => q + 1)}
-                    data-testid="button-increase-qty"
-                  >
-                    <Plus className="w-4 h-4" />
-                  </Button>
-                </div>
-
-                <Button
-                  className="flex-1 font-body text-sm tracking-widest uppercase"
-                  onClick={handleAdd}
-                  data-testid="button-add-to-cart"
-                >
-                  {added ? (
-                    <>
-                      <Check className="w-4 h-4 mr-2" />
-                      Added
-                    </>
-                  ) : (
-                    "Add to Cart"
-                  )}
-                </Button>
               </div>
             </div>
           </motion.div>

@@ -14,7 +14,6 @@ import Clarity from "@/pages/clarity";
 import Compare from "@/pages/compare";
 import Quiz from "@/pages/quiz";
 import ProductDetail from "@/pages/product-detail";
-import CartPage from "@/pages/cart";
 import NotFound from "@/pages/not-found";
 
 function ScrollToTop() {
@@ -37,7 +36,6 @@ function Router() {
         <Route path="/compare" component={Compare} />
         <Route path="/quiz" component={Quiz} />
         <Route path="/product/:slug" component={ProductDetail} />
-        <Route path="/cart" component={CartPage} />
         <Route component={NotFound} />
       </Switch>
     </>
