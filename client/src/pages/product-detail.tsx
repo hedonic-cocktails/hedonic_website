@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useRoute, Link } from "wouter";
 import { motion } from "framer-motion";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import type { Product } from "@shared/schema";
@@ -130,6 +130,18 @@ export default function ProductDetail() {
                     {ingredient}
                   </span>
                 ))}
+              </div>
+            </div>
+
+            <div className="mb-8 flex items-start gap-3 p-4 rounded-md bg-card/50 border border-border/20">
+              <AlertTriangle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+              <div>
+                <p className="font-body text-xs tracking-[0.15em] uppercase text-foreground/80 mb-1" data-testid="text-allergen-title">
+                  Allergen Notice
+                </p>
+                <p className="font-body text-xs text-muted-foreground leading-relaxed" data-testid="text-allergen-info">
+                  Contains lactose. Contains ingredients derived from milk.
+                </p>
               </div>
             </div>
 
