@@ -434,17 +434,17 @@ function StorySection() {
     {
       icon: Sparkles,
       title: "Top-Shelf Only",
-      description: "We start with spirits so good you'd sip them straight. Five-times-distilled vodka. Hand-selected agave. No compromises, no apologies.",
+      description: "Five-times-distilled vodka. Hand-selected agave. Aged Caribbean rum. London dry gin with hand-foraged botanicals. Small-batch bourbon and tequila with real provenance. Every spirit earns its place.",
     },
     {
       icon: Droplets,
       title: "Nothing Fake",
-      description: "Fresh-squeezed citrus. House-made syrups from real vanilla and pomegranate. If it doesn't belong, it doesn't go in.",
+      description: "Fresh-squeezed citrus. House-made vanilla syrup from whole Madagascar beans. Grenadine from real pomegranate. Hand-pressed pineapple. Authentic orgeat from whole almonds. If it doesn't belong, it doesn't go in.",
     },
     {
       icon: Wine,
-      title: "Velvet in a Bottle",
-      description: "Milk-clarified for impossible smoothness, then carbonated with a gentle fizz. Once you experience the texture, nothing else compares.",
+      title: "Two Paths to Clarity",
+      description: "Traditional milk clarification for our original eight cocktails. Coconut milk clarification for our Tropical Paradise collection. Two methods, one result: crystal-clear, impossibly smooth, carbonated perfection.",
     },
   ];
 
@@ -465,7 +465,7 @@ function StorySection() {
             Obsessively Crafted
           </h2>
           <p className="font-body text-sm text-muted-foreground max-w-lg mx-auto">
-            A perfect cocktail shouldn&apos;t require a reservation, a bartender, and a $25 tab. It should be waiting for you at home — effortless elegance, whenever you want it.
+            Twelve cocktails. Three collections. Two paths to clarity. A perfect cocktail shouldn&apos;t require a reservation and a $25 tab — it should be waiting at home, effortless and extraordinary.
           </p>
         </motion.div>
 
