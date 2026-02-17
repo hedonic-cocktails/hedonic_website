@@ -231,13 +231,17 @@ const seedProducts = [
 
 export async function seedDatabase() {
   const existing = await db.select().from(products);
-  if (existing.length > 0) {
-    console.log("Database already seeded, skipping...");
+  const existingSlugs = new Set(existing.map(p => p.slug));
+
+  const newProducts = seedProducts.filter(p => !existingSlugs.has(p.slug));
+
+  if (newProducts.length === 0) {
+    console.log("All products already seeded, skipping...");
     return;
   }
 
-  console.log("Seeding database with products...");
-  for (const product of seedProducts) {
+  console.log(`Seeding ${newProducts.length} new product(s)...`);
+  for (const product of newProducts) {
     await db.insert(products).values(product);
   }
   console.log("Seeding complete!");
