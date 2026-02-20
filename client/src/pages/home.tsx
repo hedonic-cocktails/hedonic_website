@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Link, useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Sparkles, Droplets, Wine, HelpCircle, X, Check } from "lucide-react";
+import { ArrowRight, Sparkles, Droplets, Wine, HelpCircle, X, Check, Clock, Music, GlassWater, Car, Gem } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -300,7 +300,7 @@ function ValueProposition() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="mb-12"
+          className="mb-16"
         >
           <Card className="p-8 md:p-12 border-primary/30 bg-card/50 text-center">
             <div className="grid grid-cols-3 gap-6 md:gap-12 items-center">
@@ -310,8 +310,8 @@ function ValueProposition() {
               </div>
               <div>
                 <p className="font-body text-xs tracking-[0.15em] uppercase text-primary mb-2">You Save</p>
-                <p className="font-display text-3xl md:text-5xl text-primary" data-testid="text-home-savings-amount">${savings.toFixed(2)}</p>
-                <p className="font-body text-xs text-muted-foreground mt-1">{savingsPercent}% less per night</p>
+                <p className="font-display text-4xl md:text-6xl text-primary" data-testid="text-home-savings-pct">{savingsPercent}%</p>
+                <p className="font-body text-xs text-muted-foreground mt-1">${savings.toFixed(2)} per evening</p>
               </div>
               <div>
                 <p className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">Hedonic at Home</p>
@@ -322,26 +322,31 @@ function ValueProposition() {
           </Card>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8"
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 mb-8">
           {[
-            "Ready whenever the occasion calls",
-            "Your space, your music, your pace",
-            "Same premium spirits, silky finish",
-            "No driving, no waiting, no hassle",
-            "All the elegance, none of the markup",
+            { icon: Clock, title: "Always Ready", desc: "On your schedule, not the bar's" },
+            { icon: Music, title: "Your Atmosphere", desc: "Your space, your music, your pace" },
+            { icon: GlassWater, title: "Top-Shelf Quality", desc: "Same premium spirits, silky finish" },
+            { icon: Car, title: "Zero Hassle", desc: "No driving, no waiting, no tipping" },
+            { icon: Gem, title: "Pure Value", desc: "All the elegance, none of the markup" },
           ].map((perk, i) => (
-            <div key={i} className="flex items-center gap-2 text-center md:text-left md:flex-col md:items-center" data-testid={`row-home-perk-${i}`}>
-              <Check className="w-4 h-4 text-primary flex-shrink-0" />
-              <span className="font-body text-xs text-muted-foreground leading-snug">{perk}</span>
-            </div>
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+            >
+              <Card className="p-5 border-border/30 bg-card/50 text-center h-full" data-testid={`card-home-perk-${i}`}>
+                <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                  <perk.icon className="w-5 h-5 text-primary" />
+                </div>
+                <p className="font-display text-sm tracking-wide mb-1">{perk.title}</p>
+                <p className="font-body text-xs text-muted-foreground leading-relaxed">{perk.desc}</p>
+              </Card>
+            </motion.div>
           ))}
-        </motion.div>
+        </div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
