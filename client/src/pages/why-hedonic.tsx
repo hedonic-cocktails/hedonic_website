@@ -209,14 +209,14 @@ export default function WhyHedonic() {
                         <p className="font-body text-sm text-foreground">{cost.label}</p>
                         <p className="font-body text-xs text-muted-foreground">{cost.detail}</p>
                       </div>
-                      <span className="font-body text-sm text-foreground">${cost.amount.toFixed(2)}</span>
+                      <span className="font-body text-sm text-foreground">${Math.round(cost.amount)}</span>
                     </div>
                   ))}
                 </div>
                 <div className="border-t border-border/20 pt-4">
                   <div className="flex items-center justify-between gap-4">
                     <span className="font-display text-lg">Total</span>
-                    <span className="font-display text-2xl md:text-3xl" data-testid="text-bar-total">${barTotal.toFixed(2)}</span>
+                    <span className="font-display text-2xl md:text-3xl" data-testid="text-bar-total">${Math.round(barTotal)}</span>
                   </div>
                 </div>
               </Card>
@@ -245,26 +245,26 @@ export default function WhyHedonic() {
                         <p className="font-body text-sm text-foreground">{cost.label}</p>
                         <p className="font-body text-xs text-muted-foreground">{cost.detail}</p>
                       </div>
-                      <span className="font-body text-sm text-foreground">${cost.amount.toFixed(2)}</span>
+                      <span className="font-body text-sm text-foreground">${Math.round(cost.amount)}</span>
                     </div>
                   ))}
                   <div className="flex items-center justify-between gap-4 text-muted-foreground/40">
                     <p className="font-body text-sm line-through">Uber there</p>
-                    <span className="font-body text-sm line-through">$0.00</span>
+                    <span className="font-body text-sm line-through">$0</span>
                   </div>
                   <div className="flex items-center justify-between gap-4 text-muted-foreground/40">
                     <p className="font-body text-sm line-through">Uber home</p>
-                    <span className="font-body text-sm line-through">$0.00</span>
+                    <span className="font-body text-sm line-through">$0</span>
                   </div>
                   <div className="flex items-center justify-between gap-4 text-muted-foreground/40">
                     <p className="font-body text-sm line-through">Tip</p>
-                    <span className="font-body text-sm line-through">$0.00</span>
+                    <span className="font-body text-sm line-through">$0</span>
                   </div>
                 </div>
                 <div className="border-t border-primary/20 pt-4">
                   <div className="flex items-center justify-between gap-4">
                     <span className="font-display text-lg">Total</span>
-                    <span className="font-display text-2xl md:text-3xl text-primary" data-testid="text-hedonic-total">${hedonicTotal.toFixed(2)}</span>
+                    <span className="font-display text-2xl md:text-3xl text-primary" data-testid="text-hedonic-total">${Math.round(hedonicTotal)}</span>
                   </div>
                 </div>
               </Card>
@@ -283,7 +283,7 @@ export default function WhyHedonic() {
                 Your Savings
               </p>
               <h3 className="font-display text-5xl md:text-7xl tracking-wide text-primary mb-2" data-testid="text-savings-amount">
-                ${savings.toFixed(2)}
+                ${Math.round(savings)}
               </h3>
               <p className="font-body text-lg text-muted-foreground mb-2">
                 That&apos;s <span className="text-primary font-semibold">{savingsPercent}%</span> less per night
