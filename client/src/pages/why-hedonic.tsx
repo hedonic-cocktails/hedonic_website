@@ -282,11 +282,11 @@ export default function WhyHedonic() {
               <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-4" data-testid="text-savings-label">
                 Your Savings
               </p>
-              <h3 className="font-display text-5xl md:text-7xl tracking-wide text-primary mb-2" data-testid="text-savings-amount">
-                ${Math.round(savings)}
+              <h3 className="font-display text-5xl md:text-7xl tracking-wide text-primary mb-2" data-testid="text-savings-pct">
+                {savingsPercent}%
               </h3>
               <p className="font-body text-lg text-muted-foreground mb-2">
-                That&apos;s <span className="text-primary font-semibold">{savingsPercent}%</span> less per night
+                That&apos;s <span className="text-primary font-semibold">${Math.round(savings)}</span> back in your pocket
               </p>
               <p className="font-body text-base text-muted-foreground max-w-lg mx-auto">
                 One bar night = <span className="text-primary font-semibold">{Math.floor(barTotal / hedonicTotal)} Hedonic nights</span> of the same luxury.
