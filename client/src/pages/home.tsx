@@ -306,16 +306,16 @@ function ValueProposition() {
             <div className="grid grid-cols-3 gap-6 md:gap-12 items-center">
               <div>
                 <p className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">A Night Out</p>
-                <p className="font-display text-2xl md:text-4xl text-foreground/60 line-through" data-testid="text-home-bar-total">${barTotal.toFixed(2)}</p>
+                <p className="font-display text-2xl md:text-4xl text-foreground/60 line-through" data-testid="text-home-bar-total">${Math.round(barTotal)}</p>
               </div>
               <div>
                 <p className="font-body text-xs tracking-[0.15em] uppercase text-primary mb-2">You Save</p>
                 <p className="font-display text-4xl md:text-6xl text-primary" data-testid="text-home-savings-pct">{savingsPercent}%</p>
-                <p className="font-body text-xs text-muted-foreground mt-1">${savings.toFixed(2)} per evening</p>
+                <p className="font-body text-xs text-muted-foreground mt-1">${Math.round(savings)} per evening</p>
               </div>
               <div>
                 <p className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">Hedonic at Home</p>
-                <p className="font-display text-2xl md:text-4xl text-foreground" data-testid="text-home-hedonic-total">${hedonicTotal.toFixed(2)}</p>
+                <p className="font-display text-2xl md:text-4xl text-foreground" data-testid="text-home-hedonic-total">${Math.round(hedonicTotal)}</p>
                 <p className="font-body text-xs text-muted-foreground mt-1">4 servings</p>
               </div>
             </div>
