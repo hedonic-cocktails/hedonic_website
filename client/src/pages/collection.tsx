@@ -31,21 +31,21 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
             </div>
 
             <div className="flex flex-col flex-1">
-              <p className="font-body text-xs tracking-[0.2em] uppercase text-primary mb-2" data-testid={`text-spirit-${product.slug}`}>
+              <p className="font-body text-sm tracking-[0.2em] uppercase text-primary mb-2" data-testid={`text-spirit-${product.slug}`}>
                 {product.spirit}
               </p>
-              <h3 className="font-display text-2xl tracking-wide min-h-[2.25rem] mb-2" data-testid={`text-name-${product.slug}`}>
+              <h3 className="font-display text-3xl tracking-wide min-h-[2.25rem] mb-2" data-testid={`text-name-${product.slug}`}>
                 {product.name}
               </h3>
-              <p className="font-body text-sm text-muted-foreground leading-relaxed line-clamp-2 min-h-[2.5rem] mb-3" data-testid={`text-tagline-${product.slug}`}>
+              <p className="font-body text-base text-muted-foreground leading-relaxed line-clamp-2 min-h-[2.5rem] mb-3" data-testid={`text-tagline-${product.slug}`}>
                 {product.tagline}
               </p>
 
               <div className="flex items-end justify-between gap-4 mt-auto pt-2">
-                <span className="font-display text-2xl text-foreground" data-testid={`text-price-${product.slug}`}>
+                <span className="font-display text-3xl text-foreground" data-testid={`text-price-${product.slug}`}>
                   ${Number(product.price).toFixed(2)}
                 </span>
-                <span className="font-body text-xs text-muted-foreground">
+                <span className="font-body text-sm text-muted-foreground">
                   / {product.volume}
                 </span>
               </div>
@@ -82,10 +82,10 @@ function CollectionGroup({
         transition={{ duration: 0.7 }}
         className="text-center mb-12"
       >
-        <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-3">
+        <p className="font-body text-sm tracking-[0.3em] uppercase text-primary mb-3">
           {title}
         </p>
-        <h3 className="font-display text-3xl md:text-4xl tracking-wide italic">
+        <h3 className="font-display text-4xl md:text-5xl tracking-wide italic">
           {subtitle}
         </h3>
       </motion.div>
@@ -113,7 +113,7 @@ export default function Collection() {
           transition={{ duration: 0.4 }}
         >
           <Link href="/">
-            <span className="inline-flex items-center gap-2 font-body text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer mb-8" data-testid="link-back-collection">
+            <span className="inline-flex items-center gap-2 font-body text-base text-muted-foreground hover:text-foreground transition-colors cursor-pointer mb-8" data-testid="link-back-collection">
               <ArrowLeft className="w-4 h-4" />
               Back to Home
             </span>
@@ -126,13 +126,13 @@ export default function Collection() {
           transition={{ duration: 0.7 }}
           className="text-center mb-16 mt-8"
         >
-          <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-4" data-testid="text-collection-label">
+          <p className="font-body text-sm tracking-[0.3em] uppercase text-primary mb-4" data-testid="text-collection-label">
             The Collection
           </p>
-          <h1 className="font-display text-4xl md:text-5xl tracking-wide mb-4" data-testid="text-collection-title">
+          <h1 className="font-display text-5xl md:text-6xl tracking-wide mb-4" data-testid="text-collection-title">
             Twelve Expressions
           </h1>
-          <p className="font-body text-sm text-muted-foreground max-w-lg mx-auto">
+          <p className="font-body text-base text-muted-foreground max-w-lg mx-auto">
             Twelve expressions, each with its own character. Find the one that speaks to you.
           </p>
         </motion.div>
@@ -190,10 +190,10 @@ export default function Collection() {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-10"
                   >
-                    <p className="font-display text-2xl md:text-3xl tracking-wide mb-2">
+                    <p className="font-display text-3xl md:text-4xl tracking-wide mb-2">
                       Not sure what you want?
                     </p>
-                    <p className="font-body text-sm text-muted-foreground">
+                    <p className="font-body text-base text-muted-foreground">
                       Let us help you decide.
                     </p>
                   </motion.div>

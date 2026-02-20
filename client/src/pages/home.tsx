@@ -19,26 +19,26 @@ function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-6" data-testid="text-hero-label">
+          <p className="font-body text-sm tracking-[0.3em] uppercase text-primary mb-6" data-testid="text-hero-label">
             Refined Indulgence
           </p>
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl tracking-wide leading-tight mb-6" data-testid="text-hero-title">
+          <h1 className="font-display text-6xl md:text-8xl lg:text-9xl tracking-wide leading-tight mb-6" data-testid="text-hero-title">
             Crafted for
             <br />
             <span className="italic text-primary">Pleasure</span>
           </h1>
-          <p className="font-body text-base md:text-lg text-foreground/60 max-w-xl mx-auto mb-10 leading-relaxed" data-testid="text-hero-subtitle">
+          <p className="font-body text-lg md:text-xl text-foreground/60 max-w-xl mx-auto mb-10 leading-relaxed" data-testid="text-hero-subtitle">
             Crystal-clear. Impossibly smooth. Every bottle is an exercise in balance — premium spirits, real ingredients, and nothing between you and pure indulgence.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/quiz">
-              <Button className="font-body text-sm tracking-widest uppercase px-8" data-testid="button-quiz-hero">
+              <Button className="font-body text-base tracking-widest uppercase px-8" data-testid="button-quiz-hero">
                 Find Your Bottle
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </Link>
             <Link href="/collection">
-              <Button variant="outline" className="font-body text-sm tracking-widest uppercase px-8" data-testid="button-explore">
+              <Button variant="outline" className="font-body text-base tracking-widest uppercase px-8" data-testid="button-explore">
                 Browse All
               </Button>
             </Link>
@@ -80,21 +80,21 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
             </div>
 
             <div className="flex flex-col flex-1">
-              <p className="font-body text-xs tracking-[0.2em] uppercase text-primary mb-2" data-testid={`text-spirit-${product.slug}`}>
+              <p className="font-body text-sm tracking-[0.2em] uppercase text-primary mb-2" data-testid={`text-spirit-${product.slug}`}>
                 {product.spirit}
               </p>
-              <h3 className="font-display text-2xl tracking-wide min-h-[2.25rem] mb-2" data-testid={`text-name-${product.slug}`}>
+              <h3 className="font-display text-3xl tracking-wide min-h-[2.25rem] mb-2" data-testid={`text-name-${product.slug}`}>
                 {product.name}
               </h3>
-              <p className="font-body text-sm text-muted-foreground leading-relaxed line-clamp-2 min-h-[2.5rem] mb-3" data-testid={`text-tagline-${product.slug}`}>
+              <p className="font-body text-base text-muted-foreground leading-relaxed line-clamp-2 min-h-[2.5rem] mb-3" data-testid={`text-tagline-${product.slug}`}>
                 {product.tagline}
               </p>
 
               <div className="flex items-end justify-between gap-4 mt-auto pt-2">
-                <span className="font-display text-2xl text-foreground" data-testid={`text-price-${product.slug}`}>
+                <span className="font-display text-3xl text-foreground" data-testid={`text-price-${product.slug}`}>
                   ${Number(product.price).toFixed(2)}
                 </span>
-                <span className="font-body text-xs text-muted-foreground">
+                <span className="font-body text-sm text-muted-foreground">
                   / {product.volume}
                 </span>
               </div>
@@ -134,10 +134,10 @@ function CollectionGroup({
         transition={{ duration: 0.7 }}
         className="text-center mb-12"
       >
-        <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-3" data-testid={`text-group-label-${packSlug}`}>
+        <p className="font-body text-sm tracking-[0.3em] uppercase text-primary mb-3" data-testid={`text-group-label-${packSlug}`}>
           {title}
         </p>
-        <h3 className="font-display text-3xl md:text-4xl tracking-wide italic" data-testid={`text-group-title-${packSlug}`}>
+        <h3 className="font-display text-4xl md:text-5xl tracking-wide italic" data-testid={`text-group-title-${packSlug}`}>
           {subtitle}
         </h3>
       </motion.div>
@@ -165,13 +165,13 @@ function CollectionSection({ products, isLoading }: { products: Product[]; isLoa
           transition={{ duration: 0.7 }}
           className="text-center mb-20"
         >
-          <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-4" data-testid="text-collection-label">
+          <p className="font-body text-sm tracking-[0.3em] uppercase text-primary mb-4" data-testid="text-collection-label">
             The Collection
           </p>
-          <h2 className="font-display text-4xl md:text-5xl tracking-wide mb-4" data-testid="text-collection-title">
+          <h2 className="font-display text-5xl md:text-6xl tracking-wide mb-4" data-testid="text-collection-title">
             Every Expression
           </h2>
-          <p className="font-body text-sm text-muted-foreground max-w-lg mx-auto">
+          <p className="font-body text-base text-muted-foreground max-w-lg mx-auto">
             Twelve expressions, each with its own character. Find the one that speaks to you.
           </p>
         </motion.div>
@@ -232,10 +232,10 @@ function CollectionSection({ products, isLoading }: { products: Product[]; isLoa
                     transition={{ duration: 0.6 }}
                     className="text-center mb-10"
                   >
-                    <p className="font-display text-2xl md:text-3xl tracking-wide mb-2">
+                    <p className="font-display text-3xl md:text-4xl tracking-wide mb-2">
                       Not sure what you want?
                     </p>
-                    <p className="font-body text-sm text-muted-foreground">
+                    <p className="font-body text-base text-muted-foreground">
                       Let us help you decide.
                     </p>
                   </motion.div>
@@ -284,13 +284,13 @@ function ValueProposition() {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-4" data-testid="text-athome-label">
+          <p className="font-body text-sm tracking-[0.3em] uppercase text-primary mb-4" data-testid="text-athome-label">
             More Good Nights for Less
           </p>
-          <h2 className="font-display text-4xl md:text-5xl tracking-wide mb-4" data-testid="text-athome-title">
+          <h2 className="font-display text-5xl md:text-6xl tracking-wide mb-4" data-testid="text-athome-title">
             Hedonic <span className="italic">at Home</span>
           </h2>
-          <p className="font-body text-sm text-muted-foreground max-w-2xl mx-auto">
+          <p className="font-body text-base text-muted-foreground max-w-2xl mx-auto">
             Same top-shelf spirits. Same refined cocktails. Same velvet mouthfeel — without the inflated bill, the crowded bar, or the ride home.
           </p>
         </motion.div>
@@ -305,18 +305,18 @@ function ValueProposition() {
           <Card className="p-8 md:p-12 border-primary/30 bg-card/50 text-center">
             <div className="grid grid-cols-3 gap-6 md:gap-12 items-center">
               <div>
-                <p className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">A Night Out</p>
-                <p className="font-display text-2xl md:text-4xl text-foreground/60 line-through" data-testid="text-home-bar-total">${Math.round(barTotal)}</p>
+                <p className="font-body text-sm tracking-[0.15em] uppercase text-muted-foreground mb-2">A Night Out</p>
+                <p className="font-display text-3xl md:text-5xl text-foreground/60 line-through" data-testid="text-home-bar-total">${Math.round(barTotal)}</p>
               </div>
               <div>
-                <p className="font-body text-xs tracking-[0.15em] uppercase text-primary mb-2">You Save</p>
-                <p className="font-display text-4xl md:text-6xl text-primary" data-testid="text-home-savings-pct">{savingsPercent}%</p>
-                <p className="font-body text-xs text-muted-foreground mt-1">${Math.round(savings)} per evening</p>
+                <p className="font-body text-sm tracking-[0.15em] uppercase text-primary mb-2">You Save</p>
+                <p className="font-display text-5xl md:text-7xl text-primary" data-testid="text-home-savings-pct">{savingsPercent}%</p>
+                <p className="font-body text-sm text-muted-foreground mt-1">${Math.round(savings)} per evening</p>
               </div>
               <div>
-                <p className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">Hedonic at Home</p>
-                <p className="font-display text-2xl md:text-4xl text-foreground" data-testid="text-home-hedonic-total">${Math.round(hedonicTotal)}</p>
-                <p className="font-body text-xs text-muted-foreground mt-1">4 servings</p>
+                <p className="font-body text-sm tracking-[0.15em] uppercase text-muted-foreground mb-2">Hedonic at Home</p>
+                <p className="font-display text-3xl md:text-5xl text-foreground" data-testid="text-home-hedonic-total">${Math.round(hedonicTotal)}</p>
+                <p className="font-body text-sm text-muted-foreground mt-1">4 servings</p>
               </div>
             </div>
           </Card>
@@ -341,8 +341,8 @@ function ValueProposition() {
                 <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center mx-auto mb-3">
                   <perk.icon className="w-5 h-5 text-primary" />
                 </div>
-                <p className="font-display text-sm tracking-wide mb-1">{perk.title}</p>
-                <p className="font-body text-xs text-muted-foreground leading-relaxed">{perk.desc}</p>
+                <p className="font-display text-base tracking-wide mb-1">{perk.title}</p>
+                <p className="font-body text-sm text-muted-foreground leading-relaxed">{perk.desc}</p>
               </Card>
             </motion.div>
           ))}
@@ -356,7 +356,7 @@ function ValueProposition() {
           className="text-center"
         >
           <Link href="/why-hedonic">
-            <Button variant="outline" className="font-body text-sm tracking-widest uppercase px-8" data-testid="button-full-comparison">
+            <Button variant="outline" className="font-body text-base tracking-widest uppercase px-8" data-testid="button-full-comparison">
               See Full Comparison
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
@@ -396,13 +396,13 @@ function StorySection() {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-4" data-testid="text-story-label">
+          <p className="font-body text-sm tracking-[0.3em] uppercase text-primary mb-4" data-testid="text-story-label">
             Why We Exist
           </p>
-          <h2 className="font-display text-4xl md:text-5xl tracking-wide mb-4" data-testid="text-story-title">
+          <h2 className="font-display text-5xl md:text-6xl tracking-wide mb-4" data-testid="text-story-title">
             Obsessively Crafted
           </h2>
-          <p className="font-body text-sm text-muted-foreground max-w-lg mx-auto">
+          <p className="font-body text-base text-muted-foreground max-w-lg mx-auto">
             Twelve cocktails. Three collections. Two paths to clarity. A perfect cocktail shouldn&apos;t require a reservation and a $25 tab — it should be waiting at home, effortless and extraordinary.
           </p>
         </motion.div>
@@ -420,10 +420,10 @@ function StorySection() {
               <div className="w-12 h-12 rounded-full border border-primary/30 flex items-center justify-center mx-auto mb-6">
                 <feature.icon className="w-5 h-5 text-primary" />
               </div>
-              <h3 className="font-display text-xl tracking-wide mb-3" data-testid={`text-feature-title-${i}`}>
+              <h3 className="font-display text-2xl tracking-wide mb-3" data-testid={`text-feature-title-${i}`}>
                 {feature.title}
               </h3>
-              <p className="font-body text-sm text-muted-foreground leading-relaxed" data-testid={`text-feature-desc-${i}`}>
+              <p className="font-body text-base text-muted-foreground leading-relaxed" data-testid={`text-feature-desc-${i}`}>
                 {feature.description}
               </p>
             </motion.div>
@@ -444,21 +444,21 @@ function CtaSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="font-display text-4xl md:text-5xl tracking-wide mb-4 italic" data-testid="text-cta-title">
+          <h2 className="font-display text-5xl md:text-6xl tracking-wide mb-4 italic" data-testid="text-cta-title">
             Find Your Perfect Match
           </h2>
-          <p className="font-body text-sm text-muted-foreground mb-8 max-w-md mx-auto">
+          <p className="font-body text-base text-muted-foreground mb-8 max-w-md mx-auto">
             Five quick questions. One perfect bottle. Discover which Hedonic expression was made for your palate.
           </p>
           <div className="flex items-center justify-center gap-4 flex-wrap">
             <Link href="/quiz">
-              <Button className="font-body text-sm tracking-widest uppercase px-8" data-testid="button-find-bottle">
+              <Button className="font-body text-base tracking-widest uppercase px-8" data-testid="button-find-bottle">
                 Take the Quiz
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </Link>
             <Link href="/collection">
-              <Button variant="outline" className="font-body text-sm tracking-widest uppercase px-8" data-testid="button-shop-now">
+              <Button variant="outline" className="font-body text-base tracking-widest uppercase px-8" data-testid="button-shop-now">
                 Browse All
               </Button>
             </Link>

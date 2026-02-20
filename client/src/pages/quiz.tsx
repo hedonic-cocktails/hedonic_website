@@ -260,7 +260,7 @@ export default function Quiz() {
           transition={{ duration: 0.4 }}
         >
           <Link href="/">
-            <span className="inline-flex items-center gap-2 font-body text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer mb-8" data-testid="link-back-quiz">
+            <span className="inline-flex items-center gap-2 font-body text-base text-muted-foreground hover:text-foreground transition-colors cursor-pointer mb-8" data-testid="link-back-quiz">
               <ArrowLeft className="w-4 h-4" />
               Back to Home
             </span>
@@ -273,13 +273,13 @@ export default function Quiz() {
           transition={{ duration: 0.7 }}
           className="text-center mt-8 mb-12"
         >
-          <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-4" data-testid="text-quiz-label">
+          <p className="font-body text-sm tracking-[0.3em] uppercase text-primary mb-4" data-testid="text-quiz-label">
             Find Your Bottle
           </p>
-          <h1 className="font-display text-4xl md:text-5xl tracking-wide mb-4" data-testid="text-quiz-title">
+          <h1 className="font-display text-5xl md:text-6xl tracking-wide mb-4" data-testid="text-quiz-title">
             Which Hedonic <span className="italic text-primary">Speaks</span> to You?
           </h1>
-          <p className="font-body text-sm text-muted-foreground max-w-md mx-auto">
+          <p className="font-body text-base text-muted-foreground max-w-md mx-auto">
             Five questions. One perfect match. Let&apos;s discover the bottle made for your palate.
           </p>
         </motion.div>
@@ -301,7 +301,7 @@ export default function Quiz() {
                 />
               ))}
             </div>
-            <p className="font-body text-xs text-muted-foreground text-right" data-testid="text-progress-label">
+            <p className="font-body text-sm text-muted-foreground text-right" data-testid="text-progress-label">
               {currentQuestion + 1} of {questions.length}
             </p>
           </div>
@@ -321,7 +321,7 @@ export default function Quiz() {
                   {currentQuestion > 0 && (
                     <button
                       onClick={handleBack}
-                      className="inline-flex items-center gap-1 font-body text-xs tracking-[0.15em] uppercase text-muted-foreground hover:text-foreground transition-colors"
+                      className="inline-flex items-center gap-1 font-body text-sm tracking-[0.15em] uppercase text-muted-foreground hover:text-foreground transition-colors"
                       data-testid="button-quiz-back"
                     >
                       <ArrowLeft className="w-3.5 h-3.5" />
@@ -329,7 +329,7 @@ export default function Quiz() {
                     </button>
                   )}
                 </div>
-                <h2 className="font-display text-2xl md:text-3xl tracking-wide" data-testid="text-question">
+                <h2 className="font-display text-3xl md:text-4xl tracking-wide" data-testid="text-question">
                   {questions[currentQuestion].question}
                 </h2>
               </div>
@@ -352,7 +352,7 @@ export default function Quiz() {
                           />
                         )}
                       </div>
-                      <span className="font-body text-base">{option.label}</span>
+                      <span className="font-body text-lg">{option.label}</span>
                     </div>
                   </Card>
                 ))}
@@ -366,7 +366,7 @@ export default function Quiz() {
               transition={{ duration: 0.7 }}
             >
               <Card className="p-8 md:p-12 border-primary/30 bg-card/50 text-center">
-                <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-6" data-testid="text-result-label">
+                <p className="font-body text-sm tracking-[0.3em] uppercase text-primary mb-6" data-testid="text-result-label">
                   Your Perfect Match
                 </p>
 
@@ -379,30 +379,30 @@ export default function Quiz() {
                   />
                 </div>
 
-                <h2 className="font-display text-3xl md:text-4xl tracking-wide mb-2" data-testid="text-result-name">
+                <h2 className="font-display text-4xl md:text-5xl tracking-wide mb-2" data-testid="text-result-name">
                   {result.name}
                 </h2>
-                <p className="font-display text-base italic text-primary mb-4" data-testid="text-result-tagline">
+                <p className="font-display text-lg italic text-primary mb-4" data-testid="text-result-tagline">
                   {result.tagline}
                 </p>
 
-                <p className="font-display text-3xl text-foreground mb-2" data-testid="text-result-price">
+                <p className="font-display text-4xl text-foreground mb-2" data-testid="text-result-price">
                   ${result.price}
                 </p>
-                <p className="font-body text-xs text-muted-foreground mb-6">per bottle &middot; 4 servings &middot; 750mL</p>
+                <p className="font-body text-sm text-muted-foreground mb-6">per bottle &middot; 4 servings &middot; 750mL</p>
 
-                <p className="font-body text-sm text-muted-foreground leading-relaxed max-w-lg mx-auto mb-10" data-testid="text-result-description">
+                <p className="font-body text-base text-muted-foreground leading-relaxed max-w-lg mx-auto mb-10" data-testid="text-result-description">
                   {result.description}
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
                   <Link href={`/product/${result.slug}`}>
-                    <Button className="font-body text-sm tracking-widest uppercase px-8" data-testid="button-view-result">
+                    <Button className="font-body text-base tracking-widest uppercase px-8" data-testid="button-view-result">
                       View Details
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
                   </Link>
-                  <Button variant="outline" onClick={restart} className="font-body text-sm tracking-widest uppercase px-8" data-testid="button-retake-quiz">
+                  <Button variant="outline" onClick={restart} className="font-body text-base tracking-widest uppercase px-8" data-testid="button-retake-quiz">
                     <RotateCcw className="w-4 h-4 mr-2" />
                     Retake Quiz
                   </Button>
@@ -410,7 +410,7 @@ export default function Quiz() {
 
                 <div className="border-t border-border/20 pt-6">
                   <Link href="/collection">
-                    <span className="inline-flex items-center gap-2 font-body text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer" data-testid="link-full-collection">
+                    <span className="inline-flex items-center gap-2 font-body text-base text-muted-foreground hover:text-foreground transition-colors cursor-pointer" data-testid="link-full-collection">
                       Browse the Full Collection
                       <ArrowRight className="w-4 h-4" />
                     </span>

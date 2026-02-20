@@ -115,9 +115,9 @@ export default function ProductDetail() {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
-          <h2 className="font-display text-3xl mb-4" data-testid="text-not-found">Product Not Found</h2>
+          <h2 className="font-display text-4xl mb-4" data-testid="text-not-found">Product Not Found</h2>
           <Link href="/">
-            <Button variant="outline" className="font-body text-sm tracking-widest uppercase" data-testid="button-back-home">
+            <Button variant="outline" className="font-body text-base tracking-widest uppercase" data-testid="button-back-home">
               Back to Home
             </Button>
           </Link>
@@ -157,7 +157,7 @@ export default function ProductDetail() {
           transition={{ duration: 0.4 }}
         >
           <Link href="/collection">
-            <span className="inline-flex items-center gap-2 font-body text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer mb-8" data-testid="link-back">
+            <span className="inline-flex items-center gap-2 font-body text-base text-muted-foreground hover:text-foreground transition-colors cursor-pointer mb-8" data-testid="link-back">
               <ArrowLeft className="w-4 h-4" />
               Back to Collection
             </span>
@@ -186,41 +186,41 @@ export default function ProductDetail() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="flex flex-col justify-center"
           >
-            <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-3" data-testid="text-detail-spirit">
+            <p className="font-body text-sm tracking-[0.3em] uppercase text-primary mb-3" data-testid="text-detail-spirit">
               {product.spirit}
             </p>
-            <h1 className="font-display text-4xl md:text-5xl tracking-wide mb-4" data-testid="text-detail-name">
+            <h1 className="font-display text-5xl md:text-6xl tracking-wide mb-4" data-testid="text-detail-name">
               {product.name}
             </h1>
-            <p className="font-body text-lg text-foreground/70 mb-6 italic" data-testid="text-detail-tagline">
+            <p className="font-body text-xl text-foreground/70 mb-6 italic" data-testid="text-detail-tagline">
               {product.tagline}
             </p>
-            <p className="font-body text-sm text-muted-foreground leading-relaxed mb-8" data-testid="text-detail-description">
+            <p className="font-body text-base text-muted-foreground leading-relaxed mb-8" data-testid="text-detail-description">
               {product.description}
             </p>
 
             <div className="grid grid-cols-3 gap-4 mb-8">
               <div className="text-center p-4 rounded-md bg-card/50 border border-border/20">
-                <p className="font-display text-lg" data-testid="text-detail-volume">{product.volume}</p>
-                <p className="font-body text-xs text-muted-foreground mt-1">Volume</p>
+                <p className="font-display text-xl" data-testid="text-detail-volume">{product.volume}</p>
+                <p className="font-body text-sm text-muted-foreground mt-1">Volume</p>
               </div>
               <div className="text-center p-4 rounded-md bg-card/50 border border-border/20">
-                <p className="font-display text-lg" data-testid="text-detail-servings">{product.servings}</p>
-                <p className="font-body text-xs text-muted-foreground mt-1">Servings</p>
+                <p className="font-display text-xl" data-testid="text-detail-servings">{product.servings}</p>
+                <p className="font-body text-sm text-muted-foreground mt-1">Servings</p>
               </div>
               <div className="text-center p-4 rounded-md bg-card/50 border border-border/20">
-                <p className="font-display text-lg" data-testid="text-detail-abv">{product.abv}</p>
-                <p className="font-body text-xs text-muted-foreground mt-1">ABV</p>
+                <p className="font-display text-xl" data-testid="text-detail-abv">{product.abv}</p>
+                <p className="font-body text-sm text-muted-foreground mt-1">ABV</p>
               </div>
             </div>
 
             <div className="mb-8">
-              <p className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground mb-3">Ingredients</p>
+              <p className="font-body text-sm tracking-[0.2em] uppercase text-muted-foreground mb-3">Ingredients</p>
               <div className="flex flex-wrap gap-2">
                 {ingredientsList.map((ingredient, i) => (
                   <span
                     key={i}
-                    className="font-body text-xs px-3 py-1.5 rounded-md bg-card border border-border/30 text-foreground/70"
+                    className="font-body text-sm px-3 py-1.5 rounded-md bg-card border border-border/30 text-foreground/70"
                     data-testid={`text-ingredient-${i}`}
                   >
                     {ingredient}
@@ -233,16 +233,16 @@ export default function ProductDetail() {
               <div className="mb-8 flex items-start gap-3 p-4 rounded-md bg-card/50 border border-border/20">
                 <AlertTriangle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-body text-xs tracking-[0.15em] uppercase text-foreground/80 mb-1" data-testid="text-allergen-title">
+                  <p className="font-body text-sm tracking-[0.15em] uppercase text-foreground/80 mb-1" data-testid="text-allergen-title">
                     Allergen Notice
                   </p>
                   {hasLactoseWarning && (
-                    <p className="font-body text-xs text-muted-foreground leading-relaxed" data-testid="text-allergen-lactose">
+                    <p className="font-body text-sm text-muted-foreground leading-relaxed" data-testid="text-allergen-lactose">
                       Contains lactose. Contains ingredients derived from milk.
                     </p>
                   )}
                   {hasTreeNutWarning && (
-                    <p className="font-body text-xs text-muted-foreground leading-relaxed" data-testid="text-allergen-treenut">
+                    <p className="font-body text-sm text-muted-foreground leading-relaxed" data-testid="text-allergen-treenut">
                       Contains orgeat (almond syrup). Contains ingredients derived from tree nuts.
                     </p>
                   )}
@@ -253,10 +253,10 @@ export default function ProductDetail() {
             <div className="border-t border-border/20 pt-8">
               <div className="flex items-end justify-between gap-4">
                 <div>
-                  <span className="font-display text-3xl" data-testid="text-detail-price">
+                  <span className="font-display text-4xl" data-testid="text-detail-price">
                     ${Number(product.price).toFixed(2)}
                   </span>
-                  <span className="font-body text-sm text-muted-foreground ml-2">
+                  <span className="font-body text-base text-muted-foreground ml-2">
                     per bottle
                   </span>
                 </div>
@@ -276,23 +276,23 @@ export default function ProductDetail() {
             <Card className="p-8 md:p-10 border-primary/30 bg-card/50">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center">
                 <div>
-                  <p className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">At the Bar</p>
-                  <p className="font-display text-2xl text-foreground/50 line-through">${barPricePerDrink}.00</p>
-                  <p className="font-body text-xs text-muted-foreground mt-1">per cocktail</p>
+                  <p className="font-body text-sm tracking-[0.15em] uppercase text-muted-foreground mb-2">At the Bar</p>
+                  <p className="font-display text-3xl text-foreground/50 line-through">${barPricePerDrink}.00</p>
+                  <p className="font-body text-sm text-muted-foreground mt-1">per cocktail</p>
                 </div>
                 <div>
-                  <p className="font-body text-xs tracking-[0.15em] uppercase text-primary mb-2">With Hedonic</p>
-                  <p className="font-display text-3xl text-primary">${pricePerServing}</p>
-                  <p className="font-body text-xs text-muted-foreground mt-1">per serving</p>
+                  <p className="font-body text-sm tracking-[0.15em] uppercase text-primary mb-2">With Hedonic</p>
+                  <p className="font-display text-4xl text-primary">${pricePerServing}</p>
+                  <p className="font-body text-sm text-muted-foreground mt-1">per serving</p>
                 </div>
                 <div className="flex flex-col items-center gap-2">
-                  <p className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground">You Save</p>
-                  <p className="font-display text-2xl text-primary">
+                  <p className="font-body text-sm tracking-[0.15em] uppercase text-muted-foreground">You Save</p>
+                  <p className="font-display text-3xl text-primary">
                     {Math.round(((barPricePerDrink - Number(pricePerServing)) / barPricePerDrink) * 100)}%
                   </p>
                   <div className="flex items-center gap-2 mt-1">
                     <Check className="w-3.5 h-3.5 text-primary" />
-                    <span className="font-body text-xs text-muted-foreground">Same premium quality</span>
+                    <span className="font-body text-sm text-muted-foreground">Same premium quality</span>
                   </div>
                 </div>
               </div>
@@ -309,10 +309,10 @@ export default function ProductDetail() {
             className="mt-24"
           >
             <div className="text-center mb-12">
-              <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-3">
+              <p className="font-body text-sm tracking-[0.3em] uppercase text-primary mb-3">
                 Also in {collection.name}
               </p>
-              <h2 className="font-display text-3xl md:text-4xl tracking-wide">
+              <h2 className="font-display text-4xl md:text-5xl tracking-wide">
                 Explore the Collection
               </h2>
             </div>
@@ -332,17 +332,17 @@ export default function ProductDetail() {
                             data-testid={`img-related-${related.slug}`}
                           />
                         </div>
-                        <p className="font-body text-xs tracking-[0.2em] uppercase text-primary mb-1">
+                        <p className="font-body text-sm tracking-[0.2em] uppercase text-primary mb-1">
                           {related.spirit}
                         </p>
-                        <h3 className="font-display text-xl tracking-wide mb-1" data-testid={`text-related-name-${related.slug}`}>
+                        <h3 className="font-display text-2xl tracking-wide mb-1" data-testid={`text-related-name-${related.slug}`}>
                           {related.name}
                         </h3>
-                        <p className="font-display text-lg text-foreground/80 mb-2" data-testid={`text-related-price-${related.slug}`}>
+                        <p className="font-display text-xl text-foreground/80 mb-2" data-testid={`text-related-price-${related.slug}`}>
                           ${Number(related.price).toFixed(2)}
                         </p>
                         {note && (
-                          <p className="font-body text-xs text-muted-foreground leading-relaxed" data-testid={`text-related-note-${related.slug}`}>
+                          <p className="font-body text-sm text-muted-foreground leading-relaxed" data-testid={`text-related-note-${related.slug}`}>
                             {note}
                           </p>
                         )}
