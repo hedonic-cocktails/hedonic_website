@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowLeft, ArrowRight, Gem, Leaf, Droplets, Wine, Heart, Star, Check, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, Gem, Leaf, Droplets, Wine, Heart, Star, Check, X, Clock, Users, UtensilsCrossed, Car, Timer, Music, GlassWater } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -46,20 +46,12 @@ const hedonicTotal = hedonicCosts.reduce((sum, c) => sum + c.amount, 0);
 const savings = barTotal - hedonicTotal;
 const savingsPercent = Math.round((savings / barTotal) * 100);
 
-const barExperience = [
-  { text: "Wait for a table or seat", positive: false },
-  { text: "Crowded, noisy atmosphere", positive: false },
-  { text: "Limited to bar's menu", positive: false },
-  { text: "Arrange rides both ways", positive: false },
-  { text: "2+ hours committed", positive: false },
-];
-
-const hedonicExperience = [
-  { text: "Ready whenever the occasion calls", positive: true },
-  { text: "Your space, your music, your pace", positive: true },
-  { text: "Same premium spirits, same silky finish", positive: true },
-  { text: "No driving, no waiting, no hassle", positive: true },
-  { text: "All the elegance, none of the markup", positive: true },
+const headToHead = [
+  { icon: Clock, category: "Timing", bar: "Wait for a table or seat", hedonic: "Ready whenever the occasion calls" },
+  { icon: Music, category: "Atmosphere", bar: "Crowded, noisy atmosphere", hedonic: "Your space, your music, your pace" },
+  { icon: GlassWater, category: "Quality", bar: "Limited to bar's menu", hedonic: "Same premium spirits, silky finish" },
+  { icon: Car, category: "Logistics", bar: "Arrange rides both ways", hedonic: "No driving, no waiting, no hassle" },
+  { icon: Gem, category: "Value", bar: "2+ hours and $130 committed", hedonic: "All the elegance, none of the markup" },
 ];
 
 export default function WhyHedonic() {
@@ -294,44 +286,33 @@ export default function WhyHedonic() {
             </Card>
           </motion.div>
 
-          <div className="grid grid-cols-2 gap-4 md:gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <Card className="p-4 md:p-8 border-border/30 bg-card/50 h-full">
-                <h3 className="font-display text-lg md:text-xl tracking-wide mb-4 md:mb-6" data-testid="text-bar-exp-title">The Bar Experience</h3>
-                <div className="space-y-4">
-                  {barExperience.map((item, i) => (
-                    <div key={i} className="flex items-center gap-3" data-testid={`row-bar-exp-${i}`}>
-                      <X className="w-4 h-4 text-destructive flex-shrink-0" />
-                      <span className="font-body text-sm text-muted-foreground">{item.text}</span>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4">
+            {headToHead.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+              >
+                <Card className="p-5 border-border/30 bg-card/50 text-center h-full" data-testid={`card-h2h-${i}`}>
+                  <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                    <item.icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <p className="font-display text-sm tracking-wide mb-3">{item.category}</p>
+                  <div className="space-y-2">
+                    <div className="flex items-start gap-2 text-left">
+                      <X className="w-3.5 h-3.5 text-destructive flex-shrink-0 mt-0.5" />
+                      <span className="font-body text-xs text-muted-foreground leading-relaxed">{item.bar}</span>
                     </div>
-                  ))}
-                </div>
-              </Card>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              <Card className="p-4 md:p-8 border-primary/30 bg-card/50 h-full">
-                <h3 className="font-display text-lg md:text-xl tracking-wide mb-4 md:mb-6" data-testid="text-hedonic-exp-title">The Hedonic Experience</h3>
-                <div className="space-y-4">
-                  {hedonicExperience.map((item, i) => (
-                    <div key={i} className="flex items-center gap-3" data-testid={`row-hedonic-exp-${i}`}>
-                      <Check className="w-4 h-4 text-primary flex-shrink-0" />
-                      <span className="font-body text-sm text-foreground">{item.text}</span>
+                    <div className="flex items-start gap-2 text-left">
+                      <Check className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="font-body text-xs text-foreground leading-relaxed">{item.hedonic}</span>
                     </div>
-                  ))}
-                </div>
-              </Card>
-            </motion.div>
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
           </div>
         </div>
 
