@@ -189,7 +189,7 @@ export default function WhyHedonic() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <Card className="p-4 md:p-8 border-border/30 bg-card/50 h-full">
+              <Card className="p-4 md:p-8 border-border/30 bg-card/50 h-full flex flex-col">
                 <div className="mb-6">
                   <p className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground mb-1">Option A</p>
                   <h3 className="font-display text-xl md:text-2xl tracking-wide" data-testid="text-bar-title">A Night at the Bar</h3>
@@ -205,7 +205,7 @@ export default function WhyHedonic() {
                     </div>
                   ))}
                 </div>
-                <div className="border-t border-border/20 pt-4">
+                <div className="border-t border-border/20 pt-4 mt-auto">
                   <div className="flex items-center justify-between gap-4">
                     <span className="font-display text-lg">Total</span>
                     <span className="font-display text-2xl md:text-3xl" data-testid="text-bar-total">${Math.round(barTotal)}</span>
@@ -220,7 +220,7 @@ export default function WhyHedonic() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <Card className="p-4 md:p-8 border-primary/30 bg-card/50 h-full relative">
+              <Card className="p-4 md:p-8 border-primary/30 bg-card/50 h-full flex flex-col relative">
                 <div className="absolute -top-3 right-6">
                   <span className="font-body text-xs tracking-[0.15em] uppercase bg-primary text-primary-foreground px-4 py-1.5 rounded-md" data-testid="text-best-value">
                     Best Value
@@ -253,7 +253,7 @@ export default function WhyHedonic() {
                     <span className="font-body text-sm line-through">$0</span>
                   </div>
                 </div>
-                <div className="border-t border-primary/20 pt-4">
+                <div className="border-t border-primary/20 pt-4 mt-auto">
                   <div className="flex items-center justify-between gap-4">
                     <span className="font-display text-lg">Total</span>
                     <span className="font-display text-2xl md:text-3xl text-primary" data-testid="text-hedonic-total">${Math.round(hedonicTotal)}</span>
