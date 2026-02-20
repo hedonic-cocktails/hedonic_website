@@ -40,28 +40,6 @@ const questions: Question[] = [
   },
   {
     id: 3,
-    question: "How do you take your coffee?",
-    options: [
-      { label: "Iced with something fruity or sweet", scores: S(2,0,0,0,2,1,0,0,0,0,0,0) },
-      { label: "A creamy latte or cappuccino", scores: S(0,3,0,0,0,0,1,0,0,1,0,0) },
-      { label: "Black or with a splash of something bold", scores: S(0,0,2,2,0,0,0,1,0,0,0,0) },
-      { label: "A mocha or espresso — strong and intense", scores: S(0,0,0,0,0,0,3,2,1,0,0,0) },
-      { label: "A coconut or oat milk cold brew", scores: S(0,0,0,0,0,0,0,0,1,2,1,2) },
-    ],
-  },
-  {
-    id: 4,
-    question: "You're at a restaurant. What catches your eye?",
-    options: [
-      { label: "A refreshing starter with bright, tangy flavors", scores: S(2,0,0,2,1,0,0,0,0,0,1,0) },
-      { label: "A rich, creamy dessert", scores: S(0,3,0,0,0,0,1,0,0,1,0,0) },
-      { label: "Something charcoal-grilled or herb-forward", scores: S(0,0,3,1,0,1,0,1,0,0,0,0) },
-      { label: "A fruit tart with seasonal berries", scores: S(1,0,0,0,2,1,2,0,0,0,0,0) },
-      { label: "Ceviche or fresh tropical seafood", scores: S(0,0,0,0,0,0,0,0,2,1,2,2) },
-    ],
-  },
-  {
-    id: 5,
     question: "What's your ideal vacation destination?",
     options: [
       { label: "A lively beach town with nightlife", scores: S(2,1,0,0,2,0,0,0,0,0,0,0) },
@@ -72,7 +50,7 @@ const questions: Question[] = [
     ],
   },
   {
-    id: 6,
+    id: 4,
     question: "Pick a music vibe for tonight.",
     options: [
       { label: "Upbeat pop or dance music", scores: S(3,1,0,0,2,0,0,0,0,0,0,0) },
@@ -83,8 +61,8 @@ const questions: Question[] = [
     ],
   },
   {
-    id: 7,
-    question: "What word describes your ideal cocktail?",
+    id: 5,
+    question: "What word best describes your ideal cocktail?",
     options: [
       { label: "Sparkling and refreshing", scores: S(3,1,0,0,1,0,0,0,0,0,0,0) },
       { label: "Smooth and comforting", scores: S(0,2,0,1,0,0,0,0,0,1,0,0) },
@@ -95,7 +73,7 @@ const questions: Question[] = [
   },
 ];
 
-const resultData: Record<string, { slug: string; name: string; tagline: string; description: string; color: string; imageUrl: string }> = {
+const resultData: Record<string, { slug: string; name: string; tagline: string; description: string; color: string; imageUrl: string; price: string }> = {
   ds: {
     slug: "dirty-shirley",
     name: "Dirty Shirley",
@@ -103,6 +81,7 @@ const resultData: Record<string, { slug: string; name: string; tagline: string; 
     description: "You gravitate toward things that are vibrant, fun, and unapologetically bold. The Dirty Shirley's bright grenadine sweetness, fresh lime, and sparkling effervescence match your energy perfectly.",
     color: "#c94060",
     imageUrl: "/images/dirty-shirley.png",
+    price: "29.99",
   },
   oj: {
     slug: "orange-julius",
@@ -111,6 +90,7 @@ const resultData: Record<string, { slug: string; name: string; tagline: string; 
     description: "You appreciate warmth, comfort, and a touch of nostalgia. The Orange Julius wraps creamy vanilla and fresh orange in sparkling elegance — familiar flavors in an entirely new, luxurious form.",
     color: "#e8a040",
     imageUrl: "/images/orange-julius.png",
+    price: "29.99",
   },
   ms: {
     slug: "mezcal-soda",
@@ -119,6 +99,7 @@ const resultData: Record<string, { slug: string; name: string; tagline: string; 
     description: "You crave depth and complexity. The Mezcal Soda's smoky character, tempered by bright lemon and a whisper of vanilla, rewards your refined palate with a long, smoldering finish.",
     color: "#c4a050",
     imageUrl: "/images/mezcal-soda.png",
+    price: "29.99",
   },
   ws: {
     slug: "whiskey-sour",
@@ -127,6 +108,7 @@ const resultData: Record<string, { slug: string; name: string; tagline: string; 
     description: "You're drawn to the classics — bold, honest, and perfectly executed. The Whiskey Sour's depth and bright citrus speak to your appreciation for timeless quality.",
     color: "#d4a340",
     imageUrl: "/images/whiskey-sour.png",
+    price: "29.99",
   },
   sd: {
     slug: "strawberry-daiquiri",
@@ -135,6 +117,7 @@ const resultData: Record<string, { slug: string; name: string; tagline: string; 
     description: "You bring the sunshine wherever you go. The Strawberry Daiquiri's ripe berry sweetness and fresh lime capture your bright, joyful spirit in a glass.",
     color: "#e05878",
     imageUrl: "/images/strawberry-daiquiri.png",
+    price: "29.99",
   },
   cc: {
     slug: "clover-club",
@@ -143,6 +126,7 @@ const resultData: Record<string, { slug: string; name: string; tagline: string; 
     description: "You have an eye for the refined and a taste for the botanical. The Clover Club's gin-forward elegance and tart raspberry are a perfect match for your sophisticated palate.",
     color: "#c44870",
     imageUrl: "/images/clover-club.png",
+    price: "29.99",
   },
   pm: {
     slug: "pheromone-martini",
@@ -151,6 +135,7 @@ const resultData: Record<string, { slug: string; name: string; tagline: string; 
     description: "You're drawn to the unconventional and the extraordinary. The Pheromone Martini's exotic passionfruit and dark chocolate reflect your taste for the bold and the unforgettable.",
     color: "#b8864e",
     imageUrl: "/images/pheromone-martini.png",
+    price: "29.99",
   },
   ns: {
     slug: "negroni-sbagliato",
@@ -159,6 +144,7 @@ const resultData: Record<string, { slug: string; name: string; tagline: string; 
     description: "You appreciate the bittersweet things in life — bold, complex, and unapologetically Italian. The Negroni Sbagliato's Campari bite and herbal depth are your kind of evening.",
     color: "#c47040",
     imageUrl: "/images/negroni-sbagliato.png",
+    price: "29.99",
   },
   jb: {
     slug: "jungle-bird",
@@ -167,6 +153,7 @@ const resultData: Record<string, { slug: string; name: string; tagline: string; 
     description: "You crave adventure with an edge. The Jungle Bird's bold Campari bitterness meets bright pineapple and rum in a cocktail that's wild, complex, and impossibly smooth — just like you.",
     color: "#d4783c",
     imageUrl: "/images/jungle-bird.png",
+    price: "29.99",
   },
   pk: {
     slug: "painkiller",
@@ -175,6 +162,7 @@ const resultData: Record<string, { slug: string; name: string; tagline: string; 
     description: "You're the one who brings the warmth. The Painkiller's lush coconut, pineapple, and orange wrap around rich rum in a cocktail that feels like golden hour on an island — your kind of paradise.",
     color: "#e8b44c",
     imageUrl: "/images/painkiller.png",
+    price: "29.99",
   },
   pa: {
     slug: "paloma",
@@ -183,6 +171,7 @@ const resultData: Record<string, { slug: string; name: string; tagline: string; 
     description: "You love things that are bright, bold, and a little bit unexpected. The Paloma's ruby grapefruit and tequila deliver a crisp, sparkling bite — refreshing, alive, and perfectly you.",
     color: "#e07068",
     imageUrl: "/images/paloma.png",
+    price: "29.99",
   },
   mt: {
     slug: "mai-tai",
@@ -191,6 +180,7 @@ const resultData: Record<string, { slug: string; name: string; tagline: string; 
     description: "You have a taste for the legendary. The Mai Tai's rich rum, almond orgeat, and tropical citrus create a cocktail steeped in history and hedonism — timeless and utterly irresistible.",
     color: "#d4943c",
     imageUrl: "/images/mai-tai.png",
+    price: "29.99",
   },
 };
 
@@ -290,19 +280,30 @@ export default function Quiz() {
             Which Hedonic <span className="italic text-primary">Speaks</span> to You?
           </h1>
           <p className="font-body text-sm text-muted-foreground max-w-md mx-auto">
-            Seven questions. One perfect match. Let&apos;s discover the bottle made for your palate.
+            Five questions. One perfect match. Let&apos;s discover the bottle made for your palate.
           </p>
         </motion.div>
 
         {!showResult && (
-          <div className="w-full h-0.5 bg-border/30 rounded-full mb-12">
-            <motion.div
-              className="h-full bg-primary rounded-full"
-              initial={{ width: 0 }}
-              animate={{ width: `${progress}%` }}
-              transition={{ duration: 0.4 }}
-              data-testid="progress-bar"
-            />
+          <div className="mb-12">
+            <div className="flex items-center justify-between gap-2 mb-2">
+              {questions.map((_, i) => (
+                <div
+                  key={i}
+                  className={`flex-1 h-1 rounded-full transition-all duration-400 ${
+                    i < currentQuestion
+                      ? "bg-primary"
+                      : i === currentQuestion
+                      ? "bg-primary/50"
+                      : "bg-border/30"
+                  }`}
+                  data-testid={`progress-step-${i}`}
+                />
+              ))}
+            </div>
+            <p className="font-body text-xs text-muted-foreground text-right" data-testid="text-progress-label">
+              {currentQuestion + 1} of {questions.length}
+            </p>
           </div>
         )}
 
@@ -327,9 +328,6 @@ export default function Quiz() {
                       Back
                     </button>
                   )}
-                  <p className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground" data-testid="text-question-count">
-                    Question {currentQuestion + 1} of {questions.length}
-                  </p>
                 </div>
                 <h2 className="font-display text-2xl md:text-3xl tracking-wide" data-testid="text-question">
                   {questions[currentQuestion].question}
@@ -384,17 +382,23 @@ export default function Quiz() {
                 <h2 className="font-display text-3xl md:text-4xl tracking-wide mb-2" data-testid="text-result-name">
                   {result.name}
                 </h2>
-                <p className="font-display text-base italic text-primary mb-6" data-testid="text-result-tagline">
+                <p className="font-display text-base italic text-primary mb-4" data-testid="text-result-tagline">
                   {result.tagline}
                 </p>
+
+                <p className="font-display text-3xl text-foreground mb-2" data-testid="text-result-price">
+                  ${result.price}
+                </p>
+                <p className="font-body text-xs text-muted-foreground mb-6">per bottle &middot; 4 servings &middot; 750mL</p>
+
                 <p className="font-body text-sm text-muted-foreground leading-relaxed max-w-lg mx-auto mb-10" data-testid="text-result-description">
                   {result.description}
                 </p>
 
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
                   <Link href={`/product/${result.slug}`}>
                     <Button className="font-body text-sm tracking-widest uppercase px-8" data-testid="button-view-result">
-                      View Bottle
+                      View Details
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
                   </Link>
@@ -402,6 +406,15 @@ export default function Quiz() {
                     <RotateCcw className="w-4 h-4 mr-2" />
                     Retake Quiz
                   </Button>
+                </div>
+
+                <div className="border-t border-border/20 pt-6">
+                  <Link href="/collection">
+                    <span className="inline-flex items-center gap-2 font-body text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer" data-testid="link-full-collection">
+                      Browse the Full Collection
+                      <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </Link>
                 </div>
               </Card>
             </motion.div>

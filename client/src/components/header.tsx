@@ -7,8 +7,9 @@ import { motion, AnimatePresence } from "framer-motion";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/collection", label: "Collection" },
-  { href: "/about", label: "Our Story" },
-  { href: "/compare", label: "Hedonic at Home" },
+  { href: "/our-process", label: "Our Process" },
+  { href: "/why-hedonic", label: "Why Hedonic" },
+  { href: "/quiz", label: "Find Your Bottle" },
 ];
 
 export function Header() {

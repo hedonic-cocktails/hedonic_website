@@ -31,15 +31,15 @@ function HeroSection() {
             Crystal-clear. Impossibly smooth. Every bottle is an exercise in balance — premium spirits, real ingredients, and nothing between you and pure indulgence.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/collection">
-              <Button className="font-body text-sm tracking-widest uppercase px-8" data-testid="button-explore">
-                Explore Collection
+            <Link href="/quiz">
+              <Button className="font-body text-sm tracking-widest uppercase px-8" data-testid="button-quiz-hero">
+                Find Your Bottle
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </Link>
-            <Link href="/quiz">
-              <Button variant="outline" className="font-body text-sm tracking-widest uppercase px-8" data-testid="button-quiz-hero">
-                Find Your Bottle
+            <Link href="/collection">
+              <Button variant="outline" className="font-body text-sm tracking-widest uppercase px-8" data-testid="button-explore">
+                Browse All
               </Button>
             </Link>
           </div>
@@ -272,15 +272,7 @@ const hedonicTotal = hedonicCosts.reduce((sum, c) => sum + c.amount, 0);
 const savings = barTotal - hedonicTotal;
 const savingsPercent = Math.round((savings / barTotal) * 100);
 
-const hedonicPerks = [
-  "Ready whenever the occasion calls",
-  "Your space, your music, your pace",
-  "Same premium spirits, same silky finish",
-  "No driving, no waiting, no hassle",
-  "All the elegance, none of the markup",
-];
-
-function HedonicAtHomeSection() {
+function ValueProposition() {
   return (
     <section className="py-24 px-6 border-t border-border/20">
       <div className="max-w-5xl mx-auto">
@@ -302,107 +294,30 @@ function HedonicAtHomeSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 gap-4 md:gap-8 mb-16">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <Card className="p-4 md:p-8 border-border/30 bg-card/50 h-full">
-              <div className="mb-6">
-                <p className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground mb-1">Option A</p>
-                <h3 className="font-display text-xl md:text-2xl tracking-wide" data-testid="text-home-bar-title">A Night at the Bar</h3>
-              </div>
-              <div className="space-y-3 mb-6">
-                {barCosts.map((cost, i) => (
-                  <div key={i} className="flex items-center justify-between gap-4" data-testid={`row-home-bar-cost-${i}`}>
-                    <div>
-                      <p className="font-body text-sm text-foreground">{cost.label}</p>
-                      <p className="font-body text-xs text-muted-foreground">{cost.detail}</p>
-                    </div>
-                    <span className="font-body text-sm text-foreground">${cost.amount.toFixed(2)}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="border-t border-border/20 pt-4">
-                <div className="flex items-center justify-between gap-4">
-                  <span className="font-display text-lg">Total</span>
-                  <span className="font-display text-2xl md:text-3xl" data-testid="text-home-bar-total">${barTotal.toFixed(2)}</span>
-                </div>
-              </div>
-            </Card>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <Card className="p-4 md:p-8 border-primary/30 bg-card/50 h-full relative">
-              <div className="absolute -top-3 right-6">
-                <span className="font-body text-xs tracking-[0.15em] uppercase bg-primary text-primary-foreground px-4 py-1.5 rounded-md" data-testid="text-home-best-value">
-                  Best Value
-                </span>
-              </div>
-              <div className="mb-6">
-                <p className="font-body text-xs tracking-[0.2em] uppercase text-primary mb-1">Option B</p>
-                <h3 className="font-display text-xl md:text-2xl tracking-wide" data-testid="text-home-hedonic-title">A Night with Hedonic</h3>
-              </div>
-              <div className="space-y-3 mb-6">
-                {hedonicCosts.map((cost, i) => (
-                  <div key={i} className="flex items-center justify-between gap-4" data-testid={`row-home-hedonic-cost-${i}`}>
-                    <div>
-                      <p className="font-body text-sm text-foreground">{cost.label}</p>
-                      <p className="font-body text-xs text-muted-foreground">{cost.detail}</p>
-                    </div>
-                    <span className="font-body text-sm text-foreground">${cost.amount.toFixed(2)}</span>
-                  </div>
-                ))}
-                <div className="flex items-center justify-between gap-4 text-muted-foreground/40">
-                  <p className="font-body text-sm line-through">Uber there</p>
-                  <span className="font-body text-sm line-through">$0.00</span>
-                </div>
-                <div className="flex items-center justify-between gap-4 text-muted-foreground/40">
-                  <p className="font-body text-sm line-through">Uber home</p>
-                  <span className="font-body text-sm line-through">$0.00</span>
-                </div>
-                <div className="flex items-center justify-between gap-4 text-muted-foreground/40">
-                  <p className="font-body text-sm line-through">Tip</p>
-                  <span className="font-body text-sm line-through">$0.00</span>
-                </div>
-              </div>
-              <div className="border-t border-primary/20 pt-4">
-                <div className="flex items-center justify-between gap-4">
-                  <span className="font-display text-lg">Total</span>
-                  <span className="font-display text-2xl md:text-3xl text-primary" data-testid="text-home-hedonic-total">${hedonicTotal.toFixed(2)}</span>
-                </div>
-              </div>
-            </Card>
-          </motion.div>
-        </div>
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="mb-16"
+          className="mb-12"
         >
           <Card className="p-8 md:p-12 border-primary/30 bg-card/50 text-center">
-            <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-4" data-testid="text-home-savings-label">
-              Your Savings
-            </p>
-            <h3 className="font-display text-5xl md:text-7xl tracking-wide text-primary mb-2" data-testid="text-home-savings-amount">
-              ${savings.toFixed(2)}
-            </h3>
-            <p className="font-body text-lg text-muted-foreground mb-2">
-              That&apos;s <span className="text-primary font-semibold">{savingsPercent}%</span> less per night
-            </p>
-            <p className="font-body text-base text-muted-foreground max-w-lg mx-auto mb-4">
-              One bar night = <span className="text-primary font-semibold">{Math.floor(barTotal / hedonicTotal)} Hedonic nights</span> of the same luxury.
-            </p>
+            <div className="grid grid-cols-3 gap-6 md:gap-12 items-center">
+              <div>
+                <p className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">A Night Out</p>
+                <p className="font-display text-2xl md:text-4xl text-foreground/60 line-through" data-testid="text-home-bar-total">${barTotal.toFixed(2)}</p>
+              </div>
+              <div>
+                <p className="font-body text-xs tracking-[0.15em] uppercase text-primary mb-2">You Save</p>
+                <p className="font-display text-3xl md:text-5xl text-primary" data-testid="text-home-savings-amount">${savings.toFixed(2)}</p>
+                <p className="font-body text-xs text-muted-foreground mt-1">{savingsPercent}% less per night</p>
+              </div>
+              <div>
+                <p className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">Hedonic at Home</p>
+                <p className="font-display text-2xl md:text-4xl text-foreground" data-testid="text-home-hedonic-total">${hedonicTotal.toFixed(2)}</p>
+                <p className="font-body text-xs text-muted-foreground mt-1">4 servings</p>
+              </div>
+            </div>
           </Card>
         </motion.div>
 
@@ -411,18 +326,35 @@ function HedonicAtHomeSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
+          className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8"
         >
-          <Card className="p-6 md:p-8 border-primary/30 bg-card/50">
-            <h3 className="font-display text-xl md:text-2xl tracking-wide mb-6 text-center" data-testid="text-home-perks-title">The Hedonic Experience</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
-              {hedonicPerks.map((perk, i) => (
-                <div key={i} className="flex items-center gap-3" data-testid={`row-home-perk-${i}`}>
-                  <Check className="w-4 h-4 text-primary flex-shrink-0" />
-                  <span className="font-body text-sm text-foreground">{perk}</span>
-                </div>
-              ))}
+          {[
+            "Ready whenever the occasion calls",
+            "Your space, your music, your pace",
+            "Same premium spirits, silky finish",
+            "No driving, no waiting, no hassle",
+            "All the elegance, none of the markup",
+          ].map((perk, i) => (
+            <div key={i} className="flex items-center gap-2 text-center md:text-left md:flex-col md:items-center" data-testid={`row-home-perk-${i}`}>
+              <Check className="w-4 h-4 text-primary flex-shrink-0" />
+              <span className="font-body text-xs text-muted-foreground leading-snug">{perk}</span>
             </div>
-          </Card>
+          ))}
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center"
+        >
+          <Link href="/why-hedonic">
+            <Button variant="outline" className="font-body text-sm tracking-widest uppercase px-8" data-testid="button-full-comparison">
+              See Full Comparison
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
+          </Link>
         </motion.div>
       </div>
     </section>
@@ -507,21 +439,21 @@ function CtaSection() {
           transition={{ duration: 0.7 }}
         >
           <h2 className="font-display text-4xl md:text-5xl tracking-wide mb-4 italic" data-testid="text-cta-title">
-            Indulge.
+            Find Your Perfect Match
           </h2>
           <p className="font-body text-sm text-muted-foreground mb-8 max-w-md mx-auto">
-            Four pours per bottle. $29.99. Delivered to your door. The finest night in is one click away.
+            Five quick questions. One perfect bottle. Discover which Hedonic expression was made for your palate.
           </p>
           <div className="flex items-center justify-center gap-4 flex-wrap">
-            <Link href="/collection">
-              <Button className="font-body text-sm tracking-widest uppercase px-8" data-testid="button-shop-now">
-                Shop Now
+            <Link href="/quiz">
+              <Button className="font-body text-sm tracking-widest uppercase px-8" data-testid="button-find-bottle">
+                Take the Quiz
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </Link>
-            <Link href="/quiz">
-              <Button variant="outline" className="font-body text-sm tracking-widest uppercase px-8" data-testid="button-find-bottle">
-                Find Your Bottle
+            <Link href="/collection">
+              <Button variant="outline" className="font-body text-sm tracking-widest uppercase px-8" data-testid="button-shop-now">
+                Browse All
               </Button>
             </Link>
           </div>
@@ -650,6 +582,7 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground">
       <HeroSection />
       <CollectionSection products={products} isLoading={isLoading} />
+      <ValueProposition />
       <StorySection />
       <CtaSection />
       <QuizPrompt />

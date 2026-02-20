@@ -40,10 +40,10 @@ export default function Clarity() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.4 }}
         >
-          <Link href="/about">
+          <Link href="/">
             <span className="inline-flex items-center gap-2 font-body text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer mb-8" data-testid="link-back-clarity">
               <ArrowLeft className="w-4 h-4" />
-              Back to About
+              Back to Home
             </span>
           </Link>
         </motion.div>
@@ -236,12 +236,19 @@ export default function Clarity() {
           <p className="font-body text-sm text-muted-foreground mb-8">
             Three hundred years of technique. Two paths to perfection. One unforgettable first sip.
           </p>
-          <Link href="/collection">
-            <Button className="font-body text-sm tracking-widest uppercase px-8" data-testid="button-clarity-shop">
-              Explore the Collection
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
-          </Link>
+          <div className="flex items-center justify-center gap-4 flex-wrap">
+            <Link href="/quiz">
+              <Button className="font-body text-sm tracking-widest uppercase px-8" data-testid="button-clarity-quiz">
+                Find Your Bottle
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </Link>
+            <Link href="/collection">
+              <Button variant="outline" className="font-body text-sm tracking-widest uppercase px-8" data-testid="button-clarity-shop">
+                Browse All
+              </Button>
+            </Link>
+          </div>
         </motion.div>
       </div>
     </div>
