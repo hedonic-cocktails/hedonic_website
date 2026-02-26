@@ -3,18 +3,18 @@ import { db } from "./db";
 import { eq } from "drizzle-orm";
 
 export interface IStorage {
-  getProducts(): Promise<Product[]>;
+  getProducts(limit?: number, offset?: number): Promise<Product[]>;
   getProductBySlug(slug: string): Promise<Product | undefined>;
   getProduct(id: string): Promise<Product | undefined>;
   createProduct(product: InsertProduct): Promise<Product>;
-  getOrders(): Promise<Order[]>;
+  getOrders(limit?: number, offset?: number): Promise<Order[]>;
   getOrder(id: string): Promise<Order | undefined>;
   createOrder(order: InsertOrder): Promise<Order>;
 }
 
 export class DatabaseStorage implements IStorage {
-  async getProducts(): Promise<Product[]> {
-    return db.select().from(products);
+  async getProducts(limit: number = 50, offset: number = 0): Promise<Product[]> {
+    return db.select().from(products).limit(limit).offset(offset);
   }
 
   async getProductBySlug(slug: string): Promise<Product | undefined> {
@@ -32,8 +32,8 @@ export class DatabaseStorage implements IStorage {
     return created;
   }
 
-  async getOrders(): Promise<Order[]> {
-    return db.select().from(orders);
+  async getOrders(limit: number = 50, offset: number = 0): Promise<Order[]> {
+    return db.select().from(orders).limit(limit).offset(offset);
   }
 
   async getOrder(id: string): Promise<Order | undefined> {

@@ -4,3 +4,8 @@ dist
 server/public
 vite.config.ts.*
 *.tar.gz
+*.zip
+.local
+sqlite.db
+cloudflare-seed/
+CLOUDFLARE_DEPLOYMENT.md
