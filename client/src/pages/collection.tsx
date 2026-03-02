@@ -5,8 +5,8 @@ import { ArrowLeft } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import type { Product } from "@shared/schema";
-const LOVINGLY_LIGHT = ["dirty-shirley", "orange-julius", "strawberry-daiquiri", "clover-club"];
-const DARK_AND_SEDUCTIVE = ["mezcal-soda", "whiskey-sour", "pheromone-martini", "blackberry-smash"];
+const LOVINGLY_LIGHT = ["dirty-shirley", "blackberry-smash", "strawberry-daiquiri", "clover-club"];
+const DARK_AND_SEDUCTIVE = ["mezcal-soda", "whiskey-sour", "pheromone-martini", "orange-julius"];
 
 function ProductCard({ product, index }: { product: Product; index: number }) {
   return (
@@ -154,14 +154,14 @@ export default function Collection() {
         ) : (
           <>
             <CollectionGroup
-              title="Bright & Refreshing"
+              title="Fruity & Refreshing"
               subtitle="Lovingly Light"
               products={products}
               slugs={LOVINGLY_LIGHT}
               startIndex={0}
             />
             <CollectionGroup
-              title="Bold & Complex"
+              title="Complex & Interesting"
               subtitle="Dark & Seductive"
               products={products}
               slugs={DARK_AND_SEDUCTIVE}

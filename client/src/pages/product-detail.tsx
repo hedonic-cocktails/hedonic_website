@@ -7,8 +7,8 @@ import { Card } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import type { Product } from "@shared/schema";
 
-const LOVINGLY_LIGHT = ["dirty-shirley", "orange-julius", "strawberry-daiquiri", "clover-club"];
-const DARK_AND_SEDUCTIVE = ["mezcal-soda", "whiskey-sour", "pheromone-martini", "blackberry-smash"];
+const LOVINGLY_LIGHT = ["dirty-shirley", "blackberry-smash", "strawberry-daiquiri", "clover-club"];
+const DARK_AND_SEDUCTIVE = ["mezcal-soda", "whiskey-sour", "pheromone-martini", "orange-julius"];
 const PACKS = ["lovingly-light", "dark-and-seductive"];
 
 function getCollection(slug: string): { name: string; slugs: string[] } | null {
@@ -19,44 +19,44 @@ function getCollection(slug: string): { name: string; slugs: string[] } | null {
 
 const relatedNotes: Record<string, Record<string, string>> = {
   "dirty-shirley": {
-    "orange-julius": "Both bright and bubbly — the Shirley is berry-forward while the Julius leans creamy citrus.",
+    "blackberry-smash": "Both are berry-forward — the Shirley is bright grenadine fizz, the Smash is deeper bourbon-kissed berries.",
     "strawberry-daiquiri": "Sister spirits in berry sweetness — the Shirley sparkles with grenadine, the Daiquiri with fresh strawberry.",
     "clover-club": "Both have a berry kiss — the Shirley is bold and fruity, the Clover Club is botanical and refined.",
   },
-  "orange-julius": {
-    "dirty-shirley": "Both bright and bubbly — the Julius is creamy citrus while the Shirley is berry-forward.",
-    "strawberry-daiquiri": "Light and fruity siblings — the Julius wraps citrus in vanilla, the Daiquiri in fresh berry.",
-    "clover-club": "Contrasting elegance — the Julius is warm and nostalgic, the Clover Club is crisp and botanical.",
+  "blackberry-smash": {
+    "dirty-shirley": "Both are berry-forward — the Smash is deeper bourbon-kissed berries, the Shirley is bright grenadine fizz.",
+    "strawberry-daiquiri": "Berry siblings — the Smash brings deep blackberry and bourbon warmth, the Daiquiri is bright and rum-forward.",
+    "clover-club": "Both have a berry soul — the Smash is bold bourbon and blackberry, the Clover Club is crisp gin and raspberry.",
   },
   "strawberry-daiquiri": {
     "dirty-shirley": "Berry sisters — the Daiquiri is sun-kissed rum sweetness, the Shirley is sparkling grenadine.",
-    "orange-julius": "Light and fruity siblings — the Daiquiri is fresh berry, the Julius is creamy orange vanilla.",
+    "blackberry-smash": "Berry siblings — the Daiquiri is bright and rum-forward, the Smash is deeper and bourbon-kissed.",
     "clover-club": "Both feature berry — the Daiquiri is bright and simple, the Clover Club is gin-forward and complex.",
   },
   "clover-club": {
     "dirty-shirley": "Both have berry notes — the Clover Club is botanical gin, the Shirley is bold vodka and grenadine.",
-    "orange-julius": "Contrasting elegance — the Clover Club is crisp and botanical, the Julius is warm and creamy.",
+    "blackberry-smash": "Both have a berry soul — the Clover Club is crisp gin and raspberry, the Smash is bold bourbon and blackberry.",
     "strawberry-daiquiri": "Both feature berry — the Clover Club is gin-forward and refined, the Daiquiri is bright and simple.",
   },
   "mezcal-soda": {
     "whiskey-sour": "Both have depth and warmth — the Mezcal Soda smolders with smoke, the Whiskey Sour balances bright citrus.",
     "pheromone-martini": "Both are dark and captivating — the Mezcal Soda is earthy smoke, the Pheromone is exotic chocolate and passionfruit.",
-    "blackberry-smash": "Both have dark fruit and smoke elements — the Mezcal Soda is earthy agave smoke, the Smash is rich berries and bourbon.",
+    "orange-julius": "An unexpected contrast — the Mezcal Soda smolders with agave smoke, the Julius is creamy citrus warmth.",
   },
   "whiskey-sour": {
     "mezcal-soda": "Both have depth and warmth — the Whiskey Sour is bright citrus balance, the Mezcal Soda smolders with smoke.",
     "pheromone-martini": "Both are spirit-forward — the Whiskey Sour is a bold classic, the Pheromone is darkly exotic.",
-    "blackberry-smash": "Bourbon siblings — the Whiskey Sour is bright citrus focus, the Smash brings deep berry sweetness.",
+    "orange-julius": "Spirit and citrus, two ways — the Whiskey Sour is tart and boozy, the Julius is smooth and creamy.",
   },
   "pheromone-martini": {
     "mezcal-soda": "Both are dark and captivating — the Pheromone is exotic passionfruit and chocolate, the Mezcal is earthy smoke.",
     "whiskey-sour": "Both are spirit-forward — the Pheromone is darkly exotic, the Whiskey Sour is a bold classic.",
-    "blackberry-smash": "Both have a provocative edge — the Pheromone is tropical chocolate, the Smash is dark berry intensity.",
+    "orange-julius": "An intriguing contrast — the Pheromone is exotic and dark, the Julius is bright and nostalgic.",
   },
-  "blackberry-smash": {
-    "mezcal-soda": "Both have rich, heavy fruit profiles — the Smash is dark berries, the Mezcal brings smoky agave depth.",
-    "whiskey-sour": "Bourbon siblings — the Smash brings deep berry sweetness, the Whiskey Sour is bright citrus focus.",
-    "pheromone-martini": "Both have a provocative edge — the Smash is dark berry intensity, the Pheromone is tropical chocolate.",
+  "orange-julius": {
+    "mezcal-soda": "An unexpected contrast — the Julius is creamy citrus warmth, the Mezcal Soda smolders with agave smoke.",
+    "whiskey-sour": "Spirit and citrus, two ways — the Julius is smooth and creamy, the Whiskey Sour is tart and boozy.",
+    "pheromone-martini": "An intriguing contrast — the Julius is bright and nostalgic, the Pheromone is exotic and dark.",
   },
 
 };
