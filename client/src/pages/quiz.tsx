@@ -5,7 +5,7 @@ import { ArrowLeft, ArrowRight, RotateCcw } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-type Scores = { ds: number; oj: number; ms: number; ws: number; sd: number; cc: number; pm: number; ns: number; jb: number; pk: number; pa: number; mt: number };
+type Scores = { ds: number; oj: number; ms: number; ws: number; sd: number; cc: number; pm: number; bs: number };
 
 interface Question {
   id: number;
@@ -13,62 +13,57 @@ interface Question {
   options: { label: string; scores: Scores }[];
 }
 
-const S = (ds=0,oj=0,ms=0,ws=0,sd=0,cc=0,pm=0,ns=0,jb=0,pk=0,pa=0,mt=0): Scores => ({ds,oj,ms,ws,sd,cc,pm,ns,jb,pk,pa,mt});
+const S = (ds = 0, oj = 0, ms = 0, ws = 0, sd = 0, cc = 0, pm = 0, bs = 0): Scores => ({ ds, oj, ms, ws, sd, cc, pm, bs });
 
 const questions: Question[] = [
   {
     id: 1,
     question: "What kind of evening are you in the mood for?",
     options: [
-      { label: "Something fun and vibrant", scores: S(3,0,0,0,2,1,0,0,0,0,0,0) },
-      { label: "Cozy and nostalgic", scores: S(0,3,0,1,0,0,0,0,0,1,0,0) },
-      { label: "Sophisticated and contemplative", scores: S(0,0,2,2,0,1,0,1,0,0,0,0) },
-      { label: "Mysterious and seductive", scores: S(0,0,1,0,0,0,3,0,1,0,0,0) },
-      { label: "A tropical escape", scores: S(0,0,0,0,0,0,0,0,2,3,1,2) },
+      { label: "Something fun and vibrant", scores: S(3, 0, 0, 0, 2, 1, 0, 0) },
+      { label: "Cozy and nostalgic", scores: S(0, 3, 0, 1, 0, 0, 0, 0) },
+      { label: "Sophisticated and contemplative", scores: S(0, 0, 2, 2, 0, 1, 0, 1) },
+      { label: "Mysterious and seductive", scores: S(0, 0, 1, 0, 0, 0, 3, 2) },
     ],
   },
   {
     id: 2,
     question: "Pick a flavor that speaks to you.",
     options: [
-      { label: "Bright berry with a citrus edge", scores: S(3,0,0,0,1,2,0,0,0,0,0,0) },
-      { label: "Creamy orange and vanilla", scores: S(0,3,0,0,0,0,1,0,0,1,0,0) },
-      { label: "Smoky or bittersweet with depth", scores: S(0,0,3,1,0,0,0,2,1,0,0,0) },
-      { label: "Pineapple, coconut, or island fruits", scores: S(0,0,0,0,0,0,0,0,2,3,0,2) },
-      { label: "Grapefruit or tangy citrus with a kick", scores: S(0,0,0,1,2,0,0,0,0,0,3,0) },
+      { label: "Bright berry with a citrus edge", scores: S(3, 0, 0, 0, 1, 2, 0, 1) },
+      { label: "Creamy orange and vanilla", scores: S(0, 3, 0, 0, 0, 0, 1, 0) },
+      { label: "Smoky or bittersweet with depth", scores: S(0, 0, 3, 1, 0, 0, 0, 0) },
+      { label: "Rich, dark, and complex", scores: S(0, 0, 1, 1, 0, 0, 1, 3) },
     ],
   },
   {
     id: 3,
     question: "What's your ideal vacation destination?",
     options: [
-      { label: "A lively beach town with nightlife", scores: S(2,1,0,0,2,0,0,0,0,0,0,0) },
-      { label: "A remote mountain or countryside retreat", scores: S(0,0,3,2,0,0,0,0,0,0,0,0) },
-      { label: "An old European city dripping with history", scores: S(0,0,0,0,0,2,1,2,0,0,0,0) },
-      { label: "Somewhere exotic and unexpected", scores: S(0,0,0,0,0,0,3,0,1,0,1,1) },
-      { label: "A Caribbean island or tiki bar on the beach", scores: S(0,0,0,0,0,0,0,0,2,3,1,3) },
+      { label: "A lively beach town with nightlife", scores: S(2, 1, 0, 0, 2, 0, 0, 0) },
+      { label: "A remote mountain or countryside retreat", scores: S(0, 0, 3, 2, 0, 0, 0, 2) },
+      { label: "An old European city dripping with history", scores: S(0, 0, 0, 0, 0, 2, 1, 0) },
+      { label: "Somewhere exotic and unexpected", scores: S(0, 0, 0, 0, 0, 0, 3, 1) },
     ],
   },
   {
     id: 4,
     question: "Pick a music vibe for tonight.",
     options: [
-      { label: "Upbeat pop or dance music", scores: S(3,1,0,0,2,0,0,0,0,0,0,0) },
-      { label: "Blues, classic rock, or Americana", scores: S(0,0,1,3,0,0,0,0,0,0,0,0) },
-      { label: "Jazz, bossa nova, or lo-fi", scores: S(0,2,0,0,0,3,1,0,0,0,0,0) },
-      { label: "Deep house or something sultry", scores: S(0,0,0,0,0,0,3,1,0,0,0,0) },
-      { label: "Reggae, calypso, or island grooves", scores: S(0,0,0,0,0,0,0,0,2,2,1,3) },
+      { label: "Upbeat pop or dance music", scores: S(3, 1, 0, 0, 2, 0, 0, 0) },
+      { label: "Blues, classic rock, or Americana", scores: S(0, 0, 1, 3, 0, 0, 0, 2) },
+      { label: "Jazz, bossa nova, or lo-fi", scores: S(0, 2, 0, 0, 0, 3, 1, 0) },
+      { label: "Deep house or something sultry", scores: S(0, 0, 0, 0, 0, 0, 3, 1) },
     ],
   },
   {
     id: 5,
     question: "What word best describes your ideal cocktail?",
     options: [
-      { label: "Sparkling and refreshing", scores: S(3,1,0,0,1,0,0,0,0,0,0,0) },
-      { label: "Smooth and comforting", scores: S(0,2,0,1,0,0,0,0,0,1,0,0) },
-      { label: "Bold and complex", scores: S(0,0,2,2,0,1,0,1,1,0,0,0) },
-      { label: "Elegant and refined", scores: S(0,0,0,0,0,3,2,0,0,0,0,0) },
-      { label: "Tropical and sun-soaked", scores: S(0,0,0,0,1,0,0,0,2,2,2,2) },
+      { label: "Sparkling and refreshing", scores: S(3, 1, 0, 0, 1, 0, 0, 1) },
+      { label: "Smooth and comforting", scores: S(0, 2, 0, 1, 0, 0, 0, 0) },
+      { label: "Bold and complex", scores: S(0, 0, 2, 2, 0, 1, 0, 2) },
+      { label: "Elegant and refined", scores: S(0, 0, 0, 0, 0, 3, 2, 0) },
     ],
   },
 ];
@@ -137,58 +132,22 @@ const resultData: Record<string, { slug: string; name: string; tagline: string; 
     imageUrl: "/images/pheromone-martini.png",
     price: "29.99",
   },
-  ns: {
-    slug: "negroni-sbagliato",
-    name: "Negroni Sbagliato",
-    tagline: "A beautiful mistake, clarified and sparkling.",
-    description: "You appreciate the bittersweet things in life — bold, complex, and unapologetically Italian. The Negroni Sbagliato's Campari bite and herbal depth are your kind of evening.",
-    color: "#c47040",
-    imageUrl: "/images/negroni-sbagliato.png",
-    price: "29.99",
-  },
-  jb: {
-    slug: "jungle-bird",
-    name: "Jungle Bird",
-    tagline: "Tropical bitterness, crystal clear and alive.",
-    description: "You crave adventure with an edge. The Jungle Bird's bold Campari bitterness meets bright pineapple and rum in a cocktail that's wild, complex, and impossibly smooth — just like you.",
-    color: "#d4783c",
-    imageUrl: "/images/jungle-bird.png",
-    price: "29.99",
-  },
-  pk: {
-    slug: "painkiller",
-    name: "Painkiller",
-    tagline: "Island sun in every sparkling sip.",
-    description: "You're the one who brings the warmth. The Painkiller's lush coconut, pineapple, and orange wrap around rich rum in a cocktail that feels like golden hour on an island — your kind of paradise.",
-    color: "#e8b44c",
-    imageUrl: "/images/painkiller.png",
-    price: "29.99",
-  },
-  pa: {
-    slug: "paloma",
-    name: "Paloma",
-    tagline: "Grapefruit fire, cooled and clarified.",
-    description: "You love things that are bright, bold, and a little bit unexpected. The Paloma's ruby grapefruit and tequila deliver a crisp, sparkling bite — refreshing, alive, and perfectly you.",
-    color: "#e07068",
-    imageUrl: "/images/paloma.png",
-    price: "29.99",
-  },
-  mt: {
-    slug: "mai-tai",
-    name: "Mai Tai",
-    tagline: "The original island legend, sparkling and clear.",
-    description: "You have a taste for the legendary. The Mai Tai's rich rum, almond orgeat, and tropical citrus create a cocktail steeped in history and hedonism — timeless and utterly irresistible.",
-    color: "#d4943c",
-    imageUrl: "/images/mai-tai.png",
+  bs: {
+    slug: "blackberry-smash",
+    name: "Blackberry Smash",
+    tagline: "Bright berries meet bourbon warmth, beautifully clear.",
+    description: "You appreciate power mixed with elegance. The Blackberry Smash's premium bourbon perfectly balanced with tart blackberries and bright lemon gives you a complex, jewel-toned experience that matches your intricate taste.",
+    color: "#8b3a62",
+    imageUrl: "/images/blackberry-smash.png",
     price: "29.99",
   },
 };
 
-const keys: (keyof Scores)[] = ["ds", "oj", "ms", "ws", "sd", "cc", "pm", "ns", "jb", "pk", "pa", "mt"];
+const keys: (keyof Scores)[] = ["ds", "oj", "ms", "ws", "sd", "cc", "pm", "bs"];
 
 export default function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [scores, setScores] = useState<Scores>({ ds: 0, oj: 0, ms: 0, ws: 0, sd: 0, cc: 0, pm: 0, ns: 0, jb: 0, pk: 0, pa: 0, mt: 0 });
+  const [scores, setScores] = useState<Scores>({ ds: 0, oj: 0, ms: 0, ws: 0, sd: 0, cc: 0, pm: 0, bs: 0 });
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [showResult, setShowResult] = useState(false);
   const [answerHistory, setAnswerHistory] = useState<number[]>([]);
@@ -242,7 +201,7 @@ export default function Quiz() {
 
   const restart = () => {
     setCurrentQuestion(0);
-    setScores({ ds: 0, oj: 0, ms: 0, ws: 0, sd: 0, cc: 0, pm: 0, ns: 0, jb: 0, pk: 0, pa: 0, mt: 0 });
+    setScores({ ds: 0, oj: 0, ms: 0, ws: 0, sd: 0, cc: 0, pm: 0, bs: 0 });
     setSelectedOption(null);
     setShowResult(false);
     setAnswerHistory([]);
@@ -290,13 +249,12 @@ export default function Quiz() {
               {questions.map((_, i) => (
                 <div
                   key={i}
-                  className={`flex-1 h-1 rounded-full transition-all duration-400 ${
-                    i < currentQuestion
-                      ? "bg-primary"
-                      : i === currentQuestion
+                  className={`flex-1 h-1 rounded-full transition-all duration-400 ${i < currentQuestion
+                    ? "bg-primary"
+                    : i === currentQuestion
                       ? "bg-primary/50"
                       : "bg-border/30"
-                  }`}
+                    }`}
                   data-testid={`progress-step-${i}`}
                 />
               ))}

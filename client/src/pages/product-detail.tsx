@@ -8,14 +8,12 @@ import { Skeleton } from "@/components/ui/skeleton";
 import type { Product } from "@shared/schema";
 
 const LOVINGLY_LIGHT = ["dirty-shirley", "orange-julius", "strawberry-daiquiri", "clover-club"];
-const DARK_AND_SEDUCTIVE = ["mezcal-soda", "whiskey-sour", "pheromone-martini", "negroni-sbagliato"];
-const TROPICAL_PARADISE = ["jungle-bird", "painkiller", "paloma", "mai-tai"];
-const PACKS = ["lovingly-light", "dark-and-seductive", "tropical-paradise"];
+const DARK_AND_SEDUCTIVE = ["mezcal-soda", "whiskey-sour", "pheromone-martini", "blackberry-smash"];
+const PACKS = ["lovingly-light", "dark-and-seductive"];
 
 function getCollection(slug: string): { name: string; slugs: string[] } | null {
   if (LOVINGLY_LIGHT.includes(slug)) return { name: "Lovingly Light", slugs: LOVINGLY_LIGHT };
   if (DARK_AND_SEDUCTIVE.includes(slug)) return { name: "Dark & Seductive", slugs: DARK_AND_SEDUCTIVE };
-  if (TROPICAL_PARADISE.includes(slug)) return { name: "Tropical Paradise", slugs: TROPICAL_PARADISE };
   return null;
 }
 
@@ -43,43 +41,24 @@ const relatedNotes: Record<string, Record<string, string>> = {
   "mezcal-soda": {
     "whiskey-sour": "Both have depth and warmth — the Mezcal Soda smolders with smoke, the Whiskey Sour balances bright citrus.",
     "pheromone-martini": "Both are dark and captivating — the Mezcal Soda is earthy smoke, the Pheromone is exotic chocolate and passionfruit.",
-    "negroni-sbagliato": "Both have bitter complexity — the Mezcal Soda is smoky agave, the Negroni is Italian Campari and herbs.",
+    "blackberry-smash": "Both have dark fruit and smoke elements — the Mezcal Soda is earthy agave smoke, the Smash is rich berries and bourbon.",
   },
   "whiskey-sour": {
     "mezcal-soda": "Both have depth and warmth — the Whiskey Sour is bright citrus balance, the Mezcal Soda smolders with smoke.",
     "pheromone-martini": "Both are spirit-forward — the Whiskey Sour is a bold classic, the Pheromone is darkly exotic.",
-    "negroni-sbagliato": "Classic meets classic — the Whiskey Sour is bourbon brightness, the Negroni is bittersweet Italian soul.",
+    "blackberry-smash": "Bourbon siblings — the Whiskey Sour is bright citrus focus, the Smash brings deep berry sweetness.",
   },
   "pheromone-martini": {
     "mezcal-soda": "Both are dark and captivating — the Pheromone is exotic passionfruit and chocolate, the Mezcal is earthy smoke.",
     "whiskey-sour": "Both are spirit-forward — the Pheromone is darkly exotic, the Whiskey Sour is a bold classic.",
-    "negroni-sbagliato": "Both have a provocative edge — the Pheromone is tropical darkness, the Negroni is Italian bitterness.",
+    "blackberry-smash": "Both have a provocative edge — the Pheromone is tropical chocolate, the Smash is dark berry intensity.",
   },
-  "negroni-sbagliato": {
-    "mezcal-soda": "Both have bitter complexity — the Negroni is Italian Campari and herbs, the Mezcal is smoky agave.",
-    "whiskey-sour": "Classic meets classic — the Negroni is bittersweet Italian soul, the Whiskey Sour is bourbon brightness.",
-    "pheromone-martini": "Both have a provocative edge — the Negroni is Italian bitterness, the Pheromone is tropical darkness.",
+  "blackberry-smash": {
+    "mezcal-soda": "Both have rich, heavy fruit profiles — the Smash is dark berries, the Mezcal brings smoky agave depth.",
+    "whiskey-sour": "Bourbon siblings — the Smash brings deep berry sweetness, the Whiskey Sour is bright citrus focus.",
+    "pheromone-martini": "Both have a provocative edge — the Smash is dark berry intensity, the Pheromone is tropical chocolate.",
   },
-  "jungle-bird": {
-    "painkiller": "Both are rum and pineapple — the Jungle Bird adds bitter Campari edge, the Painkiller goes lush with coconut.",
-    "paloma": "Both have citrus bite — the Jungle Bird pairs pineapple with Campari, the Paloma is grapefruit and tequila fire.",
-    "mai-tai": "Both are tiki legends — the Jungle Bird is wild and bitter, the Mai Tai is rich, almond-kissed, and iconic.",
-  },
-  "painkiller": {
-    "jungle-bird": "Both are rum and pineapple — the Painkiller is lush coconut warmth, the Jungle Bird adds bitter Campari edge.",
-    "paloma": "Contrasting tropics — the Painkiller is creamy island warmth, the Paloma is crisp citrus fire.",
-    "mai-tai": "Both are rich rum cocktails — the Painkiller is coconut paradise, the Mai Tai is almond and citrus legend.",
-  },
-  "paloma": {
-    "jungle-bird": "Both have citrus bite — the Paloma is grapefruit and tequila fire, the Jungle Bird pairs pineapple with Campari.",
-    "painkiller": "Contrasting tropics — the Paloma is crisp citrus fire, the Painkiller is creamy island warmth.",
-    "mai-tai": "Both pack a punch — the Paloma is bright tequila and grapefruit, the Mai Tai is rich rum and almond.",
-  },
-  "mai-tai": {
-    "jungle-bird": "Both are tiki legends — the Mai Tai is rich and almond-kissed, the Jungle Bird is wild and bitter.",
-    "painkiller": "Both are rich rum cocktails — the Mai Tai is almond and citrus legend, the Painkiller is coconut paradise.",
-    "paloma": "Both pack a punch — the Mai Tai is rich rum and almond, the Paloma is bright tequila and grapefruit.",
-  },
+
 };
 
 export default function ProductDetail() {
