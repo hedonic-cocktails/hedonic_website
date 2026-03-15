@@ -23,16 +23,17 @@ export function Footer() {
               <li><a href="/our-process" className="text-foreground/70 hover:text-primary transition-colors duration-300" data-testid="link-footer-process">Our Process</a></li>
               <li><a href="/why-licit" className="text-foreground/70 hover:text-primary transition-colors duration-300" data-testid="link-footer-why">Why Licit</a></li>
               <li><a href="/quiz" className="text-foreground/70 hover:text-primary transition-colors duration-300" data-testid="link-footer-quiz">Find Your Bottle</a></li>
+              <li><a href="/waitlist" className="text-foreground/70 hover:text-primary transition-colors duration-300" data-testid="link-footer-waitlist">Join the Waitlist</a></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4">Connect</h4>
             <div className="flex items-center gap-4">
-              <a href="#" className="text-foreground/50 hover:text-primary transition-colors duration-300" data-testid="link-instagram">
+              <a href="https://www.instagram.com/drinklicit" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-primary transition-colors duration-300" data-testid="link-instagram">
                 <SiInstagram className="w-5 h-5" />
               </a>
-              <a href="#" className="text-foreground/50 hover:text-primary transition-colors duration-300" data-testid="link-twitter">
+              <a href="https://x.com/drinklicit" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-primary transition-colors duration-300" data-testid="link-twitter">
                 <SiX className="w-5 h-5" />
               </a>
             </div>
