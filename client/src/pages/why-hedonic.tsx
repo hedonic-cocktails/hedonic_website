@@ -37,7 +37,7 @@ const barCosts = [
 ];
 
 const hedonicCosts = [
-  { label: "1 Hedonic bottle", detail: "4 servings", amount: 29.99 },
+  { label: "1 Licit bottle", detail: "4 servings", amount: 29.99 },
   { label: "Tax", detail: "~8.5%", amount: 2.55 },
 ];
 
@@ -78,13 +78,13 @@ export default function WhyHedonic() {
           className="text-center mt-8 mb-20"
         >
           <p className="font-body text-sm tracking-[0.3em] uppercase text-primary mb-4" data-testid="text-why-label">
-            Why Hedonic
+            Why Licit
           </p>
           <h1 className="font-display text-5xl md:text-7xl tracking-wide mb-6" data-testid="text-why-title">
             The Pursuit of <span className="italic">Pleasure</span>
           </h1>
           <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed" data-testid="text-why-intro">
-            Hedonic was born from a simple conviction: that pleasure is not a luxury — it is a philosophy. Twelve cocktails, three collections, and one obsession with perfection.
+            Licit was born from a simple conviction: that great cocktails shouldn't require a night out. Twelve cocktails, three collections, and one obsession with perfection.
           </p>
         </motion.div>
 
@@ -104,13 +104,13 @@ export default function WhyHedonic() {
             </div>
             <div className="space-y-5 font-body text-base text-foreground/70 leading-relaxed">
               <p data-testid="text-philosophy-p1">
-                The word <span className="italic text-foreground">hedonic</span> comes from the Greek <span className="italic text-foreground">hedonikos</span> — relating to pleasure. It is the root of hedonism, the philosophy that the highest good is the pursuit of sensory delight. We named our company after this idea because we believe it in our bones.
+                The word <span className="italic text-foreground">licit</span> means permitted, lawful, sanctioned — the opposite of forbidden. We named our company after this idea because we believe pleasure needs no justification. You have permission to enjoy.
               </p>
               <p data-testid="text-philosophy-p2">
                 A perfect cocktail is one of life&apos;s great pleasures. The weight of the glass in your hand. The first sip that makes you pause and appreciate. The warmth that settles in and elevates the evening. That experience should be yours whenever you want it — not reserved for $25 a pour behind a velvet rope.
               </p>
               <p data-testid="text-philosophy-p3">
-                That&apos;s why we created Hedonic. We wanted to bottle the experience — not approximate it, not dilute it, but preserve it in its finest form. The same obsessive craft a world-class bartender brings to their greatest creation, waiting in your home for whenever the occasion calls.
+                That&apos;s why we created Licit. We wanted to bottle the experience — not approximate it, not dilute it, but preserve it in its finest form. The same obsessive craft a world-class bartender brings to their greatest creation, waiting in your home for whenever the occasion calls.
               </p>
             </div>
           </Card>
@@ -128,7 +128,7 @@ export default function WhyHedonic() {
               What Sets Us Apart
             </p>
             <h2 className="font-display text-4xl md:text-5xl tracking-wide" data-testid="text-pillars-title">
-              Four Pillars of Hedonic
+              Four Pillars of Licit
             </h2>
           </motion.div>
 
@@ -175,10 +175,10 @@ export default function WhyHedonic() {
               More Good Nights for Less
             </p>
             <h2 className="font-display text-5xl md:text-6xl tracking-wide mb-4" data-testid="text-compare-title">
-              Hedonic <span className="italic">at Home</span>
+              Licit <span className="italic">at Home</span>
             </h2>
             <p className="font-body text-base text-muted-foreground max-w-2xl mx-auto">
-              Same top-shelf spirits. Same refined cocktails. Same velvet mouthfeel — without the inflated bill, the crowded bar, or the ride home. One night out buys you {Math.floor(barTotal / hedonicTotal)} elevated evenings at home with Hedonic.
+              Same top-shelf spirits. Same refined cocktails. Same velvet mouthfeel — without the inflated bill, the crowded bar, or the ride home. One night out buys you {Math.floor(barTotal / hedonicTotal)} elevated evenings at home with Licit.
             </p>
           </motion.div>
 
@@ -228,7 +228,7 @@ export default function WhyHedonic() {
                 </div>
                 <div className="mb-6">
                   <p className="font-body text-sm tracking-[0.2em] uppercase text-primary mb-1">Option B</p>
-                  <h3 className="font-display text-2xl md:text-3xl tracking-wide" data-testid="text-hedonic-title">A Night with Hedonic</h3>
+                  <h3 className="font-display text-2xl md:text-3xl tracking-wide" data-testid="text-hedonic-title">A Night with Licit</h3>
                 </div>
                 <div className="space-y-3 mb-6">
                   {hedonicCosts.map((cost, i) => (
@@ -281,7 +281,7 @@ export default function WhyHedonic() {
                 That&apos;s <span className="text-primary font-semibold">${Math.round(savings)}</span> back in your pocket
               </p>
               <p className="font-body text-lg text-muted-foreground max-w-lg mx-auto">
-                One bar night = <span className="text-primary font-semibold">{Math.floor(barTotal / hedonicTotal)} Hedonic nights</span> of the same luxury.
+                One bar night = <span className="text-primary font-semibold">{Math.floor(barTotal / hedonicTotal)} Licit nights</span> of the same luxury.
               </p>
             </Card>
           </motion.div>
@@ -327,12 +327,12 @@ export default function WhyHedonic() {
             <div className="flex items-center gap-3 mb-6">
               <Star className="w-7 h-7 text-primary" />
               <h2 className="font-display text-3xl md:text-4xl tracking-wide" data-testid="text-promise-title">
-                The Hedonic Promise
+                The Licit Promise
               </h2>
             </div>
             <div className="space-y-5 font-body text-base text-foreground/70 leading-relaxed">
               <p data-testid="text-promise-p1">
-                Every bottle of Hedonic is a quiet declaration: that you refuse to settle. Not for canned cocktails drowning in artificial sweetness. Not for bottom-shelf spirits hiding behind clever marketing. Not for anything less than the real thing.
+                Every bottle of Licit is a quiet declaration: that you refuse to settle. Not for canned cocktails drowning in artificial sweetness. Not for bottom-shelf spirits hiding behind clever marketing. Not for anything less than the real thing.
               </p>
               <p data-testid="text-promise-p2">
                 We use premium spirits because your palate knows the difference — even when your mind doesn&apos;t. The purity of five-times-distilled vodka means flavors that glide rather than burn. The depth of hand-selected agave means smokiness that lingers with quiet authority. The richness of aged Caribbean rum means island warmth that envelops rather than overwhelms. Every spirit is chosen with intention.

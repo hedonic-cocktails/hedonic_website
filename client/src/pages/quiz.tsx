@@ -236,7 +236,7 @@ export default function Quiz() {
             Find Your Bottle
           </p>
           <h1 className="font-display text-5xl md:text-6xl tracking-wide mb-4" data-testid="text-quiz-title">
-            Which Hedonic <span className="italic text-primary">Speaks</span> to You?
+            Which Licit <span className="italic text-primary">Speaks</span> to You?
           </h1>
           <p className="font-body text-base text-muted-foreground max-w-md mx-auto">
             Five questions. One perfect match. Let&apos;s discover the bottle made for your palate.

@@ -10,7 +10,7 @@ import { AgeGate } from "@/components/age-gate";
 import Home from "@/pages/home";
 import Collection from "@/pages/collection";
 import Clarity from "@/pages/clarity";
-import WhyHedonic from "@/pages/why-hedonic";
+import WhyLicit from "@/pages/why-hedonic";
 import Quiz from "@/pages/quiz";
 import ProductDetail from "@/pages/product-detail";
 import NotFound from "@/pages/not-found";
@@ -31,11 +31,12 @@ function Router() {
         <Route path="/" component={Home} />
         <Route path="/collection" component={Collection} />
         <Route path="/our-process" component={Clarity} />
-        <Route path="/why-hedonic" component={WhyHedonic} />
+        <Route path="/why-licit" component={WhyLicit} />
         <Route path="/quiz" component={Quiz} />
         <Route path="/product/:slug" component={ProductDetail} />
-        <Route path="/about">{() => <Redirect to="/why-hedonic" />}</Route>
-        <Route path="/compare">{() => <Redirect to="/why-hedonic" />}</Route>
+        <Route path="/about">{() => <Redirect to="/why-licit" />}</Route>
+        <Route path="/compare">{() => <Redirect to="/why-licit" />}</Route>
+        <Route path="/why-hedonic">{() => <Redirect to="/why-licit" />}</Route>
         <Route path="/clarity">{() => <Redirect to="/our-process" />}</Route>
         <Route component={NotFound} />
       </Switch>

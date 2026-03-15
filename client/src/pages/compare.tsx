@@ -14,7 +14,7 @@ const barCosts = [
 ];
 
 const hedonicCosts = [
-  { label: "1 Hedonic bottle", detail: "4 servings", amount: 29.99 },
+  { label: "1 Licit bottle", detail: "4 servings", amount: 29.99 },
   { label: "Tax", detail: "~8.5%", amount: 2.55 },
 ];
 
@@ -66,10 +66,10 @@ export default function Compare() {
             More Good Nights for Less
           </p>
           <h1 className="font-display text-4xl md:text-6xl tracking-wide mb-6" data-testid="text-compare-title">
-            Hedonic <span className="italic">at Home</span>
+            Licit <span className="italic">at Home</span>
           </h1>
           <p className="font-body text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed" data-testid="text-compare-intro">
-            Same top-shelf spirits. Same refined cocktails. Same velvet mouthfeel — without the inflated bill, the crowded bar, or the ride home. One night out buys you {Math.floor(barTotal / hedonicTotal)} elevated evenings at home with Hedonic.
+            Same top-shelf spirits. Same refined cocktails. Same velvet mouthfeel — without the inflated bill, the crowded bar, or the ride home. One night out buys you {Math.floor(barTotal / hedonicTotal)} elevated evenings at home with Licit.
           </p>
         </motion.div>
 
@@ -125,7 +125,7 @@ export default function Compare() {
               <div className="flex items-center justify-between gap-4 mb-8">
                 <div>
                   <p className="font-body text-xs tracking-[0.2em] uppercase text-primary mb-1">Option B</p>
-                  <h2 className="font-display text-2xl tracking-wide" data-testid="text-hedonic-title">A Night with Hedonic</h2>
+                  <h2 className="font-display text-2xl tracking-wide" data-testid="text-hedonic-title">A Night with Licit</h2>
                 </div>
               </div>
 
@@ -187,7 +187,7 @@ export default function Compare() {
               That's <span className="text-primary font-semibold">{savingsPercent}%</span> less per night
             </p>
             <p className="font-body text-base text-muted-foreground max-w-lg mx-auto mb-4">
-              One bar night = <span className="text-primary font-semibold">{Math.floor(barTotal / hedonicTotal)} Hedonic nights</span> of the same luxury.
+              One bar night = <span className="text-primary font-semibold">{Math.floor(barTotal / hedonicTotal)} Licit nights</span> of the same luxury.
             </p>
             <p className="font-body text-sm text-muted-foreground/70 max-w-md mx-auto">
               More refined evenings. Same exceptional quality. The only thing missing is the markup.
@@ -222,7 +222,7 @@ export default function Compare() {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <Card className="p-4 md:p-8 border-primary/30 bg-card/50 h-full">
-              <h3 className="font-display text-lg md:text-xl tracking-wide mb-4 md:mb-6" data-testid="text-hedonic-exp-title">The Hedonic Experience</h3>
+              <h3 className="font-display text-lg md:text-xl tracking-wide mb-4 md:mb-6" data-testid="text-hedonic-exp-title">The Licit Experience</h3>
               <div className="space-y-4">
                 {hedonicExperience.map((item, i) => (
                   <div key={i} className="flex items-center gap-3" data-testid={`row-hedonic-exp-${i}`}>

@@ -57,7 +57,7 @@ export default function About() {
             The Pursuit of <span className="italic">Pleasure</span>
           </h1>
           <p className="font-body text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed" data-testid="text-about-intro">
-            Hedonic was born from a simple conviction: that pleasure is not a luxury — it is a philosophy. Twelve cocktails, three collections, and one obsession with perfection.
+            Licit was born from a simple conviction: that great cocktails shouldn't require a night out. Twelve cocktails, three collections, and one obsession with perfection.
           </p>
         </motion.div>
 
@@ -77,13 +77,13 @@ export default function About() {
             </div>
             <div className="space-y-5 font-body text-sm text-foreground/70 leading-relaxed">
               <p data-testid="text-philosophy-p1">
-                The word <span className="italic text-foreground">hedonic</span> comes from the Greek <span className="italic text-foreground">hedonikos</span> — relating to pleasure. It is the root of hedonism, the philosophy that the highest good is the pursuit of sensory delight. We named our company after this idea because we believe it in our bones.
+                The word <span className="italic text-foreground">licit</span> means permitted, lawful, sanctioned — the opposite of forbidden. We named our company after this idea because we believe pleasure needs no justification. You have permission to enjoy.
               </p>
               <p data-testid="text-philosophy-p2">
                 A perfect cocktail is one of life&apos;s great pleasures. The weight of the glass in your hand. The first sip that makes you pause and appreciate. The warmth that settles in and elevates the evening. That experience should be yours whenever you want it — not reserved for $25 a pour behind a velvet rope.
               </p>
               <p data-testid="text-philosophy-p3">
-                That&apos;s why we created Hedonic. We wanted to bottle the experience — not approximate it, not dilute it, but preserve it in its finest form. The same obsessive craft a world-class bartender brings to their greatest creation, waiting in your home for whenever the occasion calls.
+                That&apos;s why we created Licit. We wanted to bottle the experience — not approximate it, not dilute it, but preserve it in its finest form. The same obsessive craft a world-class bartender brings to their greatest creation, waiting in your home for whenever the occasion calls.
               </p>
             </div>
           </Card>
@@ -101,7 +101,7 @@ export default function About() {
               What Sets Us Apart
             </p>
             <h2 className="font-display text-3xl md:text-4xl tracking-wide" data-testid="text-pillars-title">
-              Four Pillars of Hedonic
+              Four Pillars of Licit
             </h2>
           </motion.div>
 
@@ -184,12 +184,12 @@ export default function About() {
             <div className="flex items-center gap-3 mb-6">
               <Star className="w-6 h-6 text-primary" />
               <h2 className="font-display text-2xl md:text-3xl tracking-wide" data-testid="text-promise-title">
-                The Hedonic Promise
+                The Licit Promise
               </h2>
             </div>
             <div className="space-y-5 font-body text-sm text-foreground/70 leading-relaxed">
               <p data-testid="text-promise-p1">
-                Every bottle of Hedonic is a quiet declaration: that you refuse to settle. Not for canned cocktails drowning in artificial sweetness. Not for bottom-shelf spirits hiding behind clever marketing. Not for anything less than the real thing.
+                Every bottle of Licit is a quiet declaration: that you refuse to settle. Not for canned cocktails drowning in artificial sweetness. Not for bottom-shelf spirits hiding behind clever marketing. Not for anything less than the real thing.
               </p>
               <p data-testid="text-promise-p2">
                 We use premium spirits because your palate knows the difference — even when your mind doesn&apos;t. The purity of five-times-distilled vodka means flavors that glide rather than burn. The depth of hand-selected agave means smokiness that lingers with quiet authority. The richness of aged Caribbean rum means island warmth that envelops rather than overwhelms. Every spirit is chosen with intention.
@@ -215,7 +215,7 @@ export default function About() {
             Curious About Our Process?
           </h2>
           <p className="font-body text-sm text-muted-foreground mb-8 max-w-md mx-auto">
-            Discover the centuries-old techniques that give every Hedonic cocktail its impossible clarity and remarkably smooth texture.
+            Discover the centuries-old techniques that give every Licit cocktail its impossible clarity and remarkably smooth texture.
           </p>
           <div className="flex items-center justify-center gap-4 flex-wrap">
             <Link href="/clarity">

@@ -253,7 +253,7 @@ const barCosts = [
 ];
 
 const hedonicCosts = [
-  { label: "1 Hedonic bottle", detail: "4 servings", amount: 29.99 },
+  { label: "1 Licit bottle", detail: "4 servings", amount: 29.99 },
   { label: "Tax", detail: "~8.5%", amount: 2.55 },
 ];
 
@@ -277,7 +277,7 @@ function ValueProposition() {
             More Good Nights for Less
           </p>
           <h2 className="font-display text-5xl md:text-6xl tracking-wide mb-4" data-testid="text-athome-title">
-            Hedonic <span className="italic">at Home</span>
+            Licit <span className="italic">at Home</span>
           </h2>
           <p className="font-body text-base text-muted-foreground max-w-2xl mx-auto">
             Same top-shelf spirits. Same refined cocktails. Same velvet mouthfeel — without the inflated bill, the crowded bar, or the ride home.
@@ -303,7 +303,7 @@ function ValueProposition() {
                 <p className="font-body text-sm text-muted-foreground mt-1">${Math.round(savings)} per evening</p>
               </div>
               <div>
-                <p className="font-body text-sm tracking-[0.15em] uppercase text-muted-foreground mb-2">Hedonic at Home</p>
+                <p className="font-body text-sm tracking-[0.15em] uppercase text-muted-foreground mb-2">Licit at Home</p>
                 <p className="font-display text-3xl md:text-5xl text-foreground" data-testid="text-home-hedonic-total">${Math.round(hedonicTotal)}</p>
                 <p className="font-body text-sm text-muted-foreground mt-1">4 servings</p>
               </div>
@@ -344,7 +344,7 @@ function ValueProposition() {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <Link href="/why-hedonic">
+          <Link href="/why-licit">
             <Button variant="outline" className="font-body text-base tracking-widest uppercase px-8" data-testid="button-full-comparison">
               See Full Comparison
               <ArrowRight className="w-4 h-4 ml-2" />
@@ -437,7 +437,7 @@ function CtaSection() {
             Find Your Perfect Match
           </h2>
           <p className="font-body text-base text-muted-foreground mb-8 max-w-md mx-auto">
-            Five quick questions. One perfect bottle. Discover which Hedonic expression was made for your palate.
+            Five quick questions. One perfect bottle. Discover which Licit expression was made for your palate.
           </p>
           <div className="flex items-center justify-center gap-4 flex-wrap">
             <Link href="/quiz">

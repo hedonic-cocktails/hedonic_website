@@ -6,7 +6,7 @@ export interface CartItem {
   quantity: number;
 }
 
-const CART_KEY = "hedonic_cart";
+const CART_KEY = "licit_cart";
 
 function getStoredCart(): CartItem[] {
   try {

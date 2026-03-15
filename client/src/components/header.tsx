@@ -8,7 +8,7 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/collection", label: "Collection" },
   { href: "/our-process", label: "Our Process" },
-  { href: "/why-hedonic", label: "Why Hedonic" },
+  { href: "/why-licit", label: "Why Licit" },
   { href: "/quiz", label: "Find Your Bottle" },
 ];
 
@@ -43,8 +43,8 @@ export function Header() {
               className="flex items-center gap-2.5 cursor-pointer"
               data-testid="link-home"
             >
-              <img src="/images/logo-octopus.png" alt="Hedonic" className="w-8 h-8 object-contain" />
-              <span className="font-display text-xl tracking-wide text-foreground">HEDONIC</span>
+              <img src="/images/logo-octopus.png" alt="Licit" className="w-8 h-8 object-contain" />
+              <span className="font-display text-xl tracking-wide text-foreground">LICIT</span>
             </span>
           </Link>
 

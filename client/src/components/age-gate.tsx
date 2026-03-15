@@ -7,7 +7,7 @@ export function AgeGate({ children }: { children: React.ReactNode }) {
   const [denied, setDenied] = useState(false);
 
   useEffect(() => {
-    const stored = localStorage.getItem("hedonic_age_verified");
+    const stored = localStorage.getItem("licit_age_verified");
     if (stored === "true") {
       setVerified(true);
     } else {
@@ -16,7 +16,7 @@ export function AgeGate({ children }: { children: React.ReactNode }) {
   }, []);
 
   const handleYes = () => {
-    localStorage.setItem("hedonic_age_verified", "true");
+    localStorage.setItem("licit_age_verified", "true");
     setVerified(true);
   };
 
@@ -49,19 +49,19 @@ export function AgeGate({ children }: { children: React.ReactNode }) {
               <div className="relative w-32 h-44 mx-auto mb-8">
                 <img
                   src="/images/dirty-shirley.png"
-                  alt="Hedonic Bottle"
+                  alt="Licit Bottle"
                   className="w-full h-full object-contain opacity-80"
                   data-testid="img-age-gate-bottle"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
               </div>
 
-              <img src="/images/logo-octopus.png" alt="Hedonic" className="w-16 h-16 object-contain mx-auto mb-3" />
+              <img src="/images/logo-octopus.png" alt="Licit" className="w-16 h-16 object-contain mx-auto mb-3" />
               <h1 className="font-display text-4xl md:text-5xl tracking-wide mb-2" data-testid="text-age-title">
-                HEDONIC
+                LICIT
               </h1>
               <p className="font-display text-sm italic text-primary tracking-wide mb-1" data-testid="text-age-tagline">
-                Pleasure, Bottled.
+                Permission to Enjoy.
               </p>
               <div className="w-12 h-px bg-primary/40 mx-auto my-5" />
               <p className="font-body text-xs text-muted-foreground/70 tracking-wide uppercase mb-8">

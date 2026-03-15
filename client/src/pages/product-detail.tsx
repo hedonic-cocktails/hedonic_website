@@ -260,7 +260,7 @@ export default function ProductDetail() {
                   <p className="font-body text-sm text-muted-foreground mt-1">per cocktail</p>
                 </div>
                 <div>
-                  <p className="font-body text-sm tracking-[0.15em] uppercase text-primary mb-2">With Hedonic</p>
+                  <p className="font-body text-sm tracking-[0.15em] uppercase text-primary mb-2">With Licit</p>
                   <p className="font-display text-4xl text-primary">${pricePerServing}</p>
                   <p className="font-body text-sm text-muted-foreground mt-1">per serving</p>
                 </div>
