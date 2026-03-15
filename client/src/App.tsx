@@ -15,7 +15,6 @@ import Quiz from "@/pages/quiz";
 import ProductDetail from "@/pages/product-detail";
 import NotFound from "@/pages/not-found";
 import Waitlist from "@/pages/waitlist";
-import { WaitlistPopup } from "@/components/waitlist-popup";
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -56,7 +55,6 @@ function App() {
           <main className="pt-0">
             <Router />
           </main>
-          <WaitlistPopup />
           <Footer />
         </AgeGate>
         <Toaster />
