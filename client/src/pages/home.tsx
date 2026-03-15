@@ -23,9 +23,9 @@ function HeroSection() {
             Refined Indulgence
           </p>
           <h1 className="font-display text-6xl md:text-8xl lg:text-9xl tracking-wide leading-tight mb-6" data-testid="text-hero-title">
-            Crafted for
+            Permission
             <br />
-            <span className="italic text-primary">Pleasure</span>
+            <span className="italic text-primary">to Enjoy</span>
           </h1>
           <p className="font-body text-lg md:text-xl text-foreground/60 max-w-xl mx-auto mb-10 leading-relaxed" data-testid="text-hero-subtitle">
             Crystal-clear. Impossibly smooth. Every bottle is an exercise in balance — premium spirits, real ingredients, and nothing between you and pure indulgence.
