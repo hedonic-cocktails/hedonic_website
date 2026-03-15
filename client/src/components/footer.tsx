@@ -37,7 +37,7 @@ export function Footer() {
               </a>
             </div>
             <p className="font-body text-xs text-muted-foreground mt-6">
-              hello@licitcocktails.com
+              drinklicit@gmail.com
             </p>
           </div>
         </div>
