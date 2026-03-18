@@ -123,7 +123,7 @@ export default function ProductDetail() {
     : [];
 
   const isPack = PACKS.includes(product.slug);
-  const servings = product.servings || 4;
+  const servings = product.servings || 5;
   const pricePerServing = (Number(product.price) / servings).toFixed(2);
   const barPricePerDrink = 18;
 

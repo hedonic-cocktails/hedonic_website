@@ -57,7 +57,7 @@ export default function About() {
             The Pursuit of <span className="italic">Pleasure</span>
           </h1>
           <p className="font-body text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed" data-testid="text-about-intro">
-            Licit was born from a simple conviction: that great cocktails shouldn't require a night out. Twelve cocktails, three collections, and one obsession with perfection.
+            Licit was born from a simple conviction: that great cocktails shouldn't require a night out. Eight cocktails, two collections, and one obsession with perfection.
           </p>
         </motion.div>
 
@@ -147,7 +147,7 @@ export default function About() {
             <div className="flex items-center gap-3 mb-6">
               <Sparkles className="w-6 h-6 text-primary" />
               <h2 className="font-display text-2xl md:text-3xl tracking-wide" data-testid="text-collections-title">
-                Three Collections, One Standard
+                Two Collections, One Standard
               </h2>
             </div>
             <div className="space-y-6 font-body text-sm text-foreground/70 leading-relaxed">
@@ -198,7 +198,7 @@ export default function About() {
                 And then we go further. Our signature clarification — whether through traditional milk or tropical coconut — transforms each cocktail into something extraordinary. Crystal-clear liquid with a texture so refined it redefines what you thought a bottled cocktail could be.
               </p>
               <p data-testid="text-promise-p4">
-                Twelve expressions. Three collections. One uncompromising standard. This is not a cocktail you simply drink. It is a cocktail you <span className="italic text-foreground">savour</span>.
+                Eight expressions. Two collections. One uncompromising standard. This is not a cocktail you simply drink. It is a cocktail you <span className="italic text-foreground">savour</span>.
               </p>
             </div>
           </Card>

@@ -171,7 +171,7 @@ function CollectionSection({ products, isLoading }: { products: Product[]; isLoa
             Every Expression
           </h2>
           <p className="font-body text-base text-muted-foreground max-w-lg mx-auto">
-            Twelve expressions, each with its own character. Find the one that speaks to you.
+            Eight expressions, each with its own character. Find the one that speaks to you.
           </p>
         </motion.div>
 
@@ -244,16 +244,16 @@ function CollectionSection({ products, isLoading }: { products: Product[]; isLoa
 }
 
 const barCosts = [
-  { label: "4 craft cocktails", detail: "$18 each", amount: 72.00 },
+  { label: "5 craft cocktails", detail: "$18 each", amount: 90.00 },
   { label: "Bar snack", detail: "Appetizer", amount: 6.00 },
-  { label: "Tax", detail: "~8.5%", amount: 6.63 },
-  { label: "Tip", detail: "20%", amount: 15.60 },
+  { label: "Tax", detail: "~8.5%", amount: 8.16 },
+  { label: "Tip", detail: "20%", amount: 19.20 },
   { label: "Uber there", detail: "Rideshare", amount: 13.00 },
   { label: "Uber home", detail: "Rideshare", amount: 17.00 },
 ];
 
 const hedonicCosts = [
-  { label: "1 Licit bottle", detail: "4 servings", amount: 29.99 },
+  { label: "1 Licit bottle", detail: "5 servings", amount: 29.99 },
   { label: "Tax", detail: "~8.5%", amount: 2.55 },
 ];
 
@@ -305,7 +305,7 @@ function ValueProposition() {
               <div>
                 <p className="font-body text-sm tracking-[0.15em] uppercase text-muted-foreground mb-2">Licit at Home</p>
                 <p className="font-display text-3xl md:text-5xl text-foreground" data-testid="text-home-hedonic-total">${Math.round(hedonicTotal)}</p>
-                <p className="font-body text-sm text-muted-foreground mt-1">4 servings</p>
+                <p className="font-body text-sm text-muted-foreground mt-1">5 servings</p>
               </div>
             </div>
           </Card>
@@ -392,7 +392,7 @@ function StorySection() {
             Obsessively Crafted
           </h2>
           <p className="font-body text-base text-muted-foreground max-w-lg mx-auto">
-            Twelve cocktails. Three collections. Two paths to clarity. A perfect cocktail shouldn&apos;t require a reservation and a $25 tab — it should be waiting at home, effortless and extraordinary.
+            Eight cocktails. Two collections. Two paths to clarity. A perfect cocktail shouldn&apos;t require a reservation and a $25 tab — it should be waiting at home, effortless and extraordinary.
           </p>
         </motion.div>
 

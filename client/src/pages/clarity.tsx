@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowLeft, ArrowRight, Beaker, Timer, Filter, Sparkles, Milk, Palmtree } from "lucide-react";
+import { ArrowLeft, ArrowRight, Beaker, Timer, Filter, Sparkles, Milk, Palmtree, Wheat } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -61,7 +61,7 @@ export default function Clarity() {
             The Art of <span className="italic">Clarity</span>
           </h1>
           <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed" data-testid="text-clarity-intro">
-            Two paths to the same impossible transparency. Whether through traditional dairy milk or tropical coconut milk, our clarification process strips away everything harsh and leaves behind something remarkably refined.
+            Three paths to the same impossible transparency. Whether through traditional dairy milk, tropical coconut milk, or allergen-free oat milk, our clarification process strips away everything harsh and leaves behind something remarkably refined.
           </p>
         </motion.div>
 
@@ -90,7 +90,7 @@ export default function Clarity() {
           </Card>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 mb-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -132,8 +132,26 @@ export default function Clarity() {
                 <p data-testid="text-coconut-desc">
                   Our tropical variation, developed specifically for the Tropical Paradise collection. Full-fat coconut milk provides the same protein-based filtration while adding a whisper of tropical richness that complements the island-inspired flavors. The result is the same impossible transparency with a subtly different character.
                 </p>
-                <p className="font-body text-sm tracking-[0.15em] uppercase text-foreground/50">
-                  Used in: Jungle Bird, Painkiller, Paloma, Mai Tai
+              </div>
+            </Card>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.24 }}
+          >
+            <Card className="p-8 border-border/30 bg-card/50 h-full">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center">
+                  <Wheat className="w-4 h-4 text-primary" />
+                </div>
+                <h3 className="font-display text-2xl tracking-wide" data-testid="text-oat-title">Oat Milk Clarification</h3>
+              </div>
+              <div className="space-y-4 font-body text-base text-muted-foreground leading-relaxed">
+                <p data-testid="text-oat-desc">
+                  Our plant-based, allergen-free alternative. Oat milk provides an excellent protein structure for clarification without introducing any common allergens like dairy or nuts. It leaves behind a remarkably clean, crisp profile while achieving our signature impossible transparency.
                 </p>
               </div>
             </Card>
@@ -234,7 +252,7 @@ export default function Clarity() {
             Ready to Feel the Difference?
           </h2>
           <p className="font-body text-base text-muted-foreground mb-8">
-            Three hundred years of technique. Two paths to perfection. One unforgettable first sip.
+            Three hundred years of technique. Three paths to perfection. One unforgettable first sip.
           </p>
           <div className="flex items-center justify-center gap-4 flex-wrap">
             <Link href="/quiz">

@@ -129,10 +129,10 @@ export default function Collection() {
             The Collection
           </p>
           <h1 className="font-display text-5xl md:text-6xl tracking-wide mb-4" data-testid="text-collection-title">
-            Twelve Expressions
+            Eight Expressions
           </h1>
           <p className="font-body text-base text-muted-foreground max-w-lg mx-auto">
-            Twelve expressions, each with its own character. Find the one that speaks to you.
+            Eight expressions, each with its own character. Find the one that speaks to you.
           </p>
         </motion.div>
 

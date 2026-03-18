@@ -80,7 +80,7 @@ export default function Waitlist() {
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(184,149,58,0.05) 0%, transparent 60%)" }} />
               <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: 9, fontWeight: 300, letterSpacing: "0.25em", textTransform: "uppercase", color: "#888880", marginBottom: 8 }}>Licit Night</div>
               <div style={{ fontSize: 32, fontWeight: 300, color: "#D4AE5C" }}>$33</div>
-              <div style={{ fontSize: 12, color: "#888880", marginTop: 6, fontStyle: "italic" }}>750mL · 4 full servings</div>
+              <div style={{ fontSize: 12, color: "#888880", marginTop: 6, fontStyle: "italic" }}>750mL · 5 full servings</div>
             </div>
           </div>
         </div>

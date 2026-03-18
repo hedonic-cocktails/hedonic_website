@@ -347,7 +347,7 @@ export default function Quiz() {
                 <p className="font-display text-4xl text-foreground mb-2" data-testid="text-result-price">
                   ${result.price}
                 </p>
-                <p className="font-body text-sm text-muted-foreground mb-6">per bottle &middot; 4 servings &middot; 750mL</p>
+                <p className="font-body text-sm text-muted-foreground mb-6">per bottle &middot; 5 servings &middot; 750mL</p>
 
                 <p className="font-body text-base text-muted-foreground leading-relaxed max-w-lg mx-auto mb-10" data-testid="text-result-description">
                   {result.description}

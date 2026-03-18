@@ -5,16 +5,16 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 const barCosts = [
-  { label: "4 craft cocktails", detail: "$18 each", amount: 72.00 },
+  { label: "5 craft cocktails", detail: "$18 each", amount: 90.00 },
   { label: "Bar snack", detail: "Appetizer", amount: 6.00 },
-  { label: "Tax", detail: "~8.5%", amount: 6.63 },
-  { label: "Tip", detail: "20%", amount: 15.60 },
+  { label: "Tax", detail: "~8.5%", amount: 8.16 },
+  { label: "Tip", detail: "20%", amount: 19.20 },
   { label: "Uber there", detail: "Rideshare", amount: 13.00 },
   { label: "Uber home", detail: "Rideshare", amount: 17.00 },
 ];
 
 const hedonicCosts = [
-  { label: "1 Licit bottle", detail: "4 servings", amount: 29.99 },
+  { label: "1 Licit bottle", detail: "5 servings", amount: 29.99 },
   { label: "Tax", detail: "~8.5%", amount: 2.55 },
 ];
 

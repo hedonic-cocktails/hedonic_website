@@ -28,16 +28,16 @@ const pillars = [
 ];
 
 const barCosts = [
-  { label: "4 craft cocktails", detail: "$18 each", amount: 72.00 },
+  { label: "5 craft cocktails", detail: "$18 each", amount: 90.00 },
   { label: "Bar snack", detail: "Appetizer", amount: 6.00 },
-  { label: "Tax", detail: "~8.5%", amount: 6.63 },
-  { label: "Tip", detail: "20%", amount: 15.60 },
+  { label: "Tax", detail: "~8.5%", amount: 8.16 },
+  { label: "Tip", detail: "20%", amount: 19.20 },
   { label: "Uber there", detail: "Rideshare", amount: 13.00 },
   { label: "Uber home", detail: "Rideshare", amount: 17.00 },
 ];
 
 const hedonicCosts = [
-  { label: "1 Licit bottle", detail: "4 servings", amount: 29.99 },
+  { label: "1 Licit bottle", detail: "5 servings", amount: 29.99 },
   { label: "Tax", detail: "~8.5%", amount: 2.55 },
 ];
 
@@ -84,7 +84,7 @@ export default function WhyHedonic() {
             The Pursuit of <span className="italic">Pleasure</span>
           </h1>
           <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed" data-testid="text-why-intro">
-            Licit was born from a simple conviction: that great cocktails shouldn't require a night out. Twelve cocktails, three collections, and one obsession with perfection.
+            Licit was born from a simple conviction: that great cocktails shouldn't require a night out. Eight cocktails, two collections, and one obsession with perfection.
           </p>
         </motion.div>
 
@@ -341,7 +341,7 @@ export default function WhyHedonic() {
                 And then we go further. Our signature clarification — whether through traditional milk or tropical coconut — transforms each cocktail into something extraordinary. Crystal-clear liquid with a texture so refined it redefines what you thought a bottled cocktail could be.
               </p>
               <p data-testid="text-promise-p4">
-                Twelve expressions. Three collections. One uncompromising standard. This is not a cocktail you simply drink. It is a cocktail you <span className="italic text-foreground">savour</span>.
+                Eight expressions. Two collections. One uncompromising standard. This is not a cocktail you simply drink. It is a cocktail you <span className="italic text-foreground">savour</span>.
               </p>
             </div>
           </Card>
