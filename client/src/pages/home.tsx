@@ -6,6 +6,7 @@ import { ArrowRight, Sparkles, Droplets, Wine, HelpCircle, X, Check, Clock, Musi
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
+import { EventsSection } from "@/components/events-section";
 import type { Product } from "@shared/schema";
 function HeroSection() {
   return (
@@ -579,6 +580,7 @@ export default function Home() {
       <CollectionSection products={products} isLoading={isLoading} />
       <ValueProposition />
       <StorySection />
+      <EventsSection />
       <CtaSection />
       <QuizPrompt />
     </div>
