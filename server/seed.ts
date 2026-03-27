@@ -103,7 +103,7 @@ const seedProducts = [
     volume: "750mL",
     servings: 5,
     abv: "12.5%",
-    imageUrl: "/images/blackberry-smash.png",
+    imageUrl: "/images/blackberry-smash-v2.png",
     color: "#8b3a62",
     featured: true,
   },
