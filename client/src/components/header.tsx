@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -17,19 +17,21 @@ const navLinks = [
 export function Header() {
   const [location] = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setMobileOpen(false);
   }, [location]);
 
   useEffect(() => {
-    if (mobileOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
+    function handleClickOutside(event: MouseEvent) {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setMobileOpen(false);
+      }
     }
-    return () => { document.body.style.overflow = ""; };
-  }, [mobileOpen]);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <>
@@ -68,24 +70,15 @@ export function Header() {
               })}
             </nav>
 
-            <div className="relative">
+            <div className="relative" ref={menuRef}>
               <Button
                 variant="ghost"
                 size="icon"
-                className="block"
                 onClick={() => setMobileOpen(!mobileOpen)}
                 data-testid="button-mobile-menu"
               >
                 {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </Button>
-
-              {/* Background overlay for clicking away */}
-              {mobileOpen && (
-                <div
-                  className="fixed inset-0 z-40"
-                  onClick={() => setMobileOpen(false)}
-                />
-              )}
 
               <AnimatePresence>
                 {mobileOpen && (

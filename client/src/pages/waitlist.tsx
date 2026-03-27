@@ -62,10 +62,10 @@ export default function Waitlist() {
 
           <div style={{ width: 48, height: 1, background: "linear-gradient(to right, #B8953A, transparent)", marginBottom: 36 }} />
 
-          <div style={{ fontSize: 22, fontWeight: 300, lineHeight: 1.8, color: "rgba(245,240,232,0.75)", maxWidth: 520 }}>
+          <div style={{ fontSize: 28, fontWeight: 300, lineHeight: 1.6, color: "rgba(245,240,232,0.75)", maxWidth: 520 }}>
             <p>A bar night costs <strong style={{ color: "#F5F0E8", fontWeight: 400 }}>$153</strong>. A Licit night costs <strong style={{ color: "#F5F0E8", fontWeight: 400 }}>$33</strong>.</p>
-            <p style={{ marginTop: 20 }}>We take the classic cocktails you love and clarify them through an ancient milk-washing process that strips away everything harsh — leaving only pure, translucent flavor. Force-carbonated. Bottled at full cocktail strength. Ready the moment you are.</p>
-            <p style={{ marginTop: 20 }}>Licit is launching in Chicago. Before we do, we're hosting private tasting events for the people on this list.</p>
+            <p style={{ marginTop: 24, fontSize: 20 }}>We take the classic cocktails you love and clarify them through an ancient milk-washing process that strips away everything harsh — leaving only pure, translucent flavor. Force-carbonated. Bottled at full cocktail strength. Ready the moment you are.</p>
+            <p style={{ marginTop: 24, fontSize: 20 }}>Licit is launching in Chicago. Before we do, we're hosting private tasting events for the people on this list.</p>
           </div>
 
           {/* Price callout */}
