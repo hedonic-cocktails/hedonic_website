@@ -119,7 +119,7 @@ export default function Waitlist() {
             <button
               onClick={() => {
                 if (typeof window !== 'undefined' && (window as any).LicitPopup) {
-                  (window as any).LicitPopup.open();
+                  (window as any).LicitPopup.open(true);
                 } else {
                   window.location.href = "mailto:drinklicit@gmail.com?subject=Join Founding List";
                 }

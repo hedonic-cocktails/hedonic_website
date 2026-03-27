@@ -474,9 +474,9 @@
       }
 
       // ── OPEN / CLOSE ──────────────────────────────────────────
-      function open() {
-        // Don't show again if already subscribed or dismissed recently
-        if (getCookie('licit_subscribed') || getCookie('licit_dismissed')) return;
+      function open(force = false) {
+        // Don't show again if already subscribed or dismissed recently, unless explicitly forced
+        if (!force && (getCookie('licit_subscribed') || getCookie('licit_dismissed'))) return;
         const overlay = document.getElementById('licit-popup-overlay');
         overlay.style.display = 'flex';
         requestAnimationFrame(() => {
