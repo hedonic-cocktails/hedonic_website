@@ -7,10 +7,10 @@ import { motion, AnimatePresence } from "framer-motion";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/collection", label: "Collection" },
-  { href: "/events", label: "Events" },
-  { href: "/our-process", label: "Our Process" },
-  { href: "/why-licit", label: "Why Licit" },
   { href: "/quiz", label: "Find Your Bottle" },
+  { href: "/why-licit", label: "Why Licit" },
+  { href: "/our-process", label: "Our Process" },
+  { href: "/events", label: "Events" },
   { href: "/waitlist", label: "Waitlist" },
 ];
 
@@ -51,22 +51,27 @@ export function Header() {
           </Link>
 
           <nav className="hidden lg:flex items-center gap-6 font-body text-sm tracking-widest uppercase">
-            {navLinks.map((link) => (
-              <Link key={link.href} href={link.href}>
-                <span
-                  className={`cursor-pointer transition-colors duration-300 ${location === link.href ? "text-primary" : "text-muted-foreground hover:text-foreground"}`}
-                  data-testid={`link-nav-${link.label.toLowerCase().replace(/\s+/g, "-")}`}
-                >
-                  {link.label}
-                </span>
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              if (location === "/" && !["Home", "Collection", "Why Licit"].includes(link.label)) {
+                return null;
+              }
+              return (
+                <Link key={link.href} href={link.href}>
+                  <span
+                    className={`cursor-pointer transition-colors duration-300 ${location === link.href ? "text-primary" : "text-muted-foreground hover:text-foreground"}`}
+                    data-testid={`link-nav-${link.label.toLowerCase().replace(/\s+/g, "-")}`}
+                  >
+                    {link.label}
+                  </span>
+                </Link>
+              )
+            })}
           </nav>
 
           <Button
             variant="ghost"
             size="icon"
-            className="lg:hidden"
+            className={location === "/" ? "block" : "lg:hidden"}
             onClick={() => setMobileOpen(!mobileOpen)}
             data-testid="button-mobile-menu"
           >
@@ -82,7 +87,7 @@ export function Header() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-40 lg:hidden"
+            className={`fixed inset-0 z-40 ${location === "/" ? "" : "lg:hidden"}`}
           >
             <div className="absolute inset-0 bg-background/90 backdrop-blur-md" onClick={() => setMobileOpen(false)} />
             <motion.nav
