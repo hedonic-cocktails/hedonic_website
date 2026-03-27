@@ -52,7 +52,7 @@ export function Header() {
 
           <nav className="hidden lg:flex items-center gap-6 font-body text-sm tracking-widest uppercase">
             {navLinks.map((link) => {
-              if (location === "/" && !["Home", "Collection", "Why Licit"].includes(link.label)) {
+              if (!["Home", "Collection", "Why Licit"].includes(link.label)) {
                 return null;
               }
               return (
@@ -68,56 +68,58 @@ export function Header() {
             })}
           </nav>
 
-          <Button
-            variant="ghost"
-            size="icon"
-            className={location === "/" ? "block" : "lg:hidden"}
-            onClick={() => setMobileOpen(!mobileOpen)}
-            data-testid="button-mobile-menu"
-          >
-            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </Button>
+          <div className="relative">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="block"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              data-testid="button-mobile-menu"
+            >
+              {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </Button>
+
+            {/* Background overlay for clicking away */}
+            {mobileOpen && (
+              <div
+                className="fixed inset-0 z-40"
+                onClick={() => setMobileOpen(false)}
+              />
+            )}
+
+            <AnimatePresence>
+              {mobileOpen && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95, y: -10 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95, y: -10 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute top-[calc(100%+0.5rem)] right-0 z-50 w-56 bg-background/95 backdrop-blur-xl border border-border/40 rounded-md shadow-xl overflow-hidden py-2"
+                >
+                  {navLinks.map((link, i) => (
+                    <motion.div
+                      key={link.href}
+                      initial={{ opacity: 0, x: 10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.2, delay: i * 0.04 }}
+                    >
+                      <Link href={link.href}>
+                        <span
+                          className={`block px-5 py-3 font-display text-lg tracking-wide transition-colors hover:bg-primary/10 cursor-pointer ${location === link.href ? "text-primary bg-primary/5" : "text-foreground"}`}
+                          onClick={() => setMobileOpen(false)}
+                          data-testid={`link-mobile-${link.label.toLowerCase().replace(/\s+/g, "-")}`}
+                        >
+                          {link.label}
+                        </span>
+                      </Link>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
       </motion.header>
-
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.25 }}
-            className={`fixed inset-0 z-40 ${location === "/" ? "" : "lg:hidden"}`}
-          >
-            <div className="absolute inset-0 bg-background/90 backdrop-blur-md" onClick={() => setMobileOpen(false)} />
-            <motion.nav
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.25, delay: 0.05 }}
-              className="relative pt-20 px-8 flex flex-col gap-1"
-            >
-              {navLinks.map((link, i) => (
-                <motion.div
-                  key={link.href}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.3, delay: i * 0.06 }}
-                >
-                  <Link href={link.href}>
-                    <span
-                      className={`block py-4 font-display text-2xl tracking-wide cursor-pointer transition-colors border-b border-border/20 ${location === link.href ? "text-primary" : "text-foreground"}`}
-                      data-testid={`link-mobile-${link.label.toLowerCase().replace(/\s+/g, "-")}`}
-                    >
-                      {link.label}
-                    </span>
-                  </Link>
-                </motion.div>
-              ))}
-            </motion.nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </>
   );
 }
