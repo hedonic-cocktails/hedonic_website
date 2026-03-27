@@ -50,19 +50,19 @@ export default function Waitlist() {
             Coming to Chicago
           </p>
 
-          <h1 style={{ fontSize: "clamp(48px, 5vw, 72px)", fontWeight: 300, lineHeight: 1.08, letterSpacing: "-0.01em", marginBottom: 16 }}>
+          <h1 style={{ fontSize: "clamp(56px, 6.5vw, 84px)", fontWeight: 300, lineHeight: 1.08, letterSpacing: "-0.01em", marginBottom: 16 }}>
             Crafted for Pleasure.<br />
             <em style={{ fontStyle: "italic", color: "#D4AE5C", fontWeight: 300 }}>Permission to enjoy.</em>
           </h1>
 
-          <p style={{ fontSize: 18, fontWeight: 300, color: "#888880", lineHeight: 1.5, marginBottom: 44, letterSpacing: "0.02em" }}>
+          <p style={{ fontSize: 24, fontWeight: 300, color: "#888880", lineHeight: 1.5, marginBottom: 44, letterSpacing: "0.02em" }}>
             The first premium clarified RTD cocktail.<br />
             Crystal clear. Impossibly smooth. No bar required.
           </p>
 
           <div style={{ width: 48, height: 1, background: "linear-gradient(to right, #B8953A, transparent)", marginBottom: 36 }} />
 
-          <div style={{ fontSize: 16, fontWeight: 300, lineHeight: 1.8, color: "rgba(245,240,232,0.75)", maxWidth: 480 }}>
+          <div style={{ fontSize: 22, fontWeight: 300, lineHeight: 1.8, color: "rgba(245,240,232,0.75)", maxWidth: 520 }}>
             <p>A bar night costs <strong style={{ color: "#F5F0E8", fontWeight: 400 }}>$130</strong>. A Licit night costs <strong style={{ color: "#F5F0E8", fontWeight: 400 }}>$33</strong>.</p>
             <p style={{ marginTop: 20 }}>We take the classic cocktails you love and clarify them through an ancient milk-washing process that strips away everything harsh — leaving only pure, translucent flavor. Force-carbonated. Bottled at full cocktail strength. Ready the moment you are.</p>
             <p style={{ marginTop: 20 }}>Licit is launching in Chicago. Before we do, we're hosting private tasting events for the people on this list.</p>
@@ -72,15 +72,15 @@ export default function Waitlist() {
           <div style={{ display: "flex", gap: 24, marginTop: 36 }}>
             <div style={{ flex: 1, padding: "20px 24px", border: "1px solid rgba(184,149,58,0.25)", position: "relative", overflow: "hidden", opacity: 0.5 }}>
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(184,149,58,0.05) 0%, transparent 60%)" }} />
-              <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: 9, fontWeight: 300, letterSpacing: "0.25em", textTransform: "uppercase", color: "#888880", marginBottom: 8 }}>Bar Night</div>
-              <div style={{ fontSize: 32, fontWeight: 300, color: "#F5F0E8", textDecoration: "line-through", textDecorationColor: "rgba(245,240,232,0.4)" }}>$130</div>
-              <div style={{ fontSize: 12, color: "#888880", marginTop: 6, fontStyle: "italic" }}>4 cocktails + tab + Uber</div>
+              <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: 11, fontWeight: 300, letterSpacing: "0.25em", textTransform: "uppercase", color: "#888880", marginBottom: 8 }}>Bar Night</div>
+              <div style={{ fontSize: 38, fontWeight: 300, color: "#F5F0E8", textDecoration: "line-through", textDecorationColor: "rgba(245,240,232,0.4)" }}>$130</div>
+              <div style={{ fontSize: 14, color: "#888880", marginTop: 6, fontStyle: "italic" }}>4 cocktails + tab + Uber</div>
             </div>
             <div style={{ flex: 1, padding: "20px 24px", border: "1px solid rgba(184,149,58,0.25)", position: "relative", overflow: "hidden" }}>
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(184,149,58,0.05) 0%, transparent 60%)" }} />
-              <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: 9, fontWeight: 300, letterSpacing: "0.25em", textTransform: "uppercase", color: "#888880", marginBottom: 8 }}>Licit Night</div>
-              <div style={{ fontSize: 32, fontWeight: 300, color: "#D4AE5C" }}>$33</div>
-              <div style={{ fontSize: 12, color: "#888880", marginTop: 6, fontStyle: "italic" }}>750mL · 5 full servings</div>
+              <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: 11, fontWeight: 300, letterSpacing: "0.25em", textTransform: "uppercase", color: "#888880", marginBottom: 8 }}>Licit Night</div>
+              <div style={{ fontSize: 38, fontWeight: 300, color: "#D4AE5C" }}>$33</div>
+              <div style={{ fontSize: 14, color: "#888880", marginTop: 6, fontStyle: "italic" }}>750mL · 5 full servings</div>
             </div>
           </div>
         </div>
@@ -89,11 +89,11 @@ export default function Waitlist() {
         <div style={{ gridColumn: 2, gridRow: 2, padding: "80px 56px 80px 64px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
           <p style={{ fontFamily: "'Josefin Sans', 'Outfit', sans-serif", fontWeight: 200, fontSize: 11, letterSpacing: "0.3em", color: "#B8953A", textTransform: "uppercase", marginBottom: 20 }}>Founding List</p>
 
-          <h2 style={{ fontSize: "clamp(32px, 3.5vw, 48px)", fontWeight: 300, lineHeight: 1.15, marginBottom: 16 }}>
+          <h2 style={{ fontSize: "clamp(40px, 4.5vw, 60px)", fontWeight: 300, lineHeight: 1.15, marginBottom: 16 }}>
             Be the first<br />to <em style={{ fontStyle: "italic", color: "#D4AE5C" }}>taste it.</em>
           </h2>
 
-          <p style={{ fontSize: 15, fontWeight: 300, color: "#888880", lineHeight: 1.7, marginBottom: 48, maxWidth: 380 }}>
+          <p style={{ fontSize: 20, fontWeight: 300, color: "#888880", lineHeight: 1.7, marginBottom: 48, maxWidth: 440 }}>
             Founding list members are invited to exclusive private tasting events in Chicago before Licit launches to the public — plus early access when we do.
           </p>
 
@@ -104,8 +104,8 @@ export default function Waitlist() {
               "48-hour early access at launch — before we open to the public",
               "Founding member pricing — locked in for your first order",
             ].map((item, i) => (
-              <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: 16, padding: "16px 0", borderBottom: "1px solid rgba(184,149,58,0.12)", borderTop: i === 0 ? "1px solid rgba(184,149,58,0.12)" : undefined, fontSize: 15, fontWeight: 300, color: "rgba(245,240,232,0.85)", lineHeight: 1.5 }}>
-                <svg viewBox="0 0 20 20" style={{ width: 20, height: 20, flexShrink: 0, marginTop: 1 }}>
+              <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: 16, padding: "16px 0", borderBottom: "1px solid rgba(184,149,58,0.12)", borderTop: i === 0 ? "1px solid rgba(184,149,58,0.12)" : undefined, fontSize: 18, fontWeight: 300, color: "rgba(245,240,232,0.85)", lineHeight: 1.5 }}>
+                <svg viewBox="0 0 20 20" style={{ width: 24, height: 24, flexShrink: 0, marginTop: 1 }}>
                   <circle cx="10" cy="10" r="9" fill="none" stroke="#B8953A" strokeWidth="1" />
                   <path d="M6 10.5L8.5 13L14 7.5" stroke="#B8953A" strokeWidth="1.2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
@@ -114,8 +114,45 @@ export default function Waitlist() {
             ))}
           </ul>
 
-          {/* KLAVIYO FORM */}
-          <div className="klaviyo-form-SdxYNC"></div>
+          {/* KLAVIYO FORM ALTERNATIVE */}
+          <div style={{ marginTop: 24, marginBottom: 48 }}>
+            <button
+              onClick={() => {
+                if (typeof window !== 'undefined' && (window as any).LicitPopup) {
+                  (window as any).LicitPopup.open();
+                } else {
+                  window.location.href = "mailto:drinklicit@gmail.com?subject=Join Founding List";
+                }
+              }}
+              style={{
+                background: "transparent",
+                border: "1px solid rgba(184,149,58,0.55)",
+                color: "#B8953A",
+                fontFamily: "'Josefin Sans', sans-serif",
+                fontSize: 14,
+                fontWeight: 300,
+                letterSpacing: "0.28em",
+                textTransform: "uppercase",
+                padding: "20px 40px",
+                cursor: "pointer",
+                transition: "background 0.2s, color 0.2s, border-color 0.2s",
+                width: "100%",
+                maxWidth: 440
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "rgba(184,149,58,0.08)";
+                e.currentTarget.style.color = "#D4AE5C";
+                e.currentTarget.style.borderColor = "rgba(184,149,58,0.8)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "transparent";
+                e.currentTarget.style.color = "#B8953A";
+                e.currentTarget.style.borderColor = "rgba(184,149,58,0.55)";
+              }}
+            >
+              Join the Founding List →
+            </button>
+          </div>
 
           {/* Social proof */}
           <div style={{ display: "flex", alignItems: "center", gap: 20, marginTop: 32, paddingTop: 32, borderTop: "1px solid rgba(184,149,58,0.25)" }}>
