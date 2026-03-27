@@ -63,7 +63,7 @@ export default function Waitlist() {
           <div style={{ width: 48, height: 1, background: "linear-gradient(to right, #B8953A, transparent)", marginBottom: 36 }} />
 
           <div style={{ fontSize: 22, fontWeight: 300, lineHeight: 1.8, color: "rgba(245,240,232,0.75)", maxWidth: 520 }}>
-            <p>A bar night costs <strong style={{ color: "#F5F0E8", fontWeight: 400 }}>$130</strong>. A Licit night costs <strong style={{ color: "#F5F0E8", fontWeight: 400 }}>$33</strong>.</p>
+            <p>A bar night costs <strong style={{ color: "#F5F0E8", fontWeight: 400 }}>$153</strong>. A Licit night costs <strong style={{ color: "#F5F0E8", fontWeight: 400 }}>$33</strong>.</p>
             <p style={{ marginTop: 20 }}>We take the classic cocktails you love and clarify them through an ancient milk-washing process that strips away everything harsh — leaving only pure, translucent flavor. Force-carbonated. Bottled at full cocktail strength. Ready the moment you are.</p>
             <p style={{ marginTop: 20 }}>Licit is launching in Chicago. Before we do, we're hosting private tasting events for the people on this list.</p>
           </div>
@@ -73,8 +73,8 @@ export default function Waitlist() {
             <div style={{ flex: 1, padding: "20px 24px", border: "1px solid rgba(184,149,58,0.25)", position: "relative", overflow: "hidden", opacity: 0.5 }}>
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(184,149,58,0.05) 0%, transparent 60%)" }} />
               <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: 11, fontWeight: 300, letterSpacing: "0.25em", textTransform: "uppercase", color: "#888880", marginBottom: 8 }}>Bar Night</div>
-              <div style={{ fontSize: 38, fontWeight: 300, color: "#F5F0E8", textDecoration: "line-through", textDecorationColor: "rgba(245,240,232,0.4)" }}>$130</div>
-              <div style={{ fontSize: 14, color: "#888880", marginTop: 6, fontStyle: "italic" }}>4 cocktails + tab + Uber</div>
+              <div style={{ fontSize: 38, fontWeight: 300, color: "#F5F0E8", textDecoration: "line-through", textDecorationColor: "rgba(245,240,232,0.4)" }}>$153</div>
+              <div style={{ fontSize: 14, color: "#888880", marginTop: 6, fontStyle: "italic" }}>5 cocktails + tab + Uber</div>
             </div>
             <div style={{ flex: 1, padding: "20px 24px", border: "1px solid rgba(184,149,58,0.25)", position: "relative", overflow: "hidden" }}>
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(184,149,58,0.05) 0%, transparent 60%)" }} />

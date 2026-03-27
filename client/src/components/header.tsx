@@ -11,6 +11,7 @@ const navLinks = [
   { href: "/our-process", label: "Our Process" },
   { href: "/why-licit", label: "Why Licit" },
   { href: "/quiz", label: "Find Your Bottle" },
+  { href: "/waitlist", label: "Waitlist" },
 ];
 
 export function Header() {
@@ -49,7 +50,7 @@ export function Header() {
             </span>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-8 font-body text-sm tracking-widest uppercase">
+          <nav className="hidden lg:flex items-center gap-6 font-body text-sm tracking-widest uppercase">
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href}>
                 <span
@@ -65,7 +66,7 @@ export function Header() {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className="lg:hidden"
             onClick={() => setMobileOpen(!mobileOpen)}
             data-testid="button-mobile-menu"
           >
@@ -81,7 +82,7 @@ export function Header() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-40 md:hidden"
+            className="fixed inset-0 z-40 lg:hidden"
           >
             <div className="absolute inset-0 bg-background/90 backdrop-blur-md" onClick={() => setMobileOpen(false)} />
             <motion.nav
