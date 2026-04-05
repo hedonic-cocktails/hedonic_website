@@ -477,6 +477,9 @@
       function open(force = false) {
         // Don't show again if already subscribed or dismissed recently, unless explicitly forced
         if (!force && (getCookie('licit_subscribed') || getCookie('licit_dismissed'))) return;
+        // Never auto-show on the waitlist page itself
+        if (!force && window.location.pathname === '/waitlist') return;
+
         const overlay = document.getElementById('licit-popup-overlay');
         overlay.style.display = 'flex';
         requestAnimationFrame(() => {
