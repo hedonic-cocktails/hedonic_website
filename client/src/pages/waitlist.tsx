@@ -32,10 +32,10 @@ export default function Waitlist() {
       <div style={{ position: "fixed", top: -200, left: "50%", transform: "translateX(-50%)", width: 800, height: 500, background: "radial-gradient(ellipse at center, rgba(184,149,58,0.12) 0%, transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
       <div style={{ position: "fixed", bottom: -300, right: -100, width: 600, height: 600, background: "radial-gradient(ellipse at center, rgba(184,149,58,0.06) 0%, transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
 
-      <div style={{ position: "relative", zIndex: 1, minHeight: "100vh", display: "grid", gridTemplateColumns: "1fr 1fr", gridTemplateRows: "auto 1fr auto" }}>
+      <div className="relative z-10 min-h-screen flex flex-col">
 
         {/* ── HEADER ── */}
-        <header style={{ gridColumn: "1 / -1", display: "flex", alignItems: "center", justifyContent: "space-between", padding: "32px 56px", borderBottom: "1px solid rgba(184,149,58,0.25)" }}>
+        <header className="flex items-center justify-between px-6 md:px-14 py-8 border-b border-[rgba(184,149,58,0.25)]">
           <a href="/" style={{ display: "flex", alignItems: "center", gap: 14, textDecoration: "none" }}>
             <img src="/images/logo-octopus.png" alt="Licit" style={{ width: 36, height: 36, objectFit: "contain", opacity: 0.9 }} />
             <span style={{ fontFamily: "'Josefin Sans', 'Outfit', sans-serif", fontWeight: 300, fontSize: 18, letterSpacing: "0.28em", color: "#F5F0E8", textTransform: "uppercase" }}>Licit</span>
@@ -43,138 +43,140 @@ export default function Waitlist() {
           <span style={{ fontFamily: "'Josefin Sans', 'Outfit', sans-serif", fontWeight: 200, fontSize: 11, letterSpacing: "0.22em", color: "#B8953A", textTransform: "uppercase" }}>Coming to Chicago</span>
         </header>
 
-        {/* ── LEFT PANEL ── */}
-        <div style={{ gridColumn: 1, gridRow: 2, padding: "80px 56px", display: "flex", flexDirection: "column", justifyContent: "center", borderRight: "1px solid rgba(184,149,58,0.25)" }}>
-          <p style={{ fontFamily: "'Josefin Sans', 'Outfit', sans-serif", fontWeight: 200, fontSize: 11, letterSpacing: "0.3em", color: "#B8953A", textTransform: "uppercase", marginBottom: 28 }}>
-            <span style={{ display: "inline-block", width: 28, height: 1, background: "#B8953A", verticalAlign: "middle", marginRight: 12, opacity: 0.7 }} />
-            Coming to Chicago
-          </p>
+        <div className="flex-1 grid grid-cols-1 lg:grid-cols-2">
+          {/* ── LEFT PANEL ── */}
+          <div className="flex flex-col justify-center px-6 md:px-14 py-12 lg:py-20 border-b lg:border-b-0 lg:border-r border-[rgba(184,149,58,0.25)]">
+            <p style={{ fontFamily: "'Josefin Sans', 'Outfit', sans-serif", fontWeight: 200, fontSize: 11, letterSpacing: "0.3em", color: "#B8953A", textTransform: "uppercase", marginBottom: 28 }}>
+              <span style={{ display: "inline-block", width: 28, height: 1, background: "#B8953A", verticalAlign: "middle", marginRight: 12, opacity: 0.7 }} />
+              Coming to Chicago
+            </p>
 
-          <h1 style={{ fontSize: "clamp(56px, 6.5vw, 84px)", fontWeight: 300, lineHeight: 1.08, letterSpacing: "-0.01em", marginBottom: 16 }}>
-            Crafted for Pleasure.<br />
-            <em style={{ fontStyle: "italic", color: "#D4AE5C", fontWeight: 300 }}>Permission to enjoy.</em>
-          </h1>
+            <h1 style={{ fontSize: "clamp(56px, 6.5vw, 84px)", fontWeight: 300, lineHeight: 1.08, letterSpacing: "-0.01em", marginBottom: 16 }}>
+              Crafted for Pleasure.<br />
+              <em style={{ fontStyle: "italic", color: "#D4AE5C", fontWeight: 300 }}>Permission to enjoy.</em>
+            </h1>
 
-          <p style={{ fontSize: 24, fontWeight: 300, color: "#888880", lineHeight: 1.5, marginBottom: 44, letterSpacing: "0.02em" }}>
-            The first premium clarified RTD cocktail.<br />
-            Crystal clear. Impossibly smooth. No bar required.
-          </p>
+            <p style={{ fontSize: 24, fontWeight: 300, color: "#888880", lineHeight: 1.5, marginBottom: 44, letterSpacing: "0.02em" }}>
+              The first premium clarified RTD cocktail.<br />
+              Crystal clear. Impossibly smooth. No bar required.
+            </p>
 
-          <div style={{ width: 48, height: 1, background: "linear-gradient(to right, #B8953A, transparent)", marginBottom: 36 }} />
+            <div style={{ width: 48, height: 1, background: "linear-gradient(to right, #B8953A, transparent)", marginBottom: 36 }} />
 
-          <div style={{ fontSize: 28, fontWeight: 300, lineHeight: 1.6, color: "rgba(245,240,232,0.75)", maxWidth: 520 }}>
-            <p>A bar night costs <strong style={{ color: "#F5F0E8", fontWeight: 400 }}>$153</strong>. A Licit night costs <strong style={{ color: "#F5F0E8", fontWeight: 400 }}>$33</strong>.</p>
-            <p style={{ marginTop: 24, fontSize: 20 }}>We take the classic cocktails you love and clarify them through an ancient milk-washing process that strips away everything harsh — leaving only pure, translucent flavor. Force-carbonated. Bottled at full cocktail strength. Ready the moment you are.</p>
-            <p style={{ marginTop: 24, fontSize: 20 }}>Licit is launching in Chicago. Before we do, we're hosting private tasting events for the people on this list.</p>
+            <div style={{ fontSize: 28, fontWeight: 300, lineHeight: 1.6, color: "rgba(245,240,232,0.75)", maxWidth: 520 }}>
+              <p>A bar night costs <strong style={{ color: "#F5F0E8", fontWeight: 400 }}>$153</strong>. A Licit night costs <strong style={{ color: "#F5F0E8", fontWeight: 400 }}>$33</strong>.</p>
+              <p style={{ marginTop: 24, fontSize: 20 }}>We take the classic cocktails you love and clarify them through an ancient milk-washing process that strips away everything harsh — leaving only pure, translucent flavor. Force-carbonated. Bottled at full cocktail strength. Ready the moment you are.</p>
+              <p style={{ marginTop: 24, fontSize: 20 }}>Licit is launching in Chicago. Before we do, we're hosting private tasting events for the people on this list.</p>
+            </div>
+
+            {/* Price callout */}
+            <div className="flex flex-col md:flex-row gap-6 mt-9">
+              <div style={{ flex: 1, padding: "20px 24px", border: "1px solid rgba(184,149,58,0.25)", position: "relative", overflow: "hidden", opacity: 0.5 }}>
+                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(184,149,58,0.05) 0%, transparent 60%)" }} />
+                <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: 11, fontWeight: 300, letterSpacing: "0.25em", textTransform: "uppercase", color: "#888880", marginBottom: 8 }}>Bar Night</div>
+                <div style={{ fontSize: 38, fontWeight: 300, color: "#F5F0E8", textDecoration: "line-through", textDecorationColor: "rgba(245,240,232,0.4)" }}>$153</div>
+                <div style={{ fontSize: 14, color: "#888880", marginTop: 6, fontStyle: "italic" }}>5 cocktails + tab + Uber</div>
+              </div>
+              <div style={{ flex: 1, padding: "20px 24px", border: "1px solid rgba(184,149,58,0.25)", position: "relative", overflow: "hidden" }}>
+                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(184,149,58,0.05) 0%, transparent 60%)" }} />
+                <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: 11, fontWeight: 300, letterSpacing: "0.25em", textTransform: "uppercase", color: "#888880", marginBottom: 8 }}>Licit Night</div>
+                <div style={{ fontSize: 38, fontWeight: 300, color: "#D4AE5C" }}>$33</div>
+                <div style={{ fontSize: 14, color: "#888880", marginTop: 6, fontStyle: "italic" }}>750mL · 5 full servings</div>
+              </div>
+            </div>
           </div>
 
-          {/* Price callout */}
-          <div style={{ display: "flex", gap: 24, marginTop: 36 }}>
-            <div style={{ flex: 1, padding: "20px 24px", border: "1px solid rgba(184,149,58,0.25)", position: "relative", overflow: "hidden", opacity: 0.5 }}>
-              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(184,149,58,0.05) 0%, transparent 60%)" }} />
-              <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: 11, fontWeight: 300, letterSpacing: "0.25em", textTransform: "uppercase", color: "#888880", marginBottom: 8 }}>Bar Night</div>
-              <div style={{ fontSize: 38, fontWeight: 300, color: "#F5F0E8", textDecoration: "line-through", textDecorationColor: "rgba(245,240,232,0.4)" }}>$153</div>
-              <div style={{ fontSize: 14, color: "#888880", marginTop: 6, fontStyle: "italic" }}>5 cocktails + tab + Uber</div>
+          {/* ── RIGHT PANEL ── */}
+          <div className="flex flex-col justify-center px-6 md:px-14 lg:pl-16 py-12 lg:py-20">
+            <p style={{ fontFamily: "'Josefin Sans', 'Outfit', sans-serif", fontWeight: 200, fontSize: 11, letterSpacing: "0.3em", color: "#B8953A", textTransform: "uppercase", marginBottom: 20 }}>Founding List</p>
+
+            <h2 style={{ fontSize: "clamp(40px, 4.5vw, 60px)", fontWeight: 300, lineHeight: 1.15, marginBottom: 16 }}>
+              Be the first<br />to <em style={{ fontStyle: "italic", color: "#D4AE5C" }}>taste it.</em>
+            </h2>
+
+            <p style={{ fontSize: 20, fontWeight: 300, color: "#888880", lineHeight: 1.7, marginBottom: 48, maxWidth: 440 }}>
+              Founding list members are invited to exclusive private tasting events in Chicago before Licit launches to the public — plus early access when we do.
+            </p>
+
+            {/* Benefits */}
+            <ul style={{ listStyle: "none", marginBottom: 48, padding: 0 }}>
+              {[
+                "Invitation to private Chicago tasting events — taste the full lineup before anyone else",
+                "48-hour early access at launch — before we open to the public",
+                "Founding member pricing — locked in for your first order",
+              ].map((item, i) => (
+                <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: 16, padding: "16px 0", borderBottom: "1px solid rgba(184,149,58,0.12)", borderTop: i === 0 ? "1px solid rgba(184,149,58,0.12)" : undefined, fontSize: 18, fontWeight: 300, color: "rgba(245,240,232,0.85)", lineHeight: 1.5 }}>
+                  <svg viewBox="0 0 20 20" style={{ width: 24, height: 24, flexShrink: 0, marginTop: 1 }}>
+                    <circle cx="10" cy="10" r="9" fill="none" stroke="#B8953A" strokeWidth="1" />
+                    <path d="M6 10.5L8.5 13L14 7.5" stroke="#B8953A" strokeWidth="1.2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            {/* KLAVIYO FORM ALTERNATIVE */}
+            <div style={{ marginTop: 24, marginBottom: 48 }}>
+              <button
+                onClick={() => {
+                  if (typeof window !== 'undefined' && (window as any).LicitPopup) {
+                    (window as any).LicitPopup.open(true);
+                  } else {
+                    window.location.href = "mailto:drinklicit@gmail.com?subject=Join Founding List";
+                  }
+                }}
+                style={{
+                  background: "transparent",
+                  border: "1px solid rgba(184,149,58,0.55)",
+                  color: "#B8953A",
+                  fontFamily: "'Josefin Sans', sans-serif",
+                  fontSize: 14,
+                  fontWeight: 300,
+                  letterSpacing: "0.28em",
+                  textTransform: "uppercase",
+                  padding: "20px 40px",
+                  cursor: "pointer",
+                  transition: "background 0.2s, color 0.2s, border-color 0.2s",
+                  width: "100%",
+                  maxWidth: 440
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = "rgba(184,149,58,0.08)";
+                  e.currentTarget.style.color = "#D4AE5C";
+                  e.currentTarget.style.borderColor = "rgba(184,149,58,0.8)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = "transparent";
+                  e.currentTarget.style.color = "#B8953A";
+                  e.currentTarget.style.borderColor = "rgba(184,149,58,0.55)";
+                }}
+              >
+                Join the Founding List →
+              </button>
             </div>
-            <div style={{ flex: 1, padding: "20px 24px", border: "1px solid rgba(184,149,58,0.25)", position: "relative", overflow: "hidden" }}>
-              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(184,149,58,0.05) 0%, transparent 60%)" }} />
-              <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: 11, fontWeight: 300, letterSpacing: "0.25em", textTransform: "uppercase", color: "#888880", marginBottom: 8 }}>Licit Night</div>
-              <div style={{ fontSize: 38, fontWeight: 300, color: "#D4AE5C" }}>$33</div>
-              <div style={{ fontSize: 14, color: "#888880", marginTop: 6, fontStyle: "italic" }}>750mL · 5 full servings</div>
-            </div>
-          </div>
-        </div>
 
-        {/* ── RIGHT PANEL ── */}
-        <div style={{ gridColumn: 2, gridRow: 2, padding: "80px 56px 80px 64px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-          <p style={{ fontFamily: "'Josefin Sans', 'Outfit', sans-serif", fontWeight: 200, fontSize: 11, letterSpacing: "0.3em", color: "#B8953A", textTransform: "uppercase", marginBottom: 20 }}>Founding List</p>
-
-          <h2 style={{ fontSize: "clamp(40px, 4.5vw, 60px)", fontWeight: 300, lineHeight: 1.15, marginBottom: 16 }}>
-            Be the first<br />to <em style={{ fontStyle: "italic", color: "#D4AE5C" }}>taste it.</em>
-          </h2>
-
-          <p style={{ fontSize: 20, fontWeight: 300, color: "#888880", lineHeight: 1.7, marginBottom: 48, maxWidth: 440 }}>
-            Founding list members are invited to exclusive private tasting events in Chicago before Licit launches to the public — plus early access when we do.
-          </p>
-
-          {/* Benefits */}
-          <ul style={{ listStyle: "none", marginBottom: 48, padding: 0 }}>
-            {[
-              "Invitation to private Chicago tasting events — taste the full lineup before anyone else",
-              "48-hour early access at launch — before we open to the public",
-              "Founding member pricing — locked in for your first order",
-            ].map((item, i) => (
-              <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: 16, padding: "16px 0", borderBottom: "1px solid rgba(184,149,58,0.12)", borderTop: i === 0 ? "1px solid rgba(184,149,58,0.12)" : undefined, fontSize: 18, fontWeight: 300, color: "rgba(245,240,232,0.85)", lineHeight: 1.5 }}>
-                <svg viewBox="0 0 20 20" style={{ width: 24, height: 24, flexShrink: 0, marginTop: 1 }}>
-                  <circle cx="10" cy="10" r="9" fill="none" stroke="#B8953A" strokeWidth="1" />
-                  <path d="M6 10.5L8.5 13L14 7.5" stroke="#B8953A" strokeWidth="1.2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-                {item}
-              </li>
-            ))}
-          </ul>
-
-          {/* KLAVIYO FORM ALTERNATIVE */}
-          <div style={{ marginTop: 24, marginBottom: 48 }}>
-            <button
-              onClick={() => {
-                if (typeof window !== 'undefined' && (window as any).LicitPopup) {
-                  (window as any).LicitPopup.open(true);
-                } else {
-                  window.location.href = "mailto:drinklicit@gmail.com?subject=Join Founding List";
-                }
-              }}
-              style={{
-                background: "transparent",
-                border: "1px solid rgba(184,149,58,0.55)",
-                color: "#B8953A",
-                fontFamily: "'Josefin Sans', sans-serif",
-                fontSize: 14,
-                fontWeight: 300,
-                letterSpacing: "0.28em",
-                textTransform: "uppercase",
-                padding: "20px 40px",
-                cursor: "pointer",
-                transition: "background 0.2s, color 0.2s, border-color 0.2s",
-                width: "100%",
-                maxWidth: 440
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = "rgba(184,149,58,0.08)";
-                e.currentTarget.style.color = "#D4AE5C";
-                e.currentTarget.style.borderColor = "rgba(184,149,58,0.8)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = "transparent";
-                e.currentTarget.style.color = "#B8953A";
-                e.currentTarget.style.borderColor = "rgba(184,149,58,0.55)";
-              }}
-            >
-              Join the Founding List →
-            </button>
-          </div>
-
-          {/* Social proof */}
-          <div style={{ display: "flex", alignItems: "center", gap: 20, marginTop: 32, paddingTop: 32, borderTop: "1px solid rgba(184,149,58,0.25)" }}>
-            <div>
-              <div style={{ fontSize: 36, fontWeight: 300, color: "#D4AE5C", lineHeight: 1 }}>{count !== null ? count : "—"}</div>
-              <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: 10, fontWeight: 200, letterSpacing: "0.2em", textTransform: "uppercase", color: "#888880", lineHeight: 1.5 }}>people on<br />the founding list</div>
-            </div>
-            <div style={{ width: 1, height: 40, background: "rgba(184,149,58,0.25)" }} />
-            <div>
-              <div style={{ fontSize: 36, fontWeight: 300, color: "#D4AE5C", lineHeight: 1 }}>8</div>
-              <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: 10, fontWeight: 200, letterSpacing: "0.2em", textTransform: "uppercase", color: "#888880", lineHeight: 1.5 }}>cocktails<br />in the lineup</div>
-            </div>
-            <div style={{ width: 1, height: 40, background: "rgba(184,149,58,0.25)" }} />
-            <div>
-              <div style={{ fontSize: 36, fontWeight: 300, color: "#D4AE5C", lineHeight: 1 }}>0</div>
-              <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: 10, fontWeight: 200, letterSpacing: "0.2em", textTransform: "uppercase", color: "#888880", lineHeight: 1.5 }}>artificial<br />ingredients</div>
+            {/* Social proof */}
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-6 mt-8 pt-8 border-t border-[rgba(184,149,58,0.25)]">
+              <div className="flex-1 basis-[100px]">
+                <div style={{ fontSize: 36, fontWeight: 300, color: "#D4AE5C", lineHeight: 1 }}>{count !== null ? count : "—"}</div>
+                <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: 10, fontWeight: 200, letterSpacing: "0.2em", textTransform: "uppercase", color: "#888880", lineHeight: 1.5 }}>people on<br className="hidden md:block" />the founding list</div>
+              </div>
+              <div className="hidden md:block w-[1px] h-10 bg-[rgba(184,149,58,0.25)]" />
+              <div className="flex-1 basis-[100px]">
+                <div style={{ fontSize: 36, fontWeight: 300, color: "#D4AE5C", lineHeight: 1 }}>8</div>
+                <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: 10, fontWeight: 200, letterSpacing: "0.2em", textTransform: "uppercase", color: "#888880", lineHeight: 1.5 }}>cocktails<br className="hidden md:block" />in the lineup</div>
+              </div>
+              <div className="hidden md:block w-[1px] h-10 bg-[rgba(184,149,58,0.25)]" />
+              <div className="flex-1 basis-[100px]">
+                <div style={{ fontSize: 36, fontWeight: 300, color: "#D4AE5C", lineHeight: 1 }}>0</div>
+                <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: 10, fontWeight: 200, letterSpacing: "0.2em", textTransform: "uppercase", color: "#888880", lineHeight: 1.5 }}>artificial<br className="hidden md:block" />ingredients</div>
+              </div>
             </div>
           </div>
         </div>
 
         {/* ── FOOTER ── */}
-        <footer style={{ gridColumn: "1 / -1", display: "flex", alignItems: "center", justifyContent: "space-between", padding: "24px 56px", borderTop: "1px solid rgba(184,149,58,0.25)" }}>
+        <footer className="flex flex-col md:flex-row items-center justify-between gap-6 px-6 md:px-14 py-8 border-t border-[rgba(184,149,58,0.25)]">
           <span style={{ fontFamily: "'Josefin Sans', sans-serif", fontWeight: 200, fontSize: 11, letterSpacing: "0.25em", textTransform: "uppercase", color: "#888880" }}>Licit Cocktails</span>
           <span style={{ fontSize: 13, fontWeight: 300, fontStyle: "italic", color: "#B8953A" }}>Permission to enjoy.</span>
           <div style={{ display: "flex", gap: 24 }}>
