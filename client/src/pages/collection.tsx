@@ -6,7 +6,7 @@ import { Card } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import type { Product } from "@shared/schema";
 const LOVINGLY_LIGHT = ["dirty-shirley", "blackberry-smash", "strawberry-daiquiri", "clover-club"];
-const DARK_AND_SEDUCTIVE = ["mezcal-soda", "whiskey-sour", "pheromone-martini", "orange-creamsicle"];
+const DARK_AND_SEDUCTIVE = ["mezcal-soda", "whiskey-sour", "pheromone-martini", "orange-julius"];
 
 function ProductCard({ product, index }: { product: Product; index: number }) {
   return (

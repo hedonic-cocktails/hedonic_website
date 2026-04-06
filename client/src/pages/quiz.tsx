@@ -79,12 +79,12 @@ const resultData: Record<string, { slug: string; name: string; tagline: string; 
     price: "29.99",
   },
   oj: {
-    slug: "orange-creamsicle",
+    slug: "orange-julius",
     name: "Orange Creamsicle",
     tagline: "Creamy citrus indulgence, clarified and sparkling.",
     description: "You appreciate warmth, comfort, and a touch of nostalgia. The Orange Creamsicle wraps creamy vanilla and fresh orange in sparkling elegance — familiar flavors in an entirely new, luxurious form.",
     color: "#e8a040",
-    imageUrl: "/images/orange-creamsicle.png",
+    imageUrl: "/images/orange-julius.png",
     price: "29.99",
   },
   ms: {
