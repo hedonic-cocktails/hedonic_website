@@ -362,7 +362,7 @@ function StorySection() {
     {
       icon: Sparkles,
       title: "Top-Shelf Only",
-      description: "Five-times-distilled vodka. Hand-selected agave. Aged Caribbean rum. London dry gin with hand-foraged botanicals. Small-batch bourbon and tequila with real provenance. Every spirit earns its place.",
+      description: "Premium spirits, real ingredients, no artificial flavoring. Every spirit earns its place.",
     },
     {
       icon: Droplets,

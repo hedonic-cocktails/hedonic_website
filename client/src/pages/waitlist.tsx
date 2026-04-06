@@ -181,7 +181,7 @@ export default function Waitlist() {
           <span style={{ fontSize: 13, fontWeight: 300, fontStyle: "italic", color: "#B8953A" }}>Permission to enjoy.</span>
           <div style={{ display: "flex", gap: 24 }}>
             {["Instagram", "TikTok", "Contact"].map((link) => (
-              <a key={link} href={link === "Contact" ? "mailto:drinklicit@gmail.com" : "#"} style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: 10, fontWeight: 200, letterSpacing: "0.2em", textTransform: "uppercase", color: "#888880", textDecoration: "none" }}>
+              <a key={link} href={link === "Contact" ? "mailto:info@drinklicit.com" : "#"} style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: 10, fontWeight: 200, letterSpacing: "0.2em", textTransform: "uppercase", color: "#888880", textDecoration: "none" }}>
                 {link}
               </a>
             ))}

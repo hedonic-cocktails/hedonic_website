@@ -8,17 +8,17 @@ const pillars = [
   {
     icon: Gem,
     title: "Uncompromising Quality",
-    description: "We source only the finest spirits from artisan distilleries. Five-times-distilled vodka for absolute purity. Hand-selected agave, slow-roasted in earthen pits by master mezcaleros. Premium aged rum from Caribbean traditions. London dry gin with hand-foraged botanicals. Small-batch bourbon and tequila with real provenance. There are no shortcuts, no substitutes, no compromises.",
+    description: "We source only the finest spirits from artisan distilleries. Premium spirits, real ingredients, no artificial flavoring. There are no shortcuts, no substitutes, no compromises.",
   },
   {
     icon: Leaf,
     title: "Real Ingredients",
-    description: "Fresh-squeezed citrus, never from concentrate. House-made vanilla syrup from whole Madagascar beans. Grenadine from real pomegranate. Hand-pressed pineapple juice. Ruby grapefruit, ripe strawberries, and fresh raspberries. Real coconut milk, not powder. Authentic orgeat from whole almonds. Every ingredient earns its place in the bottle.",
+    description: "Fresh-squeezed citrus, never from concentrate. House-made vanilla syrup from whole Madagascar beans. Grenadine from real pomegranate. Hand-pressed pineapple juice. Ruby grapefruit, ripe strawberries, and fresh raspberries. Authentic orgeat from whole almonds. Every ingredient earns its place in the bottle.",
   },
   {
     icon: Droplets,
     title: "Two Paths to Clarity",
-    description: "Our original eight cocktails undergo traditional milk clarification — a centuries-old technique that transforms bold flavors into crystal-clear, luminous liquid. Our Tropical Paradise collection takes a different path: coconut milk clarification, which imparts a subtle richness while achieving the same stunning transparency. Two methods, one obsession with perfection.",
+    description: "Our original eight cocktails undergo traditional milk clarification — a centuries-old technique that transforms bold flavors into crystal-clear, luminous liquid. A coconut milk clarification process is currently in development. Two methods, one obsession with perfection.",
   },
   {
     icon: Wine,
@@ -154,7 +154,7 @@ export default function About() {
               <div>
                 <p className="font-display text-lg text-foreground mb-2" data-testid="text-collection-light-title">Lovingly Light</p>
                 <p data-testid="text-collection-light-desc">
-                  Our brightest, most radiant expressions. The Dirty Shirley&apos;s sparkling grenadine and lime. The Orange Julius&apos;s creamy vanilla and fresh citrus. The Strawberry Daiquiri&apos;s sun-kissed berry sweetness. The Clover Club&apos;s botanical gin and tart raspberry elegance. Each one milk-clarified to a stunning translucent brilliance — cocktails that glow like liquid jewels.
+                  Our brightest, most radiant expressions. The Dirty Shirley&apos;s sparkling grenadine and lime. The Orange Creamsicle&apos;s creamy vanilla and fresh citrus. The Strawberry Daiquiri&apos;s sun-kissed berry sweetness. The Clover Club&apos;s botanical gin and tart raspberry elegance. Each one milk-clarified to a stunning translucent brilliance — cocktails that glow like liquid jewels.
                 </p>
               </div>
               <div>
@@ -166,7 +166,7 @@ export default function About() {
               <div>
                 <p className="font-display text-lg text-foreground mb-2" data-testid="text-collection-tropical-title">Tropical Paradise</p>
                 <p data-testid="text-collection-tropical-desc">
-                  Our newest collection takes a different path to clarity. The Jungle Bird&apos;s wild pineapple and bitter Campari. The Painkiller&apos;s lush coconut and island warmth. The Paloma&apos;s crisp grapefruit and tequila fire. The Mai Tai&apos;s legendary rum and almond orgeat. Each one clarified through coconut milk — a technique that adds a subtle tropical richness while achieving the same impossible transparency.
+                  Coming soon: Our newest collection. The Jungle Bird&apos;s wild pineapple and bitter Campari. The Painkiller&apos;s lush coconut and island warmth. The Paloma&apos;s crisp grapefruit and tequila fire. The Mai Tai&apos;s legendary rum and almond orgeat. Each one clarified through coconut milk — a technique currently in development.
                 </p>
               </div>
             </div>
@@ -192,7 +192,7 @@ export default function About() {
                 Every bottle of Licit is a quiet declaration: that you refuse to settle. Not for canned cocktails drowning in artificial sweetness. Not for bottom-shelf spirits hiding behind clever marketing. Not for anything less than the real thing.
               </p>
               <p data-testid="text-promise-p2">
-                We use premium spirits because your palate knows the difference — even when your mind doesn&apos;t. The purity of five-times-distilled vodka means flavors that glide rather than burn. The depth of hand-selected agave means smokiness that lingers with quiet authority. The richness of aged Caribbean rum means island warmth that envelops rather than overwhelms. Every spirit is chosen with intention.
+                We use premium spirits because your palate knows the difference — even when your mind doesn&apos;t. Premium spirits, real ingredients, no artificial flavoring. Every spirit is chosen with intention.
               </p>
               <p data-testid="text-promise-p3">
                 And then we go further. Our signature clarification — whether through traditional milk or tropical coconut — transforms each cocktail into something extraordinary. Crystal-clear liquid with a texture so refined it redefines what you thought a bottled cocktail could be.

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
   <title>Licit Cocktails - Premium Ready-to-Drink Cocktails</title>
   <meta name="description"
-    content="Licit Cocktails offers premium ready-to-drink cocktails crafted with the finest spirits and ingredients. Permission to enjoy — discover our collection of Dirty Shirley, Orange Julius, and Mezcal Soda." />
+    content="Licit Cocktails offers premium ready-to-drink cocktails crafted with the finest spirits and ingredients. Permission to enjoy — discover our collection of Dirty Shirley, Orange Creamsicle, and Mezcal Soda." />
   <meta property="og:title" content="Licit Cocktails - Premium Ready-to-Drink Cocktails" />
   <meta property="og:description"
     content="Luxury cocktails, ready when you are. Crafted with precision, delivered in elegance." />
@@ -415,15 +415,14 @@
       <button id="licit-popup-close" aria-label="Close">✕</button>
 
       <div class="lp-eyebrow">Coming to Chicago</div>
-      <h2 class="lp-headline">Crafted for Pleasure.<br><em>Permission to enjoy.</em></h2>
-      <p class="lp-sub">A bar night costs $130. A Licit night costs $33.<br>Join the founding list for early access and
+      <h2 class="lp-headline"><em>Permission to enjoy.</em></h2>
+      <p class="lp-sub">A bar night costs $153. A Licit night costs $33.<br>Join the founding list for early access and
         tasting invitations.</p>
       <div class="lp-rule"></div>
 
       <!-- FORM STATE -->
       <div id="licit-popup-form">
-        <div class="lp-input-row">
-          <input type="text" class="lp-input" id="lp-first-name" placeholder="Name" autocomplete="name" />
+        <div class="lp-input-row" style="grid-template-columns: 1fr;">
           <input type="email" class="lp-input" id="lp-email" placeholder="Email address" autocomplete="email" />
         </div>
         <button class="lp-btn" id="lp-submit-btn" onclick="window.LicitPopup.submit()">
@@ -502,12 +501,10 @@
       // ── FORM SUBMISSION → KLAVIYO API ─────────────────────────
       async function submit() {
         const emailInput = document.getElementById('lp-email');
-        const nameInput = document.getElementById('lp-first-name');
         const btn = document.getElementById('lp-submit-btn');
         const errMsg = document.getElementById('lp-error-msg');
 
         const email = emailInput.value.trim();
-        const firstName = nameInput.value.trim();
 
         // Validate
         emailInput.classList.remove('lp-error');
@@ -536,7 +533,6 @@
                 type: 'profile',
                 attributes: {
                   email: email,
-                  first_name: firstName || undefined,
                   properties: {
                     source: 'Website Popup',
                     signup_date: new Date().toISOString().split('T')[0]

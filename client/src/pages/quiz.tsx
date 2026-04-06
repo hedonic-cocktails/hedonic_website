@@ -38,12 +38,12 @@ const questions: Question[] = [
   },
   {
     id: 3,
-    question: "What's your ideal vacation destination?",
+    question: "How do you prefer your sweetness?",
     options: [
-      { label: "A lively beach town with nightlife", scores: S(2, 1, 0, 0, 2, 0, 0, 0) },
-      { label: "A remote mountain or countryside retreat", scores: S(0, 0, 3, 2, 0, 0, 0, 2) },
-      { label: "An old European city dripping with history", scores: S(0, 0, 0, 0, 0, 2, 1, 0) },
-      { label: "Somewhere exotic and unexpected", scores: S(0, 0, 0, 0, 0, 0, 3, 1) },
+      { label: "Overt and fruity", scores: S(2, 1, 0, 0, 2, 0, 0, 0) },
+      { label: "Subtle and balanced by tartness", scores: S(0, 0, 3, 2, 0, 0, 0, 2) },
+      { label: "Dry with botanical notes", scores: S(0, 0, 0, 0, 0, 2, 1, 0) },
+      { label: "Rich with exotic nuances", scores: S(0, 0, 0, 0, 0, 0, 3, 1) },
     ],
   },
   {
@@ -80,9 +80,9 @@ const resultData: Record<string, { slug: string; name: string; tagline: string; 
   },
   oj: {
     slug: "orange-julius",
-    name: "Orange Julius",
+    name: "Orange Creamsicle",
     tagline: "Creamy citrus indulgence, clarified and sparkling.",
-    description: "You appreciate warmth, comfort, and a touch of nostalgia. The Orange Julius wraps creamy vanilla and fresh orange in sparkling elegance — familiar flavors in an entirely new, luxurious form.",
+    description: "You appreciate warmth, comfort, and a touch of nostalgia. The Orange Creamsicle wraps creamy vanilla and fresh orange in sparkling elegance — familiar flavors in an entirely new, luxurious form.",
     color: "#e8a040",
     imageUrl: "/images/orange-julius.png",
     price: "29.99",

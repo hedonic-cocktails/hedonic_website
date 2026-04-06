@@ -10,7 +10,6 @@ const navLinks = [
   { href: "/quiz", label: "Find Your Bottle" },
   { href: "/why-licit", label: "Why Licit" },
   { href: "/our-process", label: "Our Process" },
-  { href: "/events", label: "Events" },
   { href: "/waitlist", label: "Waitlist" },
 ];
 

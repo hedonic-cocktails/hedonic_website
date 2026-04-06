@@ -8,7 +8,7 @@ const pillars = [
   {
     icon: Gem,
     title: "Uncompromising Quality",
-    description: "Every spirit is selected for provenance and character. Five-times-distilled vodka. Hand-selected agave. Aged Caribbean rum. London dry gin with hand-foraged botanicals. No shortcuts, no compromises.",
+    description: "Every spirit is selected for provenance and character. Premium spirits, real ingredients, no artificial flavoring. No shortcuts, no compromises.",
   },
   {
     icon: Leaf,
@@ -51,7 +51,7 @@ const headToHead = [
   { icon: Music, category: "Atmosphere", bar: "Crowded, noisy atmosphere", hedonic: "Your space, your music, your pace" },
   { icon: GlassWater, category: "Quality", bar: "Limited to bar's menu", hedonic: "Same premium spirits, silky finish" },
   { icon: Car, category: "Logistics", bar: "Arrange rides both ways", hedonic: "No driving, no waiting, no hassle" },
-  { icon: Gem, category: "Value", bar: "2+ hours and $130 committed", hedonic: "All the elegance, none of the markup" },
+  { icon: Gem, category: "Value", bar: "2+ hours and $153 committed", hedonic: "All the elegance, none of the markup" },
 ];
 
 export default function WhyHedonic() {
@@ -335,7 +335,7 @@ export default function WhyHedonic() {
                 Every bottle of Licit is a quiet declaration: that you refuse to settle. Not for canned cocktails drowning in artificial sweetness. Not for bottom-shelf spirits hiding behind clever marketing. Not for anything less than the real thing.
               </p>
               <p data-testid="text-promise-p2">
-                We use premium spirits because your palate knows the difference — even when your mind doesn&apos;t. The purity of five-times-distilled vodka means flavors that glide rather than burn. The depth of hand-selected agave means smokiness that lingers with quiet authority. The richness of aged Caribbean rum means island warmth that envelops rather than overwhelms. Every spirit is chosen with intention.
+                We use premium spirits because your palate knows the difference — even when your mind doesn&apos;t. Premium spirits, real ingredients, no artificial flavoring. Every spirit is chosen with intention.
               </p>
               <p data-testid="text-promise-p3">
                 And then we go further. Our signature clarification — whether through traditional milk or tropical coconut — transforms each cocktail into something extraordinary. Crystal-clear liquid with a texture so refined it redefines what you thought a bottled cocktail could be.

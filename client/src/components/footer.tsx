@@ -37,7 +37,8 @@ export function Footer() {
               </a>
             </div>
             <p className="font-body text-xs text-muted-foreground mt-6">
-              drinklicit@gmail.com
+              General & Private Events:<br />
+              <a href="mailto:info@drinklicit.com" className="hover:text-primary transition-colors">info@drinklicit.com</a>
             </p>
           </div>
         </div>

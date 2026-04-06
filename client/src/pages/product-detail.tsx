@@ -108,8 +108,8 @@ export default function ProductDetail() {
   const ingredientsList = product.ingredients.split(",").map(i => i.trim());
 
   const MILK_CLARIFIED = [
-    "dirty-shirley", "orange-julius", "mezcal-soda", "whiskey-sour",
-    "strawberry-daiquiri", "clover-club", "negroni-sbagliato", "pheromone-martini",
+    "dirty-shirley", "orange-creamsicle", "mezcal-soda", "whiskey-sour",
+    "strawberry-daiquiri", "clover-club", "blackberry-smash", "pheromone-martini",
     "lovingly-light", "dark-and-seductive",
   ];
   const TREE_NUT_PRODUCTS = ["mai-tai", "tropical-paradise"];
@@ -125,7 +125,15 @@ export default function ProductDetail() {
   const isPack = PACKS.includes(product.slug);
   const servings = product.servings || 5;
   const pricePerServing = (Number(product.price) / servings).toFixed(2);
-  const barPricePerDrink = 18;
+  let barPricePerDrink = 18;
+  const s = product.spirit.toLowerCase();
+  if (s.includes("vodka") || s.includes("rum") || s.includes("gin")) {
+    barPricePerDrink = 16;
+  } else if (s.includes("mezcal")) {
+    barPricePerDrink = 22;
+  } else if (s.includes("bourbon") || s.includes("whiskey")) {
+    barPricePerDrink = 18;
+  }
 
   return (
     <div className="min-h-screen bg-background pt-24 pb-24 px-6">

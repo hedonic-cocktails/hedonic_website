@@ -15,7 +15,7 @@ const steps = [
     icon: Timer,
     step: "02",
     title: "The Separation",
-    description: "The full cocktail is slowly introduced to cold milk — whole dairy milk for our original collections, or coconut milk for our Tropical Paradise line. The natural acidity from the citrus interacts with the milk proteins, gently coaxing them apart into delicate, cloud-like formations that form a natural filtration web. We let this rest for up to 24 hours, allowing the protein structures to fully develop.",
+    description: "The full cocktail is slowly introduced to cold milk — whole dairy milk for our original collections. A coconut milk variation is currently in development. The natural acidity from the citrus interacts with the milk proteins, gently coaxing them apart into delicate, cloud-like formations that form a natural filtration web. We let this rest for up to 24 hours, allowing the protein structures to fully develop.",
   },
   {
     icon: Filter,
@@ -61,7 +61,7 @@ export default function Clarity() {
             The Art of <span className="italic">Clarity</span>
           </h1>
           <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed" data-testid="text-clarity-intro">
-            Three paths to the same impossible transparency. Whether through traditional dairy milk, tropical coconut milk, or allergen-free oat milk, our clarification process strips away everything harsh and leaves behind something remarkably refined.
+            Our core collection uses traditional dairy milk, while our tropical coconut milk and allergen-free oat milk processes remain in development. Each path strips away everything harsh and leaves behind something remarkably refined.
           </p>
         </motion.div>
 
@@ -109,7 +109,7 @@ export default function Clarity() {
                   Our original technique, used across the Lovingly Light and Dark &amp; Seductive collections. Cold whole milk provides the protein matrix that filters each cocktail to crystal clarity. Residual lactose imparts a subtle sweetness and a luxuriously silky mouthfeel.
                 </p>
                 <p className="font-body text-sm tracking-[0.15em] uppercase text-foreground/50">
-                  Used in: Dirty Shirley, Orange Julius, Strawberry Daiquiri, Clover Club, Whiskey Sour, Mezcal Soda, Pheromone Martini, Negroni Sbagliato
+                  Used in: Dirty Shirley, Orange Creamsicle, Strawberry Daiquiri, Clover Club, Whiskey Sour, Mezcal Soda, Pheromone Martini
                 </p>
               </div>
             </Card>
@@ -126,7 +126,7 @@ export default function Clarity() {
                 <div className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center">
                   <Palmtree className="w-4 h-4 text-primary" />
                 </div>
-                <h3 className="font-display text-2xl tracking-wide" data-testid="text-coconut-title">Coconut Milk Clarification</h3>
+                <h3 className="font-display text-2xl tracking-wide" data-testid="text-coconut-title">Coconut Milk Clarification (In Development)</h3>
               </div>
               <div className="space-y-4 font-body text-base text-muted-foreground leading-relaxed">
                 <p data-testid="text-coconut-desc">
@@ -147,7 +147,7 @@ export default function Clarity() {
                 <div className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center">
                   <Wheat className="w-4 h-4 text-primary" />
                 </div>
-                <h3 className="font-display text-2xl tracking-wide" data-testid="text-oat-title">Oat Milk Clarification</h3>
+                <h3 className="font-display text-2xl tracking-wide" data-testid="text-oat-title">Oat Milk Clarification (In Development)</h3>
               </div>
               <div className="space-y-4 font-body text-base text-muted-foreground leading-relaxed">
                 <p data-testid="text-oat-desc">
