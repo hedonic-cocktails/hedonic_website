@@ -10,7 +10,7 @@ import type { Product } from "@shared/schema";
 function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-[url('/images/hero-bg.png')] bg-cover bg-center" />
+      <div className="absolute inset-0 bg-[url('/images/hero-bg.jpg')] bg-cover bg-center" />
       <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background" />
 
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
