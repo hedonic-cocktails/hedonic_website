@@ -244,7 +244,7 @@ export default function ProductDetail() {
                     ${Number(product.price).toFixed(2)}
                   </span>
                   <span className="font-body text-base text-muted-foreground ml-2">
-                    per bottle
+                    {isPack ? "per pack" : "per bottle"}
                   </span>
                 </div>
               </div>

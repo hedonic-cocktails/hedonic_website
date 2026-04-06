@@ -6,7 +6,6 @@ import { ArrowRight, Sparkles, Droplets, Wine, HelpCircle, X, Check, Clock, Musi
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
-import { EventsSection } from "@/components/events-section";
 import type { Product } from "@shared/schema";
 function HeroSection() {
   return (
@@ -462,9 +461,6 @@ function CtaSection() {
 function QuizPrompt() {
   const [show, setShow] = useState(false);
   const [dismissed, setDismissed] = useState(false);
-  const scrollTimeRef = useRef(0);
-  const rafRef = useRef<number | null>(null);
-  const lastTimestampRef = useRef<number | null>(null);
   const [, navigate] = useLocation();
 
   useEffect(() => {
@@ -472,27 +468,12 @@ function QuizPrompt() {
     const alreadyShown = sessionStorage.getItem("quiz-prompt-shown");
     if (alreadyShown) return;
 
-    const tick = (timestamp: number) => {
-      if (lastTimestampRef.current !== null) {
-        const delta = (timestamp - lastTimestampRef.current) / 1000;
-        if (window.scrollY > 100) {
-          scrollTimeRef.current += delta;
-        }
-      }
-      lastTimestampRef.current = timestamp;
+    const timeoutId = setTimeout(() => {
+      setShow(true);
+      sessionStorage.setItem("quiz-prompt-shown", "true");
+    }, 20000);
 
-      if (scrollTimeRef.current >= 20) {
-        setShow(true);
-        sessionStorage.setItem("quiz-prompt-shown", "true");
-        return;
-      }
-      rafRef.current = requestAnimationFrame(tick);
-    };
-
-    rafRef.current = requestAnimationFrame(tick);
-    return () => {
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
-    };
+    return () => clearTimeout(timeoutId);
   }, [dismissed]);
 
   const handleDismiss = () => {
@@ -580,7 +561,6 @@ export default function Home() {
       <CollectionSection products={products} isLoading={isLoading} />
       <ValueProposition />
       <StorySection />
-      <EventsSection />
       <CtaSection />
       <QuizPrompt />
     </div>
