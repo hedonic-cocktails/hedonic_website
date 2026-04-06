@@ -107,7 +107,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
 }
 
 const LOVINGLY_LIGHT = ["dirty-shirley", "blackberry-smash", "strawberry-daiquiri", "clover-club"];
-const DARK_AND_SEDUCTIVE = ["mezcal-soda", "whiskey-sour", "pheromone-martini", "orange-julius"];
+const DARK_AND_SEDUCTIVE = ["mezcal-soda", "whiskey-sour", "pheromone-martini", "orange-creamsicle"];
 
 function CollectionGroup({
   title,

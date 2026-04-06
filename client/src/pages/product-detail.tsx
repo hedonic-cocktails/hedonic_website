@@ -8,7 +8,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import type { Product } from "@shared/schema";
 
 const LOVINGLY_LIGHT = ["dirty-shirley", "blackberry-smash", "strawberry-daiquiri", "clover-club"];
-const DARK_AND_SEDUCTIVE = ["mezcal-soda", "whiskey-sour", "pheromone-martini", "orange-julius"];
+const DARK_AND_SEDUCTIVE = ["mezcal-soda", "whiskey-sour", "pheromone-martini", "orange-creamsicle"];
 const PACKS = ["lovingly-light", "dark-and-seductive"];
 
 function getCollection(slug: string): { name: string; slugs: string[] } | null {
@@ -41,22 +41,22 @@ const relatedNotes: Record<string, Record<string, string>> = {
   "mezcal-soda": {
     "whiskey-sour": "Both have depth and warmth — the Mezcal Soda smolders with smoke, the Whiskey Sour balances bright citrus.",
     "pheromone-martini": "Both are dark and captivating — the Mezcal Soda is earthy smoke, the Pheromone is exotic chocolate and passionfruit.",
-    "orange-julius": "An unexpected contrast — the Mezcal Soda smolders with agave smoke, the Julius is creamy citrus warmth.",
+    "orange-creamsicle": "An unexpected contrast — the Creamsicle is creamy citrus warmth, the Mezcal Soda smolders with agave smoke.",
   },
   "whiskey-sour": {
     "mezcal-soda": "Both have depth and warmth — the Whiskey Sour is bright citrus balance, the Mezcal Soda smolders with smoke.",
     "pheromone-martini": "Both are spirit-forward — the Whiskey Sour is a bold classic, the Pheromone is darkly exotic.",
-    "orange-julius": "Spirit and citrus, two ways — the Whiskey Sour is tart and boozy, the Julius is smooth and creamy.",
+    "orange-creamsicle": "Spirit and citrus, two ways — the Whiskey Sour is tart and boozy, the Creamsicle is smooth and creamy.",
   },
   "pheromone-martini": {
     "mezcal-soda": "Both are dark and captivating — the Pheromone is exotic passionfruit and chocolate, the Mezcal is earthy smoke.",
     "whiskey-sour": "Both are spirit-forward — the Pheromone is darkly exotic, the Whiskey Sour is a bold classic.",
-    "orange-julius": "An intriguing contrast — the Pheromone is exotic and dark, the Julius is bright and nostalgic.",
+    "orange-creamsicle": "An intriguing contrast — the Pheromone is exotic and dark, the Creamsicle is bright and nostalgic.",
   },
-  "orange-julius": {
-    "mezcal-soda": "An unexpected contrast — the Julius is creamy citrus warmth, the Mezcal Soda smolders with agave smoke.",
-    "whiskey-sour": "Spirit and citrus, two ways — the Julius is smooth and creamy, the Whiskey Sour is tart and boozy.",
-    "pheromone-martini": "An intriguing contrast — the Julius is bright and nostalgic, the Pheromone is exotic and dark.",
+  "orange-creamsicle": {
+    "mezcal-soda": "An unexpected contrast — the Creamsicle is creamy citrus warmth, the Mezcal Soda smolders with agave smoke.",
+    "whiskey-sour": "Spirit and citrus, two ways — the Creamsicle is smooth and creamy, the Whiskey Sour is tart and boozy.",
+    "pheromone-martini": "An intriguing contrast — the Creamsicle is bright and nostalgic, the Pheromone is exotic and dark.",
   },
 
 };

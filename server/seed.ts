@@ -19,7 +19,7 @@ const seedProducts = [
   },
   {
     name: "Orange Creamsicle",
-    slug: "orange-julius",
+    slug: "orange-creamsicle",
     tagline: "Creamy citrus indulgence, clarified and sparkling.",
     description: "The nostalgic orange cream flavor you remember, transformed into a crystal-clear sparkling indulgence. The entire cocktail is clarified to a pale, luminous gold reminiscent of fine white wine, then carbonated for lively effervescence. Vodka melds with fresh orange juice and house-made vanilla syrup, delivering dreamsicle flavors in a remarkably elegant, sparkling form.",
     ingredients: "Vodka, Fresh Orange Juice, Vanilla Syrup, Carbonated",
@@ -28,7 +28,7 @@ const seedProducts = [
     volume: "750mL",
     servings: 5,
     abv: "12.5%",
-    imageUrl: "/images/orange-julius.png",
+    imageUrl: "/images/orange-creamsicle.png",
     color: "#e8a040",
     featured: true,
   },
