@@ -19,9 +19,7 @@ function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          <p className="font-body text-sm tracking-[0.3em] uppercase text-primary mb-6" data-testid="text-hero-label">
-            Refined Indulgence
-          </p>
+
           <h1 className="font-display text-6xl md:text-8xl lg:text-9xl tracking-wide leading-tight mb-6" data-testid="text-hero-title">
             Permission
             <br />
