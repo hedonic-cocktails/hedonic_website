@@ -23,7 +23,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
             <div className="relative aspect-[3/4] mb-6 overflow-hidden rounded-md bg-gradient-to-b from-card to-background/50 flex items-center justify-center">
               <img
                 src={product.imageUrl}
-                alt={product.name}
+                alt={product.name === "Orange Julius" ? "Orange Creamsicle" : product.name}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 data-testid={`img-product-${product.slug}`}
               />
@@ -34,7 +34,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
                 {product.spirit}
               </p>
               <h3 className="font-display text-3xl tracking-wide min-h-[2.25rem] mb-2" data-testid={`text-name-${product.slug}`}>
-                {product.name}
+                {product.name === "Orange Julius" ? "Orange Creamsicle" : product.name}
               </h3>
               <p className="font-body text-base text-muted-foreground leading-relaxed line-clamp-2 min-h-[2.5rem] mb-3" data-testid={`text-tagline-${product.slug}`}>
                 {product.tagline}

@@ -160,7 +160,7 @@ export default function ProductDetail() {
             <div className="aspect-[3/4] rounded-md overflow-hidden bg-gradient-to-b from-card to-background/50">
               <img
                 src={product.imageUrl}
-                alt={product.name}
+                alt={product.name === "Orange Julius" ? "Orange Creamsicle" : product.name}
                 className="w-full h-full object-cover"
                 data-testid="img-product-detail"
               />
@@ -177,7 +177,7 @@ export default function ProductDetail() {
               {product.spirit}
             </p>
             <h1 className="font-display text-5xl md:text-6xl tracking-wide mb-4" data-testid="text-detail-name">
-              {product.name}
+              {product.name === "Orange Julius" ? "Orange Creamsicle" : product.name}
             </h1>
             <p className="font-body text-xl text-foreground/70 mb-6 italic" data-testid="text-detail-tagline">
               {product.tagline}

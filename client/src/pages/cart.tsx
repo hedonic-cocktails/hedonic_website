@@ -75,7 +75,7 @@ export default function CartPage() {
     mutationFn: async (data: CheckoutFormData) => {
       const orderItems = items.map(i => ({
         productId: i.product.id,
-        name: i.product.name,
+        name: i.product.name === "Orange Julius" ? "Orange Creamsicle" : i.product.name,
         quantity: i.quantity,
         price: Number(i.product.price),
       }));
@@ -211,7 +211,7 @@ export default function CartPage() {
                     <div className="w-20 h-28 rounded-md overflow-hidden bg-card flex-shrink-0">
                       <img
                         src={item.product.imageUrl}
-                        alt={item.product.name}
+                        alt={item.product.name === "Orange Julius" ? "Orange Creamsicle" : item.product.name}
                         className="w-full h-full object-cover"
                         data-testid={`img-cart-${item.product.slug}`}
                       />
@@ -223,7 +223,7 @@ export default function CartPage() {
                             {item.product.spirit}
                           </p>
                           <h3 className="font-display text-lg tracking-wide" data-testid={`text-cart-item-${item.product.slug}`}>
-                            {item.product.name}
+                            {item.product.name === "Orange Julius" ? "Orange Creamsicle" : item.product.name}
                           </h3>
                         </div>
                         <Button
