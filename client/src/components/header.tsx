@@ -32,6 +32,8 @@ export function Header() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  if (location === "/waitlist") return null;
+
   return (
     <>
       <motion.header

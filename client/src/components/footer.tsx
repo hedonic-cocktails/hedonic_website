@@ -1,6 +1,11 @@
 import { SiInstagram, SiX } from "react-icons/si";
+import { useLocation } from "wouter";
 
 export function Footer() {
+  const [location] = useLocation();
+
+  if (location === "/waitlist") return null;
+
   return (
     <footer className="border-t border-border/40 bg-background">
       <div className="max-w-7xl mx-auto px-6 py-16">
