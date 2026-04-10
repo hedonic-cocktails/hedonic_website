@@ -102,8 +102,6 @@ export default function Waitlist() {
             <ul style={{ listStyle: "none", marginBottom: 48, padding: 0 }}>
               {[
                 "Invitation to private Chicago tasting events — taste the full lineup before anyone else",
-                "48-hour early access at launch — before we open to the public",
-                "Founding member pricing — locked in for your first order",
               ].map((item, i) => (
                 <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: 16, padding: "16px 0", borderBottom: "1px solid rgba(184,149,58,0.12)", borderTop: i === 0 ? "1px solid rgba(184,149,58,0.12)" : undefined, fontSize: 18, fontWeight: 300, color: "rgba(245,240,232,0.85)", lineHeight: 1.5 }}>
                   <svg viewBox="0 0 20 20" style={{ width: 24, height: 24, flexShrink: 0, marginTop: 1 }}>
