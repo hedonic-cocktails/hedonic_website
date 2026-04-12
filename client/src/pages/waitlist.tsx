@@ -20,7 +20,7 @@ export default function Waitlist() {
     if (startedRef.current) return;
     startedRef.current = true;
     const timer = setTimeout(() => {
-      animateCount(0, 7, 800, (n) => setCount(n));
+      animateCount(0, 20, 800, (n) => setCount(n));
     }, 1200);
     return () => clearTimeout(timer);
   }, []);
@@ -157,17 +157,17 @@ export default function Waitlist() {
             <div className="flex flex-wrap items-start gap-x-5 gap-y-6 mt-8 pt-8 border-t border-[rgba(184,149,58,0.25)]">
               <div className="flex-1 basis-[100px]">
                 <div style={{ fontSize: 36, fontWeight: 300, color: "#D4AE5C", lineHeight: 1, marginBottom: 12 }}>{count !== null ? count : "—"}</div>
-                <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: 10, fontWeight: 200, letterSpacing: "0.2em", textTransform: "uppercase", color: "#888880", lineHeight: 1.5 }}>people on<br className="hidden md:block" />the founding list</div>
+                <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: 10, fontWeight: 200, letterSpacing: "0.2em", textTransform: "uppercase", color: "#888880", lineHeight: 1.5 }}>people on <br className="hidden md:block" />the founding list</div>
               </div>
               <div className="hidden md:block w-[1px] h-10 mt-3 bg-[rgba(184,149,58,0.25)]" />
               <div className="flex-1 basis-[100px]">
                 <div style={{ fontSize: 36, fontWeight: 300, color: "#D4AE5C", lineHeight: 1, marginBottom: 12 }}>8</div>
-                <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: 10, fontWeight: 200, letterSpacing: "0.2em", textTransform: "uppercase", color: "#888880", lineHeight: 1.5 }}>cocktails<br className="hidden md:block" />in the lineup</div>
+                <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: 10, fontWeight: 200, letterSpacing: "0.2em", textTransform: "uppercase", color: "#888880", lineHeight: 1.5 }}>cocktails <br className="hidden md:block" />in the lineup</div>
               </div>
               <div className="hidden md:block w-[1px] h-10 mt-3 bg-[rgba(184,149,58,0.25)]" />
               <div className="flex-1 basis-[100px]">
                 <div style={{ fontSize: 36, fontWeight: 300, color: "#D4AE5C", lineHeight: 1, marginBottom: 12 }}>0</div>
-                <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: 10, fontWeight: 200, letterSpacing: "0.2em", textTransform: "uppercase", color: "#888880", lineHeight: 1.5 }}>artificial<br className="hidden md:block" />ingredients</div>
+                <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: 10, fontWeight: 200, letterSpacing: "0.2em", textTransform: "uppercase", color: "#888880", lineHeight: 1.5 }}>artificial <br className="hidden md:block" />ingredients</div>
               </div>
             </div>
           </div>
