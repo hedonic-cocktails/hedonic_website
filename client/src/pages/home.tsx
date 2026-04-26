@@ -88,13 +88,16 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
                 {product.tagline}
               </p>
 
-              <div className="flex items-end justify-between gap-4 mt-auto pt-2">
-                <span className="font-display text-3xl text-foreground" data-testid={`text-price-${product.slug}`}>
-                  ${Number(product.price).toFixed(2)}
-                </span>
-                <span className="font-body text-sm text-muted-foreground">
-                  / {product.volume}
-                </span>
+              <div className="flex flex-col mt-auto pt-2">
+                <span className="font-body text-xs text-muted-foreground mb-1">Expected price at retail</span>
+                <div className="flex items-end justify-between gap-4">
+                  <span className="font-display text-3xl text-foreground" data-testid={`text-price-${product.slug}`}>
+                    ${Number(product.price).toFixed(2)}
+                  </span>
+                  <span className="font-body text-sm text-muted-foreground">
+                    / {product.volume}
+                  </span>
+                </div>
               </div>
             </div>
           </div>

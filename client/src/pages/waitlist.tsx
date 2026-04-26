@@ -20,7 +20,7 @@ export default function Waitlist() {
     if (startedRef.current) return;
     startedRef.current = true;
     const timer = setTimeout(() => {
-      animateCount(0, 20, 800, (n) => setCount(n));
+      animateCount(0, 25, 800, (n) => setCount(n));
     }, 1200);
     return () => clearTimeout(timer);
   }, []);

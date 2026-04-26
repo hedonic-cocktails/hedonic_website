@@ -238,6 +238,9 @@ export default function ProductDetail() {
             )}
 
             <div className="border-t border-border/20 pt-8">
+              <div className="flex flex-col gap-1 mb-2">
+                <span className="font-body text-sm text-muted-foreground">Expected price at retail</span>
+              </div>
               <div className="flex items-end justify-between gap-4">
                 <div>
                   <span className="font-display text-4xl" data-testid="text-detail-price">
@@ -325,9 +328,12 @@ export default function ProductDetail() {
                         <h3 className="font-display text-2xl tracking-wide mb-1" data-testid={`text-related-name-${related.slug}`}>
                           {related.name}
                         </h3>
-                        <p className="font-display text-xl text-foreground/80 mb-2" data-testid={`text-related-price-${related.slug}`}>
-                          ${Number(related.price).toFixed(2)}
-                        </p>
+                        <div className="mb-2">
+                          <p className="font-body text-[10px] uppercase tracking-wider text-muted-foreground">Expected price at retail</p>
+                          <p className="font-display text-xl text-foreground/80" data-testid={`text-related-price-${related.slug}`}>
+                            ${Number(related.price).toFixed(2)}
+                          </p>
+                        </div>
                         {note && (
                           <p className="font-body text-sm text-muted-foreground leading-relaxed" data-testid={`text-related-note-${related.slug}`}>
                             {note}
