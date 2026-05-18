@@ -169,7 +169,7 @@ export default function ProductDetail() {
                         src={img}
                         alt={product.name === "Orange Julius" ? "Orange Creamsicle" : product.name}
                         loading="lazy"
-                        className="w-full h-full object-cover"
+                        className={`w-full h-full ${img.includes('1215') ? 'object-contain' : 'object-cover'}`}
                         data-testid={`img-product-detail-${idx}`}
                       />
                     </CarouselItem>
@@ -347,7 +347,7 @@ export default function ProductDetail() {
                                     src={img}
                                     alt={related.name}
                                     loading="lazy"
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    className={`w-full h-full transition-transform duration-700 group-hover:scale-105 ${img.includes('1215') ? 'object-contain' : 'object-cover'}`}
                                     data-testid={`img-related-${related.slug}-${idx}`}
                                   />
                                 </CarouselItem>

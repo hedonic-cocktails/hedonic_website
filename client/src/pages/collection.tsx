@@ -32,7 +32,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
                         src={img}
                         alt={product.name === "Orange Julius" ? "Orange Creamsicle" : product.name}
                         loading="lazy"
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        className={`w-full h-full transition-transform duration-700 group-hover:scale-105 ${img.includes('1215') ? 'object-contain' : 'object-cover'}`}
                         data-testid={`img-product-${product.slug}-${idx}`}
                       />
                     </CarouselItem>
