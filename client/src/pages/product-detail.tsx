@@ -168,6 +168,7 @@ export default function ProductDetail() {
                       <img
                         src={img}
                         alt={product.name === "Orange Julius" ? "Orange Creamsicle" : product.name}
+                        loading="lazy"
                         className="w-full h-full object-cover"
                         data-testid={`img-product-detail-${idx}`}
                       />
@@ -176,8 +177,12 @@ export default function ProductDetail() {
                 </CarouselContent>
                 {images.length > 1 && (
                   <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 h-10 w-10 bg-background/50 hover:bg-background/80 border-none transition-transform" />
-                    <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 h-10 w-10 bg-background/50 hover:bg-background/80 border-none transition-transform" />
+                    <div onClick={(e) => e.preventDefault()} className="absolute left-4 top-1/2 -translate-y-1/2 z-10">
+                      <CarouselPrevious className="relative inset-0 translate-y-0 translate-x-0 h-10 w-10 bg-background/50 hover:bg-background/80 border-none transition-transform" />
+                    </div>
+                    <div onClick={(e) => e.preventDefault()} className="absolute right-4 top-1/2 -translate-y-1/2 z-10">
+                      <CarouselNext className="relative inset-0 translate-y-0 translate-x-0 h-10 w-10 bg-background/50 hover:bg-background/80 border-none transition-transform" />
+                    </div>
                   </div>
                 )}
               </Carousel>
@@ -327,17 +332,38 @@ export default function ProductDetail() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
               {relatedProducts.map((related) => {
                 const note = relatedNotes[product.slug]?.[related.slug] || "";
+                const relatedImages = related.imageUrls?.length ? related.imageUrls : [related.imageUrl];
+
                 return (
                   <Link key={related.id} href={`/product/${related.slug}`} data-testid={`link-related-${related.slug}`}>
-                    <Card className="group overflow-visible border-border/30 bg-card/50 hover-elevate cursor-pointer h-full">
+                    <Card className="group overflow-hidden border-border/30 bg-card/50 hover-elevate cursor-pointer h-full">
                       <div className="p-6">
                         <div className="relative aspect-[3/4] mb-4 overflow-hidden rounded-md bg-gradient-to-b from-card to-background/50 flex items-center justify-center">
-                          <img
-                            src={related.imageUrl}
-                            alt={related.name}
-                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                            data-testid={`img-related-${related.slug}`}
-                          />
+                          <Carousel className="w-full h-full" opts={{ loop: true }}>
+                            <CarouselContent className="h-full ml-0">
+                              {relatedImages.map((img, idx) => (
+                                <CarouselItem key={idx} className="pl-0 basis-full h-full relative">
+                                  <img
+                                    src={img}
+                                    alt={related.name}
+                                    loading="lazy"
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    data-testid={`img-related-${related.slug}-${idx}`}
+                                  />
+                                </CarouselItem>
+                              ))}
+                            </CarouselContent>
+                            {relatedImages.length > 1 && (
+                              <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div onClick={(e) => e.preventDefault()} className="absolute left-2 top-1/2 -translate-y-1/2 z-10">
+                                  <CarouselPrevious className="relative inset-0 translate-y-0 translate-x-0 h-8 w-8 bg-background/50 hover:bg-background/80 border-none" />
+                                </div>
+                                <div onClick={(e) => e.preventDefault()} className="absolute right-2 top-1/2 -translate-y-1/2 z-10">
+                                  <CarouselNext className="relative inset-0 translate-y-0 translate-x-0 h-8 w-8 bg-background/50 hover:bg-background/80 border-none" />
+                                </div>
+                              </div>
+                            )}
+                          </Carousel>
                         </div>
                         <p className="font-body text-sm tracking-[0.2em] uppercase text-primary mb-1">
                           {related.spirit}

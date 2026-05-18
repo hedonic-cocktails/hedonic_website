@@ -31,6 +31,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
                       <img
                         src={img}
                         alt={product.name === "Orange Julius" ? "Orange Creamsicle" : product.name}
+                        loading="lazy"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         data-testid={`img-product-${product.slug}-${idx}`}
                       />
