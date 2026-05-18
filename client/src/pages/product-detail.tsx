@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, AlertTriangle, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import type { Product } from "@shared/schema";
 
 const LOVINGLY_LIGHT = ["dirty-shirley", "blackberry-smash", "strawberry-daiquiri", "clover-club"];
@@ -105,6 +106,7 @@ export default function ProductDetail() {
     );
   }
 
+  const images = product.imageUrls?.length ? product.imageUrls : [product.imageUrl];
   const ingredientsList = product.ingredients.split(",").map(i => i.trim());
 
   const MILK_CLARIFIED = [
@@ -156,14 +158,29 @@ export default function ProductDetail() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
+            className="group"
           >
             <div className="aspect-[3/4] rounded-md overflow-hidden bg-gradient-to-b from-card to-background/50">
-              <img
-                src={product.imageUrl}
-                alt={product.name === "Orange Julius" ? "Orange Creamsicle" : product.name}
-                className="w-full h-full object-cover"
-                data-testid="img-product-detail"
-              />
+              <Carousel className="w-full h-full" opts={{ loop: true }}>
+                <CarouselContent className="h-full ml-0">
+                  {images.map((img, idx) => (
+                    <CarouselItem key={idx} className="pl-0 basis-full h-full relative">
+                      <img
+                        src={img}
+                        alt={product.name === "Orange Julius" ? "Orange Creamsicle" : product.name}
+                        className="w-full h-full object-cover"
+                        data-testid={`img-product-detail-${idx}`}
+                      />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                {images.length > 1 && (
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 h-10 w-10 bg-background/50 hover:bg-background/80 border-none transition-transform" />
+                    <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 h-10 w-10 bg-background/50 hover:bg-background/80 border-none transition-transform" />
+                  </div>
+                )}
+              </Carousel>
             </div>
           </motion.div>
 

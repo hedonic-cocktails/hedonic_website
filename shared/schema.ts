@@ -16,6 +16,7 @@ export const products = sqliteTable("products", {
   servings: integer("servings").notNull(),
   abv: text("abv").notNull(),
   imageUrl: text("image_url").notNull(),
+  imageUrls: text("image_urls", { mode: "json" }).$type<string[]>().notNull().default(sql`'[]'`),
   color: text("color").notNull(),
   featured: integer("featured", { mode: "boolean" }).default(false),
 });

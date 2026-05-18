@@ -59,6 +59,7 @@ const seedProducts = [
     servings: 5,
     abv: "15%",
     imageUrl: "/images/whiskey-sour.png",
+    imageUrls: ["/images/whiskey-sour.png", "/images/IMG_1258.jpeg", "/images/IMG_1215.jpeg", "/images/IMG_1225.jpeg"],
     color: "#d4a340",
     featured: true,
   },
@@ -167,7 +168,10 @@ export async function seedDatabase() {
 
   console.log(`Seeding ${newProducts.length} new product(s)...`);
   for (const product of newProducts) {
-    await db.insert(products).values(product);
+    await db.insert(products).values({
+      ...product,
+      imageUrls: (product as any).imageUrls || [product.imageUrl, product.imageUrl]
+    });
   }
   console.log("Seeding complete!");
 }

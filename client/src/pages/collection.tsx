@@ -4,11 +4,14 @@ import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import type { Product } from "@shared/schema";
 const LOVINGLY_LIGHT = ["dirty-shirley", "blackberry-smash", "strawberry-daiquiri", "clover-club"];
 const DARK_AND_SEDUCTIVE = ["mezcal-soda", "whiskey-sour", "pheromone-martini", "orange-julius"];
 
 function ProductCard({ product, index }: { product: Product; index: number }) {
+  const images = product.imageUrls?.length ? product.imageUrls : [product.imageUrl];
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -18,15 +21,33 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
       className="h-full"
     >
       <Link href={`/product/${product.slug}`} data-testid={`link-product-${product.slug}`} className="h-full block">
-        <Card className="group overflow-visible border-border/30 bg-card/50 backdrop-blur-sm hover-elevate cursor-pointer h-full">
+        <Card className="group overflow-hidden border-border/30 bg-card/50 backdrop-blur-sm hover-elevate cursor-pointer h-full">
           <div className="p-6 flex flex-col h-full">
             <div className="relative aspect-[3/4] mb-6 overflow-hidden rounded-md bg-gradient-to-b from-card to-background/50 flex items-center justify-center">
-              <img
-                src={product.imageUrl}
-                alt={product.name === "Orange Julius" ? "Orange Creamsicle" : product.name}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                data-testid={`img-product-${product.slug}`}
-              />
+              <Carousel className="w-full h-full" opts={{ loop: true }}>
+                <CarouselContent className="h-full ml-0">
+                  {images.map((img, idx) => (
+                    <CarouselItem key={idx} className="pl-0 basis-full h-full relative">
+                      <img
+                        src={img}
+                        alt={product.name === "Orange Julius" ? "Orange Creamsicle" : product.name}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        data-testid={`img-product-${product.slug}-${idx}`}
+                      />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                {images.length > 1 && (
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div onClick={(e) => e.preventDefault()} className="absolute left-2 top-1/2 -translate-y-1/2 z-10">
+                      <CarouselPrevious className="relative inset-0 translate-y-0 translate-x-0 h-8 w-8 bg-background/50 hover:bg-background/80 border-none" />
+                    </div>
+                    <div onClick={(e) => e.preventDefault()} className="absolute right-2 top-1/2 -translate-y-1/2 z-10">
+                      <CarouselNext className="relative inset-0 translate-y-0 translate-x-0 h-8 w-8 bg-background/50 hover:bg-background/80 border-none" />
+                    </div>
+                  </div>
+                )}
+              </Carousel>
             </div>
 
             <div className="flex flex-col flex-1">
