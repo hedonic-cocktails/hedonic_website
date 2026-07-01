@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function AgeGate({ children }: { children: React.ReactNode }) {
   const [verified, setVerified] = useState<boolean | null>(null);
   const [denied, setDenied] = useState(false);
+  const [location] = useLocation();
 
   useEffect(() => {
     const stored = localStorage.getItem("licit_age_verified");
@@ -24,6 +26,7 @@ export function AgeGate({ children }: { children: React.ReactNode }) {
     setDenied(true);
   };
 
+  if (location === "/inventory") return <>{children}</>;
   if (verified === null) return null;
 
   return (

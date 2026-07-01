@@ -15,6 +15,7 @@ import Quiz from "@/pages/quiz";
 import ProductDetail from "@/pages/product-detail";
 import NotFound from "@/pages/not-found";
 import Waitlist from "@/pages/waitlist";
+import Inventory from "@/pages/inventory";
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -36,6 +37,7 @@ function Router() {
         <Route path="/waitlist" component={Waitlist} />
         <Route path="/quiz" component={Quiz} />
         <Route path="/product/:slug" component={ProductDetail} />
+        <Route path="/inventory" component={Inventory} />
         <Route path="/about">{() => <Redirect to="/why-licit" />}</Route>
         <Route path="/compare">{() => <Redirect to="/why-licit" />}</Route>
         <Route path="/why-hedonic">{() => <Redirect to="/why-licit" />}</Route>

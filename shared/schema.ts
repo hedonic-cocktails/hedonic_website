@@ -32,11 +32,24 @@ export const orders = sqliteTable("orders", {
   createdAt: text("created_at").$defaultFn(() => new Date().toISOString()),
 });
 
+export const batches = sqliteTable("batches", {
+  id: text("id").primaryKey().$defaultFn(() => crypto.randomUUID()),
+  name: text("name").notNull(),
+  productId: text("product_id").notNull(),
+  bottles750ml: integer("bottles_750ml").notNull().default(0),
+  bottles187ml: integer("bottles_187ml").notNull().default(0),
+  status: text("status").notNull().default("active"),
+  createdAt: text("created_at").$defaultFn(() => new Date().toISOString()),
+});
+
 export const insertProductSchema = createInsertSchema(products).omit({ id: true });
 export const insertOrderSchema = createInsertSchema(orders).omit({ id: true, createdAt: true, status: true });
+export const insertBatchSchema = createInsertSchema(batches).omit({ id: true, createdAt: true });
 
 export type InsertProduct = z.infer<typeof insertProductSchema>;
 export type Product = typeof products.$inferSelect;
 export type InsertOrder = z.infer<typeof insertOrderSchema>;
 export type Order = typeof orders.$inferSelect;
+export type InsertBatch = z.infer<typeof insertBatchSchema>;
+export type Batch = typeof batches.$inferSelect;
 

@@ -1,4 +1,4 @@
-import { type Product, type InsertProduct, type Order, type InsertOrder, products, orders } from "@shared/schema";
+import { type Product, type InsertProduct, type Order, type InsertOrder, type Batch, type InsertBatch, products, orders, batches } from "@shared/schema";
 import { db } from "./db";
 import { eq } from "drizzle-orm";
 
@@ -10,6 +10,9 @@ export interface IStorage {
   getOrders(limit?: number, offset?: number): Promise<Order[]>;
   getOrder(id: string): Promise<Order | undefined>;
   createOrder(order: InsertOrder): Promise<Order>;
+  getBatches(): Promise<any[]>;
+  createBatch(batch: InsertBatch): Promise<Batch>;
+  updateBatch(id: string, updates: Partial<InsertBatch>): Promise<Batch | undefined>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -44,6 +47,29 @@ export class DatabaseStorage implements IStorage {
   async createOrder(order: InsertOrder): Promise<Order> {
     const [created] = await db.insert(orders).values(order).returning();
     return created;
+  }
+
+  async getBatches(): Promise<any[]> {
+    const allBatches = await db.select().from(batches);
+    const allProducts = await db.select().from(products);
+
+    return allBatches.map(b => {
+      const p = allProducts.find(prod => prod.id === b.productId);
+      return {
+        ...b,
+        productName: p ? p.name : "Unknown Recipe"
+      };
+    });
+  }
+
+  async createBatch(batch: InsertBatch): Promise<Batch> {
+    const [created] = await db.insert(batches).values(batch).returning();
+    return created;
+  }
+
+  async updateBatch(id: string, updates: Partial<InsertBatch>): Promise<Batch | undefined> {
+    const [updated] = await db.update(batches).set(updates).where(eq(batches.id, id)).returning();
+    return updated;
   }
 }
 
