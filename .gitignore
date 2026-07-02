@@ -8,3 +8,7 @@ vite.config.ts.*
 .local
 cloudflare-seed/
 CLOUDFLARE_DEPLOYMENT.md
+.wrangler/
+dump.sql
+d1-seed.sql
+sqlite.db
