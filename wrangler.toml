@@ -1,0 +1,7 @@
+name = "hedonic-website"
+compatibility_date = "2024-03-20"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "licit-db"
+database_id = "fc66d076-1584-4d87-9e3b-985bf2040ff3"
